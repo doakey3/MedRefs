@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hypertension Template</title>
+    <meta name="author" content="doakey3">
+
+    <meta name="description" content="A template for charting on hypertension">
+    <meta name="keywords" content="htn, hypertension, blood, pressure, template">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Hypertension Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Hypertension Diagnostic Criteria:
+(    ) BP &gt;= 180/120
+(    ) BP &gt;= 160/100 and known end-organ damage (LVH, retinopathy, cardiovascular disease)
+(    ) BP higher than 140/90 in office and one of the following:
+    (    ) &gt;= 130/80 on average on 24-hour ambulatory monitoring
+    (    ) &gt;= 135/85 on average at home
+
+Hypertension Comorbidities:
+(    ) Coronary Artery Disease
+(    ) Chronic kidney disease
+(    ) Type 2 Diabetes Mellitus
+
+Patient's Upper Arm Circumference: [ArmCirc]
+Patients STOP-BANG Scrore: [STOP-BANG]
+
+Treatment Goals:
+- reduce BP to less than 140/90 within 3 months of starting medication
+- long-term goal: reduce BP to less than 130/80 in patients younger than 65
+
+Tests for Newly Diagnosed Hypertension: (Food Fasting, well hydrated)
+- CMP
+- CBC
+- TSH
+- Lipid Panel to allow for calculation of 10-year ASCVD risk
+- Urinalysis
+- Urine Albumin to Creatinine Ratio
+- EKG to evaluate for LVH
+
+OPTION 1: (Recommended if no CAD, CKD, DM, or signs of end-organ damage)
+- for blood pressure &lt; 160/100 and no comorbidities: 6 months of lifestyle intervention
+- avoid frequent NSAID use
+- discussed lifestyle interventions (low salt, weight loss, exercise, DASH diet)
+- referral to disease management
+- referral to nutrition to discuss DASH diet
+- referral to sleep medicine for sleep study due to high STOP-BANG score
+
+OPTION 2: (preferrable for diabetic patients and those with heart failure)
+- start ARB
+- check CMP
+- check renal function panel in 4-12 weeks (dependent on KDOQI guidelines)
+
+OPTION 3: (especially for black patients, works better than ACEIs/ARBs)
+- start amlodipine
+- encourage good oral care
+
+OPTION 4:
+- start hydrochlorothiazide
+- check renal function panel yearly and with every increase
+</textarea>
+</div>
+
+<div id="notes">
+<a href="../KdoqiGuidelines" target="_blank">KDOQI Guidelines</a>
+<br>
+<a href="../LowerBPwoMeds" target="_blank">Lower BP w/o Meds</a>
+<br>
+<a href="../CheckingHomeBP" target="_blank">Checking Home Blood Pressure</a>
+
+<h2>Recommended Physical Exam for High Blood Pressure</h2>
+<img src="media/physical_exam.png">
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2021/0615/p763.html">Hypertension: New Guidelines from the International Society of Hypertension. 2021</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/overview-of-hypertension-in-adults">Overview of hypertension in adults</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

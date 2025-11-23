@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes"/>
+    <meta charset="utf-8">
+    <title>Fast Physical</title>
+    <meta name="author" content="doakey3">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="A tool for generating a physical exam quickly.">
+    <meta name="keywords" content="physical, exam, pe, assessment, template">
+
+    <style>
+        body {
+            font-family: tahoma;
+            font-size: 10pt;
+            background-color: #595959;
+            overflow: hidden;
+        }
+        div#left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 512px;
+            border: 3px solid black;
+            
+        }
+        div#right {
+            position: absolute;
+            right: 0;
+            width: 509px;
+            top: 0;
+            bottom: 0;
+            border: 3px solid black;
+        }
+        textarea#output {
+            font-family: inherit;
+            font-size: 10pt;
+            display: block;
+            resize: none;
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: #595959;
+            outline: none;
+            color: white;
+        }
+        div#shortcuts {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 29px;
+            border-bottom: 3px solid black;
+            background-color: gray;
+        }
+        a.shortcut {
+            font-size: 10pt;
+            display: inline-block;
+            border: 3px solid transparent;
+            padding: 3px;
+            margin: 0;
+            cursor: default;
+            background-color: gray;
+            color: white;
+            user-select: none;
+        }
+        a.shortcut:hover {
+            border-color: #855700;
+        }
+        a.shortcut:active {
+            background-color: #855700;
+        }
+        #area_selection {
+            position: absolute;
+            top: 32px;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+        }
+        #area_selection table {
+            background-color: #333333;
+            height: 100%;
+            width: 100%;
+            border-collapse: collapse;
+            border-right: 3px solid black;
+        }
+        #area_selection table td {
+            padding: 0;
+        }
+        #selectors td {
+            position: relative;
+        }
+        a.body_area {
+            user-select: none;
+            cursor: default;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column; 
+            border: 3px solid transparent;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #333333;
+            box-sizing:border-box;
+            color: white;
+            font-size: 10pt;
+        }
+        a.body_area:hover {
+            border-color: #855700;
+        }
+        a.body_area:active {
+            background-color: #855700;
+        }
+        .options_container {
+            position: absolute;
+            top: 32px;
+            left: 100px;
+            right: 0;
+            bottom: 0;
+            background-color: #777777;
+            box-sizing:border-box;
+        }
+        
+        a.option_link {
+            user-select: none;
+            display: inline-block;
+            padding: 3px;
+            border: 3px solid transparent;
+            background-color: #444444;
+            margin: 2px;
+            color: white;
+            cursor: default;
+        }
+        a.option_link:hover {
+            border-color: #855700;
+        }
+        a.option_link:active {
+            background-color: #855700
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="left">
+        <textarea id="output" autocomplete="off" spellcheck="false"></textarea>
+    </div>
+    <div id="right" class="right">
+        <div id="shortcuts">
+            <a id="adult_basic" class="shortcut">Adult Basic</a>
+             <a id="sports_phys" class="shortcut">Sports Phys</a>
+            <a id="infant_boy" class="shortcut">Infant Boy</a>
+            <a id="infant_girl" class="shortcut">Infant Girl</a>
+        </div>
+        <div id="area_selection">
+            <table id="selectors">
+            </table>
+        </div>
+    </div>
+</body>
+
+<script>
+var exam_map = {
+    "General": [
+        "no acute distress",
+        "well-appearing",
+        "somnolent",
+        "diaphoretic",
+        "frail",
+        "muscular",
+        "cachectic",
+        "thin",
+        "healthy weight",
+        "overweight",
+        "obese",
+        "morbidly obese",
+    ],
+    "Head": [
+        "atraumatic",
+        "normocephalic",
+        "facial nerve intact",
+        "anterior fontanelle flat and soft",
+        "no caput succedaneum",
+        "no cephalohematoma"
+    ],
+    "Eyes": [
+        "sclera white",
+        "pupils equal round reactive to light and accomodation",
+        "no obvious gaze disturbance",
+        "no obvious visual deficit",
+        "cranial nerves 3, 4, and 6 intact",
+        "no exophthalmos",
+        "red reflex symmetrical bilaterally",
+        //"no papilledema",
+        //"cup:disk ratio < 0.5",
+        //"no retinal hemorrhages"
+    ],
+    "Ears": [
+        "external ear intact bilaterally",
+        "auditory canal clear bilaterally",
+        "no post auricular swelling or ecchymosis",
+        "no obvious hearing deficit",
+        "no tragal tenderness",
+        "tympanic membrane gray, shiny, and transparent bilaterally",
+        "rinne air > bone bilaterally",
+    ],
+    "Nose": [
+        "external nose intact",
+        "nares patent bilaterally",
+        "nasal mucosa pink and moist",
+        "no septal deviation",
+        "no frontal or maxillary sinus tenderness",
+    ],
+    "Mouth": [
+        "lips pink and moist",
+        "teeth white without erosions",
+        "no strong mouth odor",
+        "tongue pink and moist",
+        "pharyngeal mucosa pink and moist",
+        "tonsils unenlarged",
+        "uvula nondeviated",
+        "palate intact",
+        "palate elevates symmetrically",
+        "cranial nerve 9 intact",
+        "cranial nerve 12 intact",
+    ],
+    "Neck": [
+        "thyroid unenlarged",
+        "no cervical lymphadenopathy",
+        "neck supple without crepitus",
+        "trachea midline",
+        "cranial nerve 11 intact"
+    ],
+    "Heart": [
+        "rate normal",
+        "rhythm regular",
+        "no significant murmur",
+        "capillary refill < 3 seconds",
+        "legs warm without edema",
+        "dorsalis pedis pulse easily palpable bilaterally",
+        "radial pulse easily palpable bilaterally",
+        "no splinter hemorrhages or janeway lesions"
+    ],
+    "Lungs": [
+        "clear to auscultation bilaterally",
+        "respiratory effort unlabored",
+        "expansion symmetrical and appropriate",
+        "no clubbing or acrocyanosis",
+        "tactile fremitus symmetrical",
+        "no E to A change", // would indicate fluid in lungs
+        "percussion resonant in all lung fields", // hyperresonant or dull
+    ],
+    "Chest": [
+        "no pectus excavatum or carinatum",
+        "collar bones intact without crepitus",
+        "no nipple discharge",
+        "breasts soft and nontender",
+    ],
+    "Back": [
+        "no step-off lesion",
+        "no costovertebral angle tenderness",
+        "no significant sacral dimple",
+        "no sacral tuft of hair",
+    ],
+    "Abdomen": [
+        "nondistended",
+        "soft",
+        "no masses",
+        "nontender",
+        "active bowel sounds",
+        "murphy's sign negative",
+        "rovsing sign negative",
+        "psoas sign negative",
+        "appropriate rectal sphincter tone",
+    ],
+    "Pelvic": [
+        "circumcised",
+        "uncircumcised",
+        "urethra midline at distal tip of penis",
+        "testes descended bilaterally",
+        "cremasteric reflex intact bilaterally",
+        "vagina pink rugated",
+        "cervix intact and nontender",
+        "uterine fundus at the umbilicus",
+    ],
+    "Lymphatic": [
+        "no cervical lymphadenopathy",
+        "no inguinal lyphadenopathy",
+        "no axillary lymphadenopathy"
+    ],
+    "Musculoskeletal": [
+        "no gross abnormality",
+        "overall strength normal",
+        "barlow-ortolani w/o hip-pop bilaterally",
+    ],
+    "Skin": [
+        "appropriate for ethnicity",
+        "no rash",
+        "no wounds",
+    ],
+    "Neuro": [
+        "alert",
+        "oriented to person place time",
+        "responds appropriately to questions",
+        "no focal neurologic deficit",
+        "CN II-XII intact",
+        "gait fluid and normal",
+        "patellar reflex normal bilaterally",
+        "brachioradialis reflex normal bilaterally",
+        "finger-to-nose test normal",
+        "heel-to-shin test normal",
+        "rapid alternating movement fluid and normal",
+        "romberg test normal",
+    ],
+    "Psych": [
+        "relaxed",
+        "repetitive purposeless movement",
+        "anxious",
+    ]
+}
+
+var body_areas = Object.keys(exam_map);
+var table = document.getElementById("selectors");
+
+var select_color = "#855700";
+var default_color = "#333333";
+
+var right = document.getElementById("right");
+right.addEventListener("wheel", function(event) {
+    var links = document.getElementsByClassName("body_area");
+    var select_index = -1;
+    
+    for (var x = 0; x < links.length; x++) {
+        if (links[x].select) {
+            select_index = x;
+        }
+        links[x].select = false;
+        links[x].style.backgroundColor = default_color;
+    }
+    
+    if (event.deltaY < 0) {
+        if (select_index > 0) {
+            links[select_index - 1].select = true;
+            links[select_index - 1].style.backgroundColor = select_color;
+        }
+        else if (select_index == 0) {
+            links[links.length - 1].select = true;
+            links[links.length - 1].style.backgroundColor = select_color;
+        }
+        select_options_container();
+    }
+    if (event.deltaY > 0) {
+        if (select_index < links.length - 1) {
+            links[select_index + 1].select = true;
+            links[select_index + 1].style.backgroundColor = select_color;
+        }
+        else if (select_index == links.length - 1) {
+            links[0].select = true;
+            links[0].style.backgroundColor = select_color;
+        }
+        select_options_container();
+    }
+});
+
+var sort_lines = function(lines) {
+    var areas = [];
+    for (var i = 0; i < body_areas.length; i++) {
+        areas.push(body_areas[i].toUpperCase());
+    }
+    
+    var new_lines = [];
+    for (var i = 0; i < areas.length; i++) {
+        var intro = new RegExp("^" + areas[i] + ":");
+        var x = 0;
+        while (x < lines.length) {
+            if (lines[x].match(intro)) {
+                if (lines[x].replace(intro, "").replace(/\s+$/, "") == "") {
+                    lines.splice(x, 1);
+                }
+                else {
+                    new_lines.push(lines[x]);
+                    lines.splice(x, 1);
+                    break;
+                }
+            }
+            x++;
+        }
+    }
+    new_lines.push.apply(new_lines, lines);
+    return new_lines;
+}
+
+var select_options_container = function() {
+    var options_containers = document.getElementsByClassName("options_container");
+    for (var i = 0; i < options_containers.length; i++) {
+        options_containers[i].style.display = "none";
+    }
+    var links = document.getElementsByClassName("body_area");
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].select) {
+            options_containers[i].style.display = "block";
+        }
+    }
+}
+
+var get_selection_range = function(text, area, item) {
+    if (text == "") {
+        return {"start": 0, "end": 0};
+    }
+    var pre_lines = [];
+    var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+    var area_pat = new RegExp("^" + area + ":");
+    var line = "";
+    for (var i = 0; i < lines.length; i++) {
+        if (lines[i].match(area_pat)) {
+            line = lines[i];
+            break;
+        }
+        else {
+            pre_lines.push(lines[i]);
+        }
+    }
+    var item_pat = new RegExp(item + "[^;]*");
+    var match = line.match(item_pat);
+    if (match) {
+        var start = pre_lines.join("\n").length + match.index;
+        var end = start + item.length;
+        if (pre_lines.length > 0) {
+            start += 1;
+            end += 1;
+        }
+        return {
+            "start": start,
+            "end": end
+        }
+    }
+    else {
+        return text.length;
+    }
+}
+
+for (var i = 0; i < body_areas.length; i++) {
+    var tr = document.createElement("TR");
+    var td = document.createElement("TD");
+    var a = document.createElement("A");
+    
+    a.innerHTML = body_areas[i];
+    a.className = "body_area";
+    if (i == 0) {
+        a.select = true;
+        a.style.backgroundColor = select_color;
+    }
+    a.addEventListener("click", function() {
+        var links = document.getElementsByClassName("body_area");
+        for (var x = 0; x < links.length; x++) {
+            links[x].select = false;
+            links[x].style.backgroundColor = default_color;
+        }
+        
+        this.select = true;
+        this.style.backgroundColor = select_color;
+        select_options_container();
+    });
+    
+    table.appendChild(tr);
+    tr.appendChild(td);
+    td.appendChild(a);
+    
+    var div = document.createElement("div");
+    div.className = "options_container";
+    div.id = body_areas[i];
+    div.style.display = "none";
+    right.appendChild(div);
+    
+    if (i == 0) {
+        div.style.display = "block";
+    }
+    
+    var options = exam_map[body_areas[i]];
+    for (var x = 0; x < options.length; x++) {
+        var a = document.createElement("a");
+        a.innerHTML = options[x];
+        a.className = "option_link";
+        div.appendChild(a);
+        
+        a.addEventListener("click", function() {
+            var area = this.parentElement.id.toUpperCase();
+            var textarea = document.getElementById("output");
+            var text = textarea.value;
+
+            var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+            if (!lines) {
+                lines = [];
+            }
+            var line_found = false
+            var area_pat = new RegExp(area + ":");
+            for (var i = 0; i < lines.length; i++) {
+                if (lines[i].match(area_pat)) {
+                    line_found = true;
+                    this.select = false;
+                    this.style.backgroundColor = "#444444";
+                    var parts = lines[i].replace(area_pat, "").split(/;/g);
+                    for (var x = 0; x < parts.length; x++) {
+                        parts[x] = parts[x].replace(/^\s+/g, "").replace(/\s+$/, "");
+                    }
+                    var x = 0;
+                    var part_pat = new RegExp("^" + this.innerHTML + ".*");
+                    var part_found = false;
+                    while (x < parts.length) {
+                        if (parts[x] == "") {
+                            parts.splice(x, 1);
+                        }
+                        else if (parts[x].match(part_pat)) {
+                            parts.splice(x, 1);
+                            part_found = true;
+                        }
+                        else {
+                            x++;
+                        }
+                    }
+                    if (part_found == false) {
+                        parts.push(this.innerHTML);
+                        this.select = true;
+                        this.style.backgroundColor = select_color;
+                    }
+                    lines[i] = area + ": " + parts.join("; ");
+                }
+            }
+            if (line_found == false) {
+                lines.push(area + ": " + this.innerHTML);
+                this.select = true;
+                this.style.backgroundColor = select_color;
+            }
+            lines = sort_lines(lines);
+            textarea.value = lines.join("\n");
+            var range = get_selection_range(textarea.value, area, this.innerHTML);
+            textarea.focus();
+            textarea.setSelectionRange(range.start, range.end);
+        });
+    }
+}
+
+var set_selected_options = function() {
+    var textarea = document.getElementById("output");
+    var text = textarea.value;
+    var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+    var dict = {};
+    var keys = [];
+    if (lines && lines.length > 0) {
+        for (var i = 0; i < lines.length; i++) {
+            var area = lines[i].match(/^[A-Z]+/);
+            if (area) {
+                var parts = lines[i].replace(/^[A-Z ]+:/, "").split(/;/g)
+                for (var x = 0; x < parts.length; x++) {
+                    parts[x] = parts[x].replace(/^\s+/g, "").replace(/\s+$/, "");
+                }
+                dict[area] = parts;
+                keys.push(area);
+            }
+        }
+    }
+    
+    var option_links = document.getElementsByClassName("option_link");
+    for (var i = 0; i < option_links.length; i++) {
+        option_links[i].style.backgroundColor = "#444444";
+        option_links[i].select = false;
+        
+        if (dict[option_links[i].parentElement.id.toUpperCase()]) {
+            var key = option_links[i].parentElement.id.toUpperCase();
+            for (var x = 0; x < dict[key].length; x++) {
+                var pat = new RegExp("^" + option_links[i].innerHTML);
+                if (dict[key][x].match(pat)) {
+                    option_links[i].style.backgroundColor = select_color;
+                    option_links[i].select = false;
+                }
+            }
+        }
+    }
+}
+
+document.getElementById("right").addEventListener("mouseenter", set_selected_options);
+
+document.getElementById("adult_basic").addEventListener("click", function() {
+    var textarea = document.getElementById("output");
+    textarea.value = [
+        "GENERAL: no acute distress; well-appearing; healthy weight",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: sclera white; no obvious gaze disturbance; no exophthalmos",
+        "EARS: no obvious hearing deficit",
+        "HEART: rate normal; rhythm regular; no significant murmur",
+        "LUNGS: clear to auscultation bilaterally; respiratory effort unlabored; expansion symmetrical and appropriate",
+        "MUSCULOSKELETAL: no gross abnormality; overall strength normal",
+        "SKIN: appropriate for ethnicity; no rash; no wounds",
+        "NEURO: alert; responds appropriately to questions",
+        "PSYCH: relaxed"
+    ].join("\n");
+    set_selected_options();
+});
+
+document.getElementById("infant_boy").addEventListener("click", function() {
+    var textarea = document.getElementById("output");
+    textarea.value = [
+        "GENERAL: no acute distress; well-appearing; healthy weight",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: sclera white; no obvious gaze disturbance; no exophthalmos",
+        "NOSE: external nose intact",
+        "MOUTH: lips pink and moist; palate intact",
+        "HEART: rate normal; rhythm regular; no significant murmur",
+        "LUNGS: clear to auscultation bilaterally; respiratory effort unlabored; expansion symmetrical and appropriate",
+        "CHEST: no pectus excavatum or carinatum",
+        "BACK: no step-off lesion; no significant sacral dimple; no sacral tuft of hair",
+        "ABDOMEN: nondistended; soft; no masses",
+        "PELVIC: uncircumcised; testes descended bilaterally",
+        "MUSCULOSKELETAL: no gross abnormality; barlow-ortolani w/o hip-pop bilaterally",
+        "SKIN: appropriate for ethnicity; no wounds",
+    ].join("\n");
+    set_selected_options();
+});
+
+document.getElementById("infant_girl").addEventListener("click", function() {
+    var textarea = document.getElementById("output");
+    textarea.value = [
+        "GENERAL: no acute distress; well-appearing; healthy weight",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: sclera white; no obvious gaze disturbance; no exophthalmos",
+        "NOSE: external nose intact",
+        "MOUTH: lips pink and moist; palate intact",
+        "HEART: rate normal; rhythm regular; no significant murmur",
+        "LUNGS: clear to auscultation bilaterally; respiratory effort unlabored; expansion symmetrical and appropriate",
+        "CHEST: no pectus excavatum or carinatum",
+        "BACK: no step-off lesion; no significant sacral dimple; no sacral tuft of hair",
+        "ABDOMEN: nondistended; soft; no masses",
+        "MUSCULOSKELETAL: no gross abnormality; barlow-ortolani w/o hip-pop bilaterally",
+        "SKIN: appropriate for ethnicity; no wounds",
+    ].join("\n");
+    set_selected_options();
+});
+
+document.getElementById("sports_phys").addEventListener("click", function() {
+    var textarea = document.getElementById("output");
+    textarea.value = [
+        "GENERAL: no acute distress; well-appearing; healthy weight",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: sclera white; no obvious gaze disturbance; no exophthalmos; pupils equal round reactive to light and accommodation",
+        "EARS: external ear intact bilaterally; auditory canal clear bilaterally; no obvious hearing deficit; tympanic membrane gray, shiny, and transparent bilaterally",
+        "NOSE: external nose intact; nares patent bilaterally; nasal mucosa pink and moist; no septal deviation",
+        "MOUTH: teeth white without erosions; uvula nondeviated; palate elevates symmetrically; tonsils unenlarged; pharyngeal mucosa pink and moist; tongue pink and moist; lips pink and moist",
+        "NECK: no cervical lymphadenopathy; neck supple without crepitus",
+        "HEART: rate normal; rhythm regular; no significant murmur; no murmur with squat-to-stand",
+        "LUNGS: clear to auscultation bilaterally; respiratory effort unlabored; expansion symmetrical and appropriate",
+        "BACK: no step-off lesion",
+        "ABDOMEN: nondistended; soft; no masses",
+        "MUSCULOSKELETAL: no gross abnormality; ROM normal for neck, shoulders, elbows, wrists, hips, knees, ankles",
+        "SKIN: appropriate for ethnicity; no wounds",
+        "NEURO: alert; responds appropriately to questions; patellar reflex intact; CN II-XII intact",
+        "PSYCH: relaxed"
+    ].join("\n");
+    set_selected_options();
+});
+
+
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+.grow-wrap {
+    display: grid;
+    font-family: tahoma;
+}
+.grow-wrap::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+.grow-wrap > textarea {
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.grow-wrap > textarea, .grow-wrap::after {
+    border: 1px solid black;
+    padding: 0.5rem;
+    font: inherit;
+    grid-area: 1 / 1 / 2 / 2;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.checkable {
+    width: 100%;
+    resize: none;
+}
+
+

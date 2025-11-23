@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chronic Diarrhea Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on chronic diarrhea">
+    <meta name="keywords" content="chronic, diarrhea, template, stool">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+	
+	<style>
+        #bristol {
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin: 1em;
+            background-color: white;
+        }
+        #bristol td, #bristol th {
+            padding: 1em;
+        }
+        #bristol tr {
+            padding-bottom: 2em;
+        }
+        span.redlined {
+            text-decoration: underline;
+            text-decoration-color:red
+        }
+        .table_title {
+            font-size: 125%;
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>Chronic Diarrhea Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+
+Alarm Features For Chronic Diarrhea: (Any positive indicates endoscopy)
+(    ) Age of onset after age 50
+(    ) Rectal bleeding or melena
+(    ) Nocturnal pain or diarrhea
+(    ) Progressive abdominal pain
+(    ) Unexplained weight loss, fever, or other systemic symptoms
+(    ) First degree relative with inflammatory bowel disease or colorectal cancer
+(    ) Laboratory abnormalities:
+    (    ) Iron deficiency anemia
+	(    ) Elevated CRP/ESR
+	(    ) Elevated fecal calprotectin
+	(    ) Fecal occult blood)
+	
+General Laboratory Tests:
+-CBC
+-TSH and T4
+-Celiac panel
+-CMP (evaluate for electrolyte abnormalities)
+-FIT
+-Giardia antigen
+-Fecal calprotectin
+-CRP
+</textarea>
+</div>
+
+<div id="notes">
+<p><b>Chronic diarrhea</b>: Persistent alteration of stool consistency from the norm with loose stools (consistency between types 5 and 7 on the Bristol stool chart) and increased stool frequency of greater than three stools daily of at least four weeks' duration</p>
+<p>Consider C difficile in those with recent antibiotic treatment or recent known infection with C dif</p>
+<p>If fever and weight loss or abdominal pain, get an abdominal CT scan</p>
+<table id="bristol">
+    <tr>
+        <th class="table_title" colspan=3><span class="redlined">B</span>ristol <span class="redlined">S</span>tool <span class="redlined">F</span>orm <span class="redlined">S</span>cale</th>
+    </tr>
+    <tr>
+        <th>Type 1</th>
+        <td><img src="media/bristol/01.jpg"></td>
+        <td>Separate hard lumps, like nuts (hard to pass)</td>
+    </tr>
+    <tr>
+        <th>Type 2</th>
+        <td><img src="media/bristol/02.jpg"></td>
+        <td>Sausage-shaped, but lumpy</td>
+    </tr>
+    <tr>
+        <th>Type 3</th>
+        <td><img src="media/bristol/03.jpg"></td>
+        <td>Like a sausage, but with cracks on its surface</td>
+    </tr>
+    <tr>
+        <th>Type 4</th>
+        <td><img src="media/bristol/04.jpg"></td>
+        <td>Like a sausage or snake, smooth and soft</td>
+    </tr>
+    <tr>
+        <th>Type 5</th>
+        <td><img src="media/bristol/05.jpg"></td>
+        <td>Soft blobs with clear-cut edges (passed easily)</td>
+    </tr>
+    <tr>
+        <th>Type 6</th>
+        <td><img src="media/bristol/06.jpg"></td>
+        <td>Fluffy pieces with ragged edges, a mushy stool</td>
+    </tr>
+    <tr>
+        <th>Type 7</th>
+        <td><img src="media/bristol/07.jpg"></td>
+        <td>Watery, no solid pieces, ENTIRELY LIQUID</td>
+    </tr>
+</table>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/approach-to-the-adult-with-chronic-diarrhea-in-resource-abundant-settings">Approach to the adult with chronic diarrhea in resource-abundant settings</a>.</li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

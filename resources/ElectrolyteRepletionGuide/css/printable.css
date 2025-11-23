@@ -1,0 +1,45 @@
+.document {
+    margin: 0.25in;
+}
+
+body {
+    font-family: tahoma;
+    font-size: 10pt;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 8.5in;
+}
+
+#print_container {
+    width: 8.0in;
+    margin: 0.25in;
+}
+
+@page {
+    margin: 0.25in 0 0.25in 0;
+    width: 8.5in;
+    height: 11in;
+}
+
+@media print {
+    body {
+        margin-top: -0.25in;
+    }
+
+    select {
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: white;
+    }
+}
+
+@media only screen and (max-device-width: 600px) {
+    body {
+        width: 100%;
+    }
+    #print_container {
+        margin: 2.5%;
+        width: 95%;
+    }
+}

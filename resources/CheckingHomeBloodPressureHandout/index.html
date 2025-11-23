@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Checking Home Blood Pressure Handout</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="How to check home blood pressure">
+    <meta name="keywords" content="handout, htn, hypertension, blood, pressure, home, checking">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0.25in;
+            width: calc(8.5in - 2px);
+            border: 1px dashed black;
+            height: calc(11in - 2px);
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        #instructions td:first-child {
+            padding-right: 1em;
+        }
+        #instructions td {
+            padding-bottom: 1em;
+        }
+        #instructions img {
+            min-width: 32px;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+        .bp_log {
+            width: 100%;
+        }
+        .bp_log td, .bp_log th {
+            border: 2px solid black;
+            height: 2em;
+        }
+        #references {
+            font-size: 75%;
+            width: 8in;
+        }
+        #references ul {
+            margin: 0;
+            margin-left: -2em;
+        }
+        hr.expander {
+            flex-grow: 1; 
+            border: 0;
+        }
+        h2 {
+            font-size: 100%;
+            margin-bottom: 0;
+        }
+        @media print {
+            body {
+                border: none;
+                padding: 0;
+                max-width: 8in;
+                max-height: 10.5in;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>Checking Home Blood Pressure Handout</h1>
+    <table id="instructions">
+        <tr>
+            <td><img src="icons/bpcuff.svg"></td>
+            <td>Use a cuff for the upper arm. Good cuffs: <a href="https://www.validatebp.org" target="_blank">https://www.validatebp.org</a></td>
+        </tr>
+        <tr>
+            <td><img src="icons/chair.svg"></td>
+            <td>Use a chair that supports a straight back.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/mute.svg"></td>
+            <td>Avoid loud noise.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/clock.svg"></td>
+            <td>Rest for 5 minutes beforehand.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/armrested.svg"></td>
+            <td>Support the arm at the level of the heart.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/coffee.svg"></td>
+            <td>Avoid caffeine, tobacco, or exercise 30 mins beforehand.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/uncrossed.svg"></td>
+            <td>Keep legs uncrossed.</td>
+        </tr>
+        <tr>
+            <td><img src="icons/measure.svg"></td>
+            <td>Use the right size cuff for your arm.</td>
+        </tr>
+    </table>
+    <h1>Blood Pressure Log</h1>
+    <table class="bp_log">
+        <colgroup>
+            <col width="0">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+        </colgroup>
+        <tr>
+            <td style="border: none;"></td>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+        </tr>
+        <tr>
+            <th>Morning</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Evening</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr class="expander">
+    <table class="bp_log">
+        <colgroup>
+            <col width="0">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+        </colgroup>
+        <tr>
+            <td style="border: none;"></td>
+            <th>Day 8</th>
+            <th>Day 9</th>
+            <th>Day 10</th>
+            <th>Day 11</th>
+            <th>Day 12</th>
+            <th>Day 13</th>
+            <th>Day 14</th>
+        </tr>
+        <tr>
+            <th>Morning</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Evening</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr class="expander">
+    <hr class="expander">
+    <div id="references">
+        <h2>References:</h2>
+        <ul>
+            <li>Uptodate. <a href="https://www.uptodate.com/contents/overview-of-hypertension-in-adults">"Overview of hypertension in adults"</a></li>
+            <li>The American Heart Association. <a href="https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings/monitoring-your-blood-pressure-at-home">"Monitoring Your Blood Pressure at Home</a></li>
+        </ul>
+    </div>
+</body>
+</html>

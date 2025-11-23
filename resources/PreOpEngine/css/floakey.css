@@ -1,0 +1,58 @@
+.floakey.block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid black;
+    max-width: 200px;
+    background-color: white;
+}
+
+.floakey p {
+    margin: 0;
+    margin-bottom: 0.33em;
+}
+
+.floakey p:first-child {
+    margin-top: 0;
+}
+.floakey p:last-child {
+    margin-bottom: 0;
+}
+
+.floakey ul {
+    padding: 0;
+    padding-left: 1em;
+}
+
+.floakey .jumper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.floakey.vline {
+    position: absolute;
+    width: 2px;
+    background-color: black;
+}
+
+.floakey.hline {
+    position: absolute;
+    height: 2px;
+    background-color: black;
+}
+
+.floakey.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid black;
+}

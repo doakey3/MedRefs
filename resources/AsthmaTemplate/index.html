@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Asthma Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on asthma">
+    <meta name="keywords" content="asthma, asthmatic, sob, cough, allergy, atopy, template">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Asthma Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Asthma Control Test Score: [score, note: a score of 19 or less indicates poor control]    
+Number of ER visits in the last year for asthma: [NUMBER]
+Peak flow personal best: [Best score]
+Frequency of rescue inhaler use: [RESCUE INHALER USE]
+
+ASTHMA SEVERITY RATING (The symptom with the greatest severity sets the rating)
+Intermittent:
+(    ) Daytime asthma symptoms occurring &lt;= 2 days per week
+(    ) Two or fewer nocturnal awakenings per month
+(    ) Use of short-acting beta agonists to relieve symptoms &lt;= 2 days per week
+(    ) No interference with normal activities between exacerbations
+(    ) FEV1 measurements between exacerbations are consistently within the normal range (&gt;= 80% predicted)
+(    ) FEV1/FVC ratio between exacerbations that is age-adjusted normal
+(    ) One or no exacerbations requiring oral glucocorticoids per year
+
+Mild Persistent:
+(    ) Symptoms more than twice weekly, but &lt; daily
+(    ) Approximately three to four nocturnal awakenings per month due to asthma, but &lt; every week
+(    ) Use of SABAs to relieve symptoms more than 2 days out of the week, but not daily
+(    ) Minor interference with normal activities
+(    ) FEV1 measuremnets within normal range (&gt;= 80 percent of predicted)
+
+Moderate Persistent:
+(    ) Daily symptoms of asthma
+(    ) Nocturnal awakenings as often as once per week
+(    ) Daily need for SABAs for symptom relief
+(    ) Some limitation in normal activity
+(    ) FEV1 &gt;= 60% &lt; 80% of predicted and FEV1/FVC below normal
+
+Severe Persistent:
+(    ) Symptoms thoughout the day
+(    ) Nocturnal awakening due to asthma nightly
+(    ) Reliever medication needed for symptoms several times daily
+(    ) Activity limitation due to asthma
+
+TREATMENT FOR ALL STAGES:
+- trigger avoidance, consider possible triggers that only occur at school or workplace
+    - dust mites, wash linens weekly, avoid down fillings, limit stuffed animals to those that can be washed, keep humidity to 30-50%
+    - cockroach excrement, remove food sources (sweep floors, seal food containers)
+    - animal hair--especially cat hair, keep pets outside if they trigger asthma. At the very least keep them out of the bedroom
+    - mold, remove sources of moisture
+    - other triggers may be possible including cold air, stress/anxiety, cigarette smoke, aspirin &amp; NSAIDs, exercise
+- referral to allergist for allergen-specific IgE blood testing or skin testing to confirm allergic sensitivity
+- use a peak flow meter and keep track of levels in the morning and evening
+- patient to follow up monthly until symptoms are stable and well-controlled
+- asthma action plan discussed
+
+INTERMITTENT/MILD TREATMENT:
+-budesonide-formoterol 160 mg-4.5 mg PRN
+  OR
+-albuterol 90 mcg/inhalation, 2 puffs every 6 hr as needed
+-fluticasone propionate 110 mcg, 1-2 puffs by mouth after every episode of shortness of breath, wash mouth out after use
+
+MODERATE PERSISTENT:
+-budesonide-formoterol 160 mcg-4.5 mcg BID + PRN up to 8 puffs total daily max
+  OR
+-albuterol 90 mcg/inhalation, 2 puffs every 6 hr as needed
+-fluticasone propionate 110 mcg, 1-2 puffs by mouth BID, wash mouth out after use
+  OR
+-albuterol 90 mcg/inhalation, 2 puffs every 6 hr as needed
+-fluticasone-salmeterol dry powder inhaler, 250 mcg-50 mcg BID, wash mouth out after use
+
+SEVERE PERSISTENT
+-albuterol 2 puffs every 6 hr as needed
+-fluticasone-salmeterol dry powder inhaler, 500 mcg-50 mcg BID, wash mouth out after use
+-tiotropium 1.25 mcg per actuation, 2 inhalations once dialy
+
+GOALS OF THERAPY:
+- no more than twice weekly daytime symptoms
+- no more than 2 episodes of nighttime wakening per month due to asthma
+- requiring SABA no more than 2 times weekly except for exercise pre-treatments
+- no interference with normal activities
+- maintenance of normal peak expiratory flow
+</textarea>
+</div>
+<div id="notes">
+    <p>Note: every asthma patient should have a peak flow meter</p>
+    <img src="media/urgent_care_management.png">
+    <br>
+    <img src="media/asthma_treatments.png">
+    <br>
+    <img width="392px" src="media/how_to_inhaler.png">
+</div>
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/an-overview-of-asthma-management">An Overview of Asthma Management.</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/treatment-of-intermittent-and-mild-persistent-asthma-in-adolescents-and-adults">Treatment of intermittent and mild persistent asthma in adolescents and adults. Gives some discussion about the downsides of treating mild persistent asthma with inhaled glucocorticoids, even though this treatment reduces the number of severe exacerbations.</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/acute-exacerbations-of-asthma-in-adults-emergency-department-and-inpatient-management">Acute Exacerbations of Asthma in Adults Emergency Department and Inpatient Management</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="js/setup_resizables.js"></script>
+<script src="js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

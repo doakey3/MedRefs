@@ -1,0 +1,18 @@
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+td, th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 4px;
+    padding-right: 12px;
+    padding-left: 12px;
+    vertical-align: top;
+}
+
+ul {
+    margin: 0;
+    margin-left: -1.5em;
+}

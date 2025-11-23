@@ -1,0 +1,58 @@
+body {
+    font-family: tahoma;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+table th {
+    border: 2px solid black;
+}
+
+table td p {
+    text-align: left;
+}
+
+img.dysfunction {
+    max-height: 120px;
+    max-width: 160px;
+}
+
+div.treatment_container {
+    position: relative;
+    width: 160px;
+    height: 120px;
+}
+div.treatment_container img {
+    max-height: 120px;
+    max-width: 160px;
+    position: absolute;
+    left: 0;
+}
+
+div.treatment_container video {
+    max-height: 120px;
+    max-width: 160px;
+}
+
+img.legend {
+    max-height: 160px;
+}

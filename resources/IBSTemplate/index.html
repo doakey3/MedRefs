@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IBS Template</title>
+    <meta name="author" content="doakey3">
+ 
+    <meta name="description" content="A template for charting on IBS">
+    <meta name="keywords" content="ibs, irritable, bowel, syndrome">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+    <style>
+        #bristol {
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin: 1em;
+            background-color: white;
+        }
+        #bristol td, #bristol th {
+            padding: 1em;
+        }
+        #bristol tr {
+            padding-bottom: 2em;
+        }
+        span.redlined {
+            text-decoration: underline;
+            text-decoration-color:red
+        }
+        .table_title {
+            font-size: 125%;
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>IBS Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+DIAGNOSTIC CRITERIA FOR IBS (Rome IV Criteria):
+(    ) Recurrent abdominal pain on average, at least one day per week in the last 3 months with two or more of the following:
+    (    ) Pain related to defecation
+    (    ) Pain associated with change in frequency of stool
+    (    ) Pain associated with a change in the form (appearance) of stool
+
+SUBTYPES:
+(    ) IBS w/predominant constipation (IBS-C): abnormal BMs are usually constipation (type 1 &amp; 2 in the BSFS)
+(    ) IBS w/predominant diarrhea (IBS-D): abnormal BMs are usually diarrhea (type 6 &amp; 7 in the BSFS)
+(    ) IBS w/mixed bowel habits (IBS-M): &gt; 1/4th BMs diarrhea &amp; &gt; 1/4th BMs constipation
+(    ) IBS unclassified: IBS that cannot be categorized into one of the three subtypes
+
+ALARM FEATURES (Indications for Referral):
+(    ) More than minimal rectal bleeding
+(    ) Abnormal/Unwanted weight loss
+(    ) Unexplained iron deficiency anemia
+(    ) Nocturnal symptoms
+(    ) Family history of colorectal cancer, inflammatory bowel disease, or celiac sprue
+
+TREATMENT:
+Part 1:
+- Dietary modification (Low FODMAP)
+- Keep a food journal
+- Exercise at least 20 mins 3 days per week
+- A probiotic supplement daily may be helpful
+- A peppermint oil supplement (IBGard) may be helpful
+
+Part 2:
+For IBS-C: 
+- psyllium fiber, start witih 1 tsp daily, then increase if effective
+    if this fails,
+- miralax 17 g daily or BID
+    if this fails,
+- lubiprostone 8 mcg PO BID
+    if this fails,
+- refer to gastroenterology
+
+For IBS-D:
+- loperamide 2 mg 45 mins before a meal
+    if this fails,
+- amitriptyline 10 mg PO QHS for its anticholinergic effect, plan to increase to 25 mg after 4 weeks if not effective
+
+Abdominal pain with bloating without constipation:
+- rifaximin 550 mg TID x 14 days
+
+Spasm-like Abdominal Pain 
+- short term use of dicyclomine 20 mg PO QID PRN
+</textarea>
+</div>
+
+<div id="notes">
+<img src="media/metamucil.jpg">
+<img src="media/ibgard.jpg">
+<br>
+<table id="bristol">
+    <tr>
+        <th class="table_title" colspan=3><span class="redlined">B</span>ristol <span class="redlined">S</span>tool <span class="redlined">F</span>orm <span class="redlined">S</span>cale</th>
+    </tr>
+    <tr>
+        <th>Type 1</th>
+        <td><img src="media/bristol/01.jpg"></td>
+        <td>Separate hard lumps, like nuts (hard to pass)</td>
+    </tr>
+    <tr>
+        <th>Type 2</th>
+        <td><img src="media/bristol/02.jpg"></td>
+        <td>Sausage-shaped, but lumpy</td>
+    </tr>
+    <tr>
+        <th>Type 3</th>
+        <td><img src="media/bristol/03.jpg"></td>
+        <td>Like a sausage, but with cracks on its surface</td>
+    </tr>
+    <tr>
+        <th>Type 4</th>
+        <td><img src="media/bristol/04.jpg"></td>
+        <td>Like a sausage or snake, smooth and soft</td>
+    </tr>
+    <tr>
+        <th>Type 5</th>
+        <td><img src="media/bristol/05.jpg"></td>
+        <td>Soft blobs with clear-cut edges (passed easily)</td>
+    </tr>
+    <tr>
+        <th>Type 6</th>
+        <td><img src="media/bristol/06.jpg"></td>
+        <td>Fluffy pieces with ragged edges, a mushy stool</td>
+    </tr>
+    <tr>
+        <th>Type 7</th>
+        <td><img src="media/bristol/07.jpg"></td>
+        <td>Watery, no solid pieces, ENTIRELY LIQUID</td>
+    </tr>
+</table>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/treatment-of-irritable-bowel-syndrome-in-adults#!">Treatment of irritable bowel syndrome in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2012/0901/p419.html">Diagnosis and Management of IBS in Adults</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>
