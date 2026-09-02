@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mildly Elevated Liver Enzymes Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="For incidental asymptomatic AST/ALT elevation &lt; 5x the upper limit of normal with no obvious acute illness.">
+    <meta name="keywords" content="mildly, elevated, liver, enzymes, template, mash, masld">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Mildly Elevated Liver Enzymes Template</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<p>For incidental asymptomatic AST/ALT elevation &lt; 5x the upper limit of normal with no obvious acute illness.</p>
+<ul>
+    <li>AST/ALT &lt; 5x the upper limit of normal</li>
+    <li>ALP not disproportionately elevated</li>
+    <li>Bilirubin normal or minimally elevated</li>
+    <li>No jaundice, confusion/encephalopathy, significant RUQ pain, or systemic toxicity</li>
+</ul>
+
+<p><b>MASLD</b>: Metabolic dysfunction-associated steatotic liver disease</p>
+<p><b>MASH</b>: Metabolic dysfunction-associated steatohepatitis</p>
+
+<p>If ALP predominantely elevated,  use the <a href="https://www.uptodate.com/contents/approach-to-the-patient-with-abnormal-liver-tests#topicGraphics">cholestatic workup</a> instead</p>
+
+<p>Common Causes:</p>
+<ul>
+    <li>Alcohol</li>
+    <li>New medications (incl. acetaminophen, anabolic steroids)</li>
+    <li>supplements
+        <ul>
+            <li>valerian</li>
+            <li>kava</li>
+            <li>ashwagandha</li>
+            <li>green tea extract</li>
+            <li>turmeric</li>
+            <li>black cohosh</li>
+            <li>garcinia</li>
+            <li>kratom</li>
+            <li>red yeast rice extract</li>
+        </ul>
+    <li>Viral hepatitis</li>
+    <li>Recent strenuous exercise</li>
+    <li>Metabolic causes: obesity, diabetes, dyslipidemia, hypertension</li>
+</ul>
+
+<div class="mermaid">
+flowchart TD
+    A["Incidental elevated AST / ALT"] --> B{"AST or ALT ≥5× ULN<br>or concerning symptoms?"}
+
+    B -- Yes --> C["Urgent / expanded evaluation<br>for acute liver injury"]
+    B -- No --> D{"Cholestatic pattern?<br>ALP disproportionately elevated"}
+
+    D -- Yes --> E["Use cholestatic<br>liver enzyme workup"]
+    D -- No --> F["Review prior labs + history<br><br>Alcohol<br>Medications / acetaminophen<br>Herbals / supplements<br>Bodybuilding products<br>Metabolic risk factors<br>Viral hepatitis risk<br>Strenuous exercise / muscle injury"]
+
+    F --> G["Repeat AST / ALT / ALP / bilirubin<br>in ~4 weeks"]
+
+    G --> H{"Normalized?"}
+
+    H -- Yes --> I["No further workup<br>unless clinical concern"]
+    H -- No --> J["INITIAL WORKUP<br><br>CBC + platelets<br>CMP<br>HBsAg<br>HCV Ab<br>Ferritin + iron / TIBC<br>A1c / glucose<br>Lipid panel"]
+
+    J --> K{"MASLD / metabolic<br>risk factors (obese, DM, HLD, HTN)?"}
+
+    K -- Yes --> L["Calculate FIB-4"]
+    K -- No --> M{"Cause identified?"}
+
+    L --> N{"FIB-4 low risk?"}
+    N -- Yes --> O["Manage metabolic risk factors<br>in primary care"]
+    N -- No --> P["Transient elastography / FibroScan<br>± hepatology referral"]
+
+    O --> Q{"AST / ALT remain<br>persistently elevated?"}
+    P --> Q
+    M -- Yes --> R["Treat / remove cause<br>and monitor"]
+    M -- No --> Q
+
+    Q -- No --> S["Routine follow-up"]
+    Q -- Yes --> T["SECOND-LINE WORKUP<br><br>Liver ultrasound<br>ANA + ASMA + IgG<br>Alpha-1 antitrypsin<br>± ceruloplasmin<br>± TSH / celiac testing / CK"]
+
+    T --> U{"Cause identified?"}
+    U -- Yes --> R
+    U -- No --> V["Consider hepatology referral"]
+
+    C:::urgent
+    E:::alternate
+    P:::caution
+    V:::caution
+
+    classDef urgent fill:#ffd6d6,stroke:#900,stroke-width:2px
+    classDef caution fill:#fff1c7,stroke:#996b00
+    classDef alternate fill:#e3e3e3,stroke:#555
+</div>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/management-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults">Management of metabolic dysfunction-associated steatotic liver disease (nonalcoholic fatty liver disease) in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2024/1200/elevated-liver-transaminase-levels">Mildly Elevated Liver Transaminase Levels: Causes and Evaluation</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

@@ -1,0 +1,99 @@
+{
+  "title": "Granola",
+  "goal": "muscle",
+  "image": null,
+  "instructions": "",
+  "ingredients": [
+    {
+      "type": "ingredient",
+      "fdcId": 2346397,
+      "name": "Oats, whole grain, steel cut",
+      "grams": 300,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 9000001,
+      "name": "Methylcellulose",
+      "grams": 4,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 9000002,
+      "name": "Water",
+      "grams": 60,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174267,
+      "name": "Peanut flour, defatted",
+      "grams": 200,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2598563,
+      "name": "Puffed Rice",
+      "grams": 170,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169661,
+      "name": "Syrups, maple",
+      "grams": 140,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174276,
+      "name": "Soy protein isolate",
+      "grams": 70,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 173806,
+      "name": "Peanuts, all types, dry-roasted, without salt",
+      "grams": 70,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2515380,
+      "name": "Seeds, pumpkin seeds (pepitas), raw",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748278,
+      "name": "Oil, canola",
+      "grams": 25,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2262075,
+      "name": "Flaxseed, ground",
+      "grams": 10,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 171320,
+      "name": "Spices, cinnamon, ground",
+      "grams": 3,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746775,
+      "name": "Salt, table, iodized",
+      "grams": 2,
+      "comment": ""
+    }
+  ]
+}

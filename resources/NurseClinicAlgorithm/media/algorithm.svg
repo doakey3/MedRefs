@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="8.5in"
+   height="11in"
+   viewBox="0 0 215.9 279.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="algorithm.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.0204836"
+     inkscape:cx="419.89896"
+     inkscape:cy="260.66073"
+     inkscape:window-width="1920"
+     inkscape:window-height="1019"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1"
+     inkscape:lockguides="true">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker67"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path67" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker65"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path65" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker63"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path63" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker60"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path60" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker58"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path58" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker56"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path56" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker54"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path54" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker52"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path52" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker50"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path50" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker39"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path39" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker35"
+       refX="3"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path35" />
+    </marker>
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="105.92207"
+       height="28.595913"
+       id="rect1" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="105.92207"
+       height="28.595913"
+       id="rect1-7" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="153.25362"
+       height="29.575842"
+       id="rect1-7-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="105.92207"
+       height="28.595913"
+       id="rect1-7-6" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="124.0174"
+       height="32.850445"
+       id="rect1-7-2-7" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="124.0174"
+       height="32.850445"
+       id="rect1-7-2-7-4" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="326.28323"
+       height="67.787744"
+       id="rect1-7-2-0" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="124.0174"
+       height="32.850445"
+       id="rect1-7-2-7-4-4" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="151.39658"
+       height="52.861961"
+       id="rect1-7-2-7-4-4-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="110.23651"
+       height="29.481331"
+       id="rect1-7-2-7-4-4-2-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="110.23651"
+       height="29.481331"
+       id="rect1-7-2-7-4-4-2-2-5" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="110.23651"
+       height="29.481331"
+       id="rect1-7-2-7-4-4-2-2-5-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="110.23651"
+       height="29.481331"
+       id="rect1-7-2-7-4-4-2-2-0" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="775.43528"
+       height="76.504338"
+       id="rect1-7-2-7-4-4-2-5" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-5" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-2-3" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="180.01152"
+       height="43.972897"
+       id="rect1-7-2-7-4-4-2-2-0-6" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="111.7091"
+       height="51.397167"
+       id="rect1-7-2-7-4-4-2-2-0-1" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="113.38645"
+       height="30.195505"
+       id="rect1-7-2-7-4-4-2-2-0-1-5" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="113.38645"
+       height="30.195505"
+       id="rect1-7-2-7-4-4-2-2-0-1-5-1" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="113.38645"
+       height="30.195505"
+       id="rect1-7-2-7-4-4-2-2-0-1-5-3" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-2-0" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="131.05884"
+       height="28.380861"
+       id="rect1-7-2-7-4-4-2-2-0-1-5-2" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-9" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-2-0-5" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-0" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="113.38645"
+       height="30.195505"
+       id="rect1-7-2-7-4-4-2-2-0-1-5-6" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-2-0-0" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-0-4" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="26.564997"
+       height="15.077396"
+       id="rect1-7-2-7-4-4-2-7-0-9" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="603.15028"
+       height="200.27423"
+       id="rect1-7-2-7-4-4-2-2-5-4" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="866.44178"
+       height="190.03385"
+       id="rect1-7-2-7-4-4-2-2-5-6" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="866.44177"
+       height="190.03384"
+       id="rect1-7-2-7-4-4-2-2-5-6-1" />
+    <rect
+       x="404.22009"
+       y="44.5867"
+       width="65.951391"
+       height="35.053578"
+       id="rect1-7-2-7-4-4-2-7-0-9-7" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1">
+      <g
+         id="g3-7"
+         transform="translate(-114.36652,45.415219)" />
+      <g
+         id="g3-9-2"
+         transform="translate(-30.943313,51.806043)" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-97.313791,165.72591)"
+         id="text1-2-6-9-5-6-7-6"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-5);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan2">* Uptodate → Drug Information → Monitoring Parameters
+</tspan><tspan
+           x="404.2207"
+           y="70.551197"
+           id="tspan71">¶ Such as GLP-1 agonists like Wegovy or Zepbound
+</tspan><tspan
+           x="404.2207"
+           y="85.217826"
+           id="tspan72">† Common: Spironolactone, finasteride, doxycycline, tretinoin, topirmate, valproate, statins,
+</tspan><tspan
+           x="404.2207"
+           y="99.88446"
+           id="tspan73">          lithium, paroxetine
+</tspan></text>
+      <g
+         id="g6"
+         transform="translate(52.667589,-22.904288)">
+        <g
+           id="g25">
+          <rect
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+             id="rect2-6-9"
+             width="42.47068"
+             height="9.4708347"
+             x="5.7333393"
+             y="41.198032"
+             ry="8.0046424e-16" />
+          <g
+             id="g3-9"
+             transform="translate(-109.34299,37.290333)">
+            <text
+               xml:space="preserve"
+               transform="matrix(0.26458333,0,0,0.26458333,9.0133259,-7.0764554)"
+               id="text1-2-6"
+               style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:center;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+               x="199.99977"
+               y="0"><tspan
+                 x="408.60175"
+                 y="55.884567"
+                 id="tspan77">Medication renewal
+</tspan><tspan
+                 x="452.75202"
+                 y="70.551197"
+                 id="tspan78">Request</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g47"
+         transform="translate(-23.195775,39.306036)">
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-40.446957,13.726138)"
+           id="text1-2-6-0"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-0);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="128.03381"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan79">Is the medication:
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan80">- A controlled substance
+</tspan><tspan
+             x="404.2207"
+             y="85.217826"
+             id="tspan82">- Very expensive<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan81">¶</tspan>
+</tspan><tspan
+             x="404.2207"
+             y="99.88446"
+             id="tspan84">- Teratogenic<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan83">†</tspan> &amp; pt could get pregnant</tspan></text>
+      </g>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2-6-9-2-6"
+         width="81.888733"
+         height="19.735418"
+         x="42.747536"
+         y="62.764584"
+         ry="1.6680152e-15" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-30.936449,98.55022)"
+         id="text1-2-6-9-5-6-7-5"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan85">Yes</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-78.399539,141.55022)"
+         id="text1-2-6-9-5-6-7-5-4"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-5);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan86">Yes</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-29.518775,73.55022)"
+         id="text1-2-6-9-5-6-7-5-9"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-2);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan87">No</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,9.4812272,88.92851)"
+         id="text1-2-6-9-5-6-7-5-9-46"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-2-0);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan88">No</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-32.518775,43.550215)"
+         id="text1-2-6-9-5-6-7-5-9-46-0"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-2-0-5);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan89">No</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-57.392776,141.92851)"
+         id="text1-2-6-9-5-6-7-5-9-4"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-2-3);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan90">No</tspan></text>
+      <g
+         id="g9"
+         transform="translate(1.2986184,30.672103)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1"
+           width="32.582104"
+           height="9.4708347"
+           x="22.046597"
+           y="107.62165"
+           ry="8.0046424e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-82.560707,96.961337)"
+           id="text1-2-6-9-5-6-7-8"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="299.77493"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan91">Physical exam
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan93">recommended<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan92">*</tspan>?</tspan></text>
+      </g>
+      <g
+         id="g12"
+         transform="translate(100.56108,-12.327899)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71"
+           width="29.211561"
+           height="9.4708347"
+           x="24.46941"
+           y="107.62165"
+           ry="8.0046424e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-82.560707,96.961337)"
+           id="text1-2-6-9-5-6-7-8-15"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="347.67194"
+           y="0"><tspan
+             x="411.17493"
+             y="55.884567"
+             id="tspan95"><tspan
+               style="text-align:center;text-anchor:middle"
+               id="tspan94">Nurse orders
+</tspan></tspan><tspan
+             x="419.20225"
+             y="70.551197"
+             id="tspan97"><tspan
+               style="text-align:center;text-anchor:middle"
+               id="tspan96">Medication</tspan></tspan></text>
+      </g>
+      <g
+         id="g12-5"
+         transform="translate(41.370968,-69.621178)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529165;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71-7"
+           width="29.211563"
+           height="14.470843"
+           x="23.659519"
+           y="107.38576"
+           ry="1.2230594e-15" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-82.560707,96.961337)"
+           id="text1-2-6-9-5-6-7-8-15-4"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0-1);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="347.67194"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan98">Medication is
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan99">managed by a </tspan><tspan
+             x="404.2207"
+             y="85.217826"
+             id="tspan100">specialist</tspan></text>
+      </g>
+      <g
+         id="g33"
+         transform="translate(15.830945,11.618422)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529165;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71-7-3"
+           width="29.729836"
+           height="10.361705"
+           x="108.94041"
+           y="105.78446"
+           ry="8.7575959e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,3.049944,95.21388)"
+           id="text1-2-6-9-5-6-7-8-15-4-8"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0-1-5);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="347.67194"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan101">System safety
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan102">warning?</tspan></text>
+      </g>
+      <g
+         id="g33-7"
+         transform="translate(10.960445,-67.755298)">
+        <g
+           id="g34"
+           transform="translate(-9.6778868,2.1409909)">
+          <rect
+             style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+             id="rect2-6-9-2-1-71-7-3-5"
+             width="36.73542"
+             height="10.361705"
+             x="108.61829"
+             y="105.7526"
+             ry="8.7575959e-16" />
+          <text
+             xml:space="preserve"
+             transform="matrix(0.26458333,0,0,0.26458333,3.049944,95.21388)"
+             id="text1-2-6-9-5-6-7-8-15-4-8-4"
+             style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0-1-5-2);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+             x="347.67194"
+             y="0"><tspan
+               x="404.2207"
+               y="55.884567"
+               id="tspan103">Patient to
+</tspan><tspan
+               x="404.2207"
+               y="70.551197"
+               id="tspan104">f/u w/specialist</tspan></text>
+        </g>
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker35)"
+           d="M 83.281605,112.7553 H 98.940407"
+           id="path34"
+           inkscape:connector-type="orthogonal"
+           inkscape:connector-curvature="0"
+           inkscape:connection-end="#g34"
+           inkscape:connection-start="#g12-5" />
+      </g>
+      <g
+         id="g31"
+         transform="translate(55.039314,54.705811)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529165;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71-7-3-4"
+           width="29.729836"
+           height="10.361705"
+           x="14.861536"
+           y="63.323357"
+           ry="8.7575959e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-90.051386,52.751048)"
+           id="text1-2-6-9-5-6-7-8-15-4-8-2"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0-1-5-3);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="347.67194"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan105">Nurse orders
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan106">gap renewal.</tspan></text>
+      </g>
+      <g
+         id="g24"
+         transform="translate(136.42782,-9.73375)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529165;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71-7-3-8"
+           width="29.729836"
+           height="10.361705"
+           x="-11.656464"
+           y="147.49834"
+           ry="8.7575959e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-117.56071,136.96134)"
+           id="text1-2-6-9-5-6-7-8-15-4-8-6"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-0-1-5-1);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="347.67194"
+           y="0"><tspan
+             x="404.2207"
+             y="55.884567"
+             id="tspan107">Physician
+</tspan><tspan
+             x="404.2207"
+             y="70.551197"
+             id="tspan108">cosigns order</tspan></text>
+      </g>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2-6-9-2-1-7"
+         width="30.735418"
+         height="9.4708347"
+         x="9.9008484"
+         y="158.02917"
+         ry="8.0046424e-16" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-96.195948,147.35335)"
+         id="text1-2-6-9-5-6-7-8-1"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-5);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="351.1713"
+         y="0"><tspan
+           x="427.22957"
+           y="55.884567"
+           id="tspan110"><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan109">Schedule </tspan></tspan><tspan
+           x="407.16126"
+           y="70.551197"
+           id="tspan112"><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan111">virtual visit</tspan></tspan></text>
+      <g
+         id="g10"
+         transform="translate(-24.179419,55.366718)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-7-0"
+           width="30.735418"
+           height="9.4708347"
+           x="69.080269"
+           y="102.66245"
+           ry="8.0046424e-16" />
+        <text
+           xml:space="preserve"
+           transform="matrix(0.26458333,0,0,0.26458333,-37.016525,91.986636)"
+           id="text1-2-6-9-5-6-7-8-1-6"
+           style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-5-2);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+           x="351.1713"
+           y="0"><tspan
+             x="411.17493"
+             y="55.884567"
+             id="tspan114"><tspan
+               style="text-align:center;text-anchor:middle"
+               id="tspan113">Schedule F2F </tspan></tspan><tspan
+             x="439.27056"
+             y="70.551197"
+             id="tspan116"><tspan
+               style="text-align:center;text-anchor:middle"
+               id="tspan115">visit</tspan></tspan></text>
+      </g>
+      <g
+         id="g30"
+         transform="translate(19.149505,34.293534)">
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529165;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           id="rect2-6-9-2-1-71-7-3-88"
+           width="54.484081"
+           height="14.296818"
+           x="38.24472"
+           y="58.47105"
+           ry="1.2083508e-15" />
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:3.52777px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:90;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+           x="139.08409"
+           y="40"
+           id="text25"
+           transform="translate(-54.083983,22.74746)"><tspan
+             x="139.08409"
+             y="40"
+             id="tspan120"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan117">Monitoring parameters</tspan><tspan
+               style="font-size:65%;baseline-shift:super"
+               id="tspan118">*</tspan><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan119">: 
+</tspan></tspan><tspan
+             x="139.08409"
+             y="43.880547"
+             id="tspan122"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan121">    - physical exam
+</tspan></tspan><tspan
+             x="139.08409"
+             y="47.761094"
+             id="tspan124"><tspan
+               style="text-align:start;text-anchor:start"
+               id="tspan123">    - laboratory studies</tspan></tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-8.3275708,28.550214)"
+         id="text1-2-6-9-5-6-7-5-8"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-9);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan125">Yes</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker39)"
+         d="m 79.636269,27.764579 v 10"
+         id="path38"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-end="#g12-5"
+         inkscape:connection-start="#g6" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-65.028153,97.42846)"
+         id="text1-2-6-9-5-6-7-5-6"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-0);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan126">Yes</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.3995362,122.92851)"
+         id="text1-2-6-9-5-6-7-5-6-8"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-0-9);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan127">Yes</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
+         d="m 82.74754,52.235423 v 10.52916"
+         id="path48"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-start="#g12-5" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker50)"
+         d="m 84.636266,82.5 h 0 v 10.264584"
+         id="path49"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-end="#g30" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker52)"
+         d="m 84.765768,107.0614 v 10.96777"
+         id="path51"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-start="#g30"
+         inkscape:connection-end="#g31" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker54)"
+         d="m 111.87831,99.912993 h 13.15218"
+         id="path53"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-start="#g30"
+         inkscape:connection-end="#g12" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,24.481228,118.92851)"
+         id="text1-2-6-9-5-6-7-5-9-46-3"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-2-0-0);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="299.77493"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan128">No</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker56)"
+         d="m 139.63627,127.76459 v 10"
+         id="path55"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-end="#g24"
+         inkscape:connection-start="#g33" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker58)"
+         d="m 139.63627,104.76459 v 12.63829"
+         id="path57"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-end="#g33"
+         inkscape:connection-start="#g12" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker60)"
+         d="M 99.630686,123.21002 H 124.77135"
+         id="path59"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-start="#g31"
+         inkscape:connection-end="#g33" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker63)"
+         d="m 49.636265,82.76458 v 55.51667"
+         id="path62" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker65)"
+         d="m 84.765768,128.39087 v 14.6383 H 55.927319"
+         id="path64"
+         inkscape:connector-type="orthogonal"
+         inkscape:connector-curvature="0"
+         inkscape:connection-start="#g31"
+         inkscape:connection-end="#g9" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker67)"
+         d="m 124.63627,127.76459 -20.00001,19.99999 H 55.927318"
+         id="path66" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker65)"
+         d="m 39.636267,147.76458 v 5 H 26.636266 v 5"
+         id="path69" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker39)"
+         d="m 39.636267,152.76458 h 19.999999 v 5"
+         id="path70" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:8.46667px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         x="36.570351"
+         y="10"
+         id="text74"><tspan
+           sodipodi:role="line"
+           id="tspan74"
+           style="font-size:8.46667px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529167"
+           x="36.570351"
+           y="10">Medication Renewal Algorithm</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-76.533407,205.21388)"
+         id="text1-2-6-9-5-6-7-8-1-4"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-5-4);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="351.1713"
+         y="0" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-102.33074,231.22753)"
+         id="text1-2-6-9-5-6-7-8-1-7"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-5-6);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="351.1713"
+         y="0"><tspan
+           x="404.2207"
+           y="55.884567"
+           id="tspan129">- I want to change my medication to something else.
+</tspan><tspan
+           x="404.2207"
+           y="70.551197"
+           id="tspan130">- I need this form filled out.
+</tspan><tspan
+           x="404.2207"
+           y="85.217826"
+           id="tspan131">- Can I get a lab/imaging/referral?
+</tspan><tspan
+           x="404.2207"
+           y="99.88446"
+           id="tspan132">- We forgot to talk about this during our recent visit, can I also have the doctor do X?
+</tspan><tspan
+           x="404.2207"
+           y="114.55109"
+           id="tspan133">- It's been less than a week since my test(s) resulted. Can I get some input from the doc about X?</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:3.52777px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         x="4.7950172"
+         y="240.01364"
+         id="text75"><tspan
+           sodipodi:role="line"
+           id="tspan75"
+           style="stroke-width:0.529167"
+           x="4.7950172"
+           y="240.01364">Needs an Appointment:</tspan></text>
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2-6-9-2-1-7-2"
+         width="209.47083"
+         height="20.470829"
+         x="3.6776109"
+         y="242.5325"
+         ry="1.7301714e-15" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.529166;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2-6-9-2-1-7-2-0"
+         width="209.47083"
+         height="20.470829"
+         x="3.6776109"
+         y="211.53078"
+         ry="1.7301714e-15" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:3.52777px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         x="83.329292"
+         y="240.01364"
+         id="text76"><tspan
+           sodipodi:role="line"
+           id="tspan76"
+           style="stroke:none;stroke-width:0.529167"
+           x="83.329292"
+           y="240.01364">Exception: Provider gives specific instructions in the note.</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-101.95006,202.87164)"
+         id="text1-2-6-9-5-6-7-8-1-7-1"
+         style="font-weight:bold;font-size:13.3333px;line-height:1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-2-5-6-1);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="351.1713"
+         y="0"><tspan
+           x="404.2207"
+           y="55.217902"
+           id="tspan134">- The pharmacy doesn't have the medication that was prescribed.
+</tspan><tspan
+           x="404.2207"
+           y="68.551199"
+           id="tspan135">    - Except GLP-1 agonists, the patient should just wait until more comes.
+</tspan><tspan
+           x="404.2207"
+           y="81.884497"
+           id="tspan136">- There's a problem with a form that was already completed.
+</tspan><tspan
+           x="404.2207"
+           y="95.217795"
+           id="tspan137">- An order was promised in the appointment but wasn't actually placed</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:3.52777px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.529167;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+         x="4"
+         y="209.26619"
+         id="text75-1"><tspan
+           sodipodi:role="line"
+           id="tspan75-0"
+           style="stroke-width:0.529167"
+           x="4"
+           y="209.26619">Message the provider if there was an error</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-39.67485,120.21388)"
+         id="text1-2-6-9-5-6-7-5-6-8-5"
+         style="font-weight:bold;font-size:13.3333px;line-height:1.1;font-family:'Hack Nerd Font Propo';-inkscape-font-specification:'Hack Nerd Font Propo Bold';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-7-2-7-4-4-2-7-0-9-7);display:inline;fill:#000000;stroke-width:1.00157;stroke-miterlimit:1"
+         x="327.42459"
+         y="0"><tspan
+           x="429.16897"
+           y="55.884567"
+           id="tspan139"><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan138">No
+</tspan></tspan><tspan
+           x="409.10066"
+           y="70.551197"
+           id="tspan141"><tspan
+             style="text-align:center;text-anchor:middle"
+             id="tspan140">Warning</tspan></tspan></text>
+    </g>
+  </g>
+</svg>

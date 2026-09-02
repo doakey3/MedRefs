@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chest Pain Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on chest pain">
+    <meta name="keywords" content="chest, pain, template, heart, cardiac, dimer, embolism, pulmonary, wall, ischemia">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+    <script src="../../js/d3-selection.min.js"></script>
+    <script src="../../js/dagre.min.js"></script>
+    <script src="../../js/measureLabel.js"></script>
+</head>
+
+<body>
+<h1>Chest Pain Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Typical Myodarcial Symptoms:
+(    ) Substernal pain or pressure
+(    ) Exertional
+(    ) Relieved by rest or sublingual nitroglycerin
+
+Chest Wall Pain: (2 positives = 77% likelihood of this diagnosis):
+(    ) Localized muscle tension
+(    ) Stinging pain
+(    ) Pain reproducible by palpation
+(    ) Absence of cough
+    
+ASSESSMENT:
+
+Well's Score: [WELL'S SCORE]
+INTERCHEST Score: [If low, consider exercise stress test/CT angio/cardiac MRI]
+EKG: [Done on all patients w/suspected cardiac ischemia. Look for: ST Segment changes, new-onset LBBB, Q waves, new T-wave inversion (if present, send to ED)]
+
+</textarea>
+</div>
+
+<div id="notes">
+    <p>Do not order an exercise stress test in a patient with a baseline abnormal EKG.</p>
+    <p>Clinical suspicion for thoracic dissection warrants immediate referral to the emergency department.</p>
+    <p>LBBB = QRS &gt; 120 ms; "W" in V1; "M" in V6; no Q wave in I, aVL, V5, or V6;</p>
+    <p>Pathologic Q Waves: &gt; 40 ms (1mm) wide; &gt; 2 mm deep; &gt; 25% of depth of QRS; seen in V1-3</p>
+    <p>T wave inversion in lead III is normal, but any new T-wave flip of direction is bad.</p>
+    <p>
+    <br>
+    <a href="https://www.mdcalc.com/calc/115/wells-criteria-pulmonary-embolism">Wells' Criteria for Pulmonary Embolism</a>
+    <br>
+    <a href="https://www.mdcalc.com/calc/10225/interchest-clinical-prediction-rule-chest-pain-primary-care">INTERCHEST Calculator</a>
+    <br>
+    <h2>Chest Pain Algorithm</h2>
+    <img src="media/algorithm.gif"/>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP. <a href="https://www.aafp.org/pubs/afp/issues/2020/1215/p721.html">Acute Chest Pain in Adults: Outpatient Evaluation</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/pubs/afp/issues/2005/1115/p2012.html">Diagnosing the Cause of Chest Pain</a></li>
+    </ul>
+</div>
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+
+</html>

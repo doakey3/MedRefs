@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BPH Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting on BPH">
+    <meta name="keywords" content="benign, prostatic, prostate, enlargement, hypertrophy, hyperplasia">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>BPH Template</h1>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">**IPSS Score**:
+
+### Potential Alternative Causes For This Patient:
+[ ] Foreign body
+[ ] Urethral/bladder stricture
+[ ] Prostatitis
+[ ] Sexually Transmitted disease
+[ ] Urinary tract infection
+[ ] Prostate/Bladder Cancer
+[ ] Anticholinergics
+[ ] Antihistamines
+[ ] Bronchodilators (e.g. albuterol)
+[ ] Diuretics
+[ ] Opioid analgesics
+[ ] Sympathomemetics (e.g. pseudoephedrine)
+[ ] Tricyclic antidepressants (e.g. amitriptyline)
+[ ] Neurogenic bladder
+[ ] Overactive bladder
+</div>
+</div>
+
+<div id="notes">
+<p><a href="https://www.mdcalc.com/calc/10462/american-urological-association-symptom-index-aua-si">International Prostate Symptom Score (IPSS)</a></p>
+
+<h4>Physical Exam</h4>
+<ul>
+    <li>Suprapubic and genital region (STI? Phimosis? Urethral stricture? Cancer masses? Bladder enlargement?)</li>
+    <li>Cardiovascular problems: Hypotension? Aortic stenosis? Lower extremity edema?</li>
+    <li>Neurologic exam. Sensory deficits?</li>
+    <li>Digital rectal exam. Is the prostate huge or severely abnormal?</li>
+</ul>
+
+<h4>Red Flags</h4>
+<ul>
+    <li>PSA &ge; 4 ng/mL</li>
+    <li>History of Prostate Cancer</li>
+    <li>Recurrent urinary tract infections</li>
+    <li>Bladder stone</li>
+    <li>Hydronephrosis</li>
+    <li>Refractory urinary retention</li>
+    <li>Gross hematuria</li>
+    <li>Progressive renal impairment</li>
+    <li>Very abnormal prostate on physical exam</li>
+</ul>
+
+<h4>Lifestyle Modifications</h4>
+<ul>
+    <li>Strategic fluid intake</li>
+    <li>Maintain physical activity</li>
+    <li>Timed voiding</li>
+    <li>Double voiding</li>
+</ul>
+
+<h4>Tamsulosin</h4>
+<ul>
+    <li><b>Mechanism</b>: Relaxes smooth muscles in the prostate and bladder neck → lower outlet resistance</li>
+    <li><b>Dose</b>: 0.4 mg PO daily ~30 mins after the same meal each day; increase to 0.8 mg PO daily after 2-4 weeks if inadequate control</li>
+    <li>If therapy is interrupted for several days, start at 0.4 mg even if previously taking 0.8 mg. Continue x 2 weeks, then go back to 0.8 mg</li>
+    <li>Side effects:
+        <ul>
+            <li>Orthostatic hypotension, falls. Worse when combined with antihypertensives and PDE-5i (sildenafil, tadalafil)</li>
+            <li>Ejaculatory dysfunction</li>
+            <li>Intraoperatie floppy iris syndrome -- ask about planned cataract or glaucoma surgery, the ophthalmologist needs to know</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>Finasteride</h4>
+<ul>
+    <li><b>Mechanism</b>: decreases conversion of testosterone → DHT → gradual shrinkage (~20%) of prostate over about 6-12 months.</li>
+    <li><b>Dose</b>: 5 mg PO daily</li>
+    <li>Pregnant women should not handle crushed or broken finasteride tablets</li>
+    <li>Finasteride will lower the PSA by 50% after 6 months. Establish a new baseline PSA at that time.</li>
+    <li>Side Effects:
+        <ul>
+            <li>Decreased libido</li>
+            <li>Erectile dysfunction</li>
+            <li>Ejaculatory dysfunction</li>
+            <li>Gynecomastia</li>
+            <li>Decreased fertility</li>
+        </ul>
+    </li>
+</ul>
+
+<div class="mermaid">
+flowchart TD
+    A["Man with lower urinary tract symptoms<br>w/o acute urinary retention"] --> B["History, PE, Urinalysis"]
+    B --> RedFlags{"Red flags?"}
+    RedFlags -- Yes --> Urology["Refer to Urology"]
+    RedFlags -- No --> C{"Alternative cause suggested?"}
+    C -- Yes --> D["Evaluate &amp; treat alternative cause"]
+    C -- No --> E["Obtain clinical IPSS"]
+    
+    E --> F{"IPSS &ge; 8?"}
+    F -- Yes --> H["Behavioral therapies<br><br>Start Tamsulosin 0.4 mg daily<br><br>f/u in 2-4 weeks"]
+    F -- No --> G["Behavioral therapies"]
+    
+    G --> I{"Sufficient control?"}
+    I -- Yes --> J["Continue behavioral modification"]
+    I -- No --> H
+    
+    H --> K{"Sufficient control?"}
+    K -- Yes --> L["Continue Tamsulosin"]
+    K -- No --> M["Check PSA<br>Increase Tamsulosin<br>to 0.8 mg daily<br>f/u in 2-4 weeks"]
+    
+    M --> N{"Sufficient control?"}
+    N -- Yes --> L
+    N -- No --> O{"PSA &ge; 1.5 ng/mL<br>OR palpable prostate enlargement?"}
+    
+    O -- Yes --> R["Add finasteride 5 mg daily<br><br>Continue Tamsulosin<br><br>f/u ~6 months<br><br>Then reestablish PSA baseline"]
+    O -- No --> Imaging["Consider prostate imaging<br>if enlargement suspected"]
+    
+    Imaging --> P{"Prostate &gt; 30 mL?"}
+    P -- No --> Q["Reevaluate for alternative causes<br><br>Consider Urology referral"]
+    P -- Yes --> R
+    
+    R --> S{"Sufficient control?"}
+    S -- No --> FinalUrology["Refer to Urology"]
+    S -- Yes --> T["Continue finasteride<br><br>Consider tapering tamsulosin<br><br>Monitor symptoms (ED) + PSA"]
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="www.uptodate.com/contents/medical-treatment-of-benign-prostatic-hyperplasia">Medical treatment of benign prostatic hyperplasia</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2023/0600/benign-prostatic-hyperplasia">Benign Prostatic Hyperplasia: Rapid Evidence Review</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

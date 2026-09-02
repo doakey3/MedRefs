@@ -1,0 +1,57 @@
+{
+  "title": "Mussel Taco",
+  "goal": "maintenance",
+  "image": null,
+  "instructions": "",
+  "ingredients": [
+    {
+      "type": "ingredient",
+      "fdcId": 173241,
+      "name": "Tortillas, ready-to-bake or -fry, corn, without added salt",
+      "grams": 90,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174217,
+      "name": "Mollusks, mussel, blue, cooked, moist heat",
+      "grams": 100,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174523,
+      "name": "Sauce, barbecue",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168572,
+      "name": "Cabbage, napa, cooked",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2258590,
+      "name": "Peppers, bell, red, raw",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2727585,
+      "name": "Green onion, (scallion), bulb and greens, root removed, raw",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748608,
+      "name": "Oil, olive, extra virgin",
+      "grams": 5,
+      "comment": ""
+    }
+  ]
+}

@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes"/>
+    <meta charset="utf-8">
+    <title>Fast Physical</title>
+    <meta name="author" content="doakey3">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="A tool for generating a physical exam quickly.">
+    <meta name="keywords" content="fast, physical, exam, pe, assessment, template">
+
+    <style>
+        body {
+            font-family: tahoma;
+            font-size: 10pt;
+            background-color: #595959;
+            overflow: hidden;
+        }
+        div#left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 512px;
+            border: 3px solid black;
+            
+        }
+        div#right {
+            position: absolute;
+            right: 0;
+            width: 509px;
+            top: 0;
+            bottom: 0;
+            border: 3px solid black;
+        }
+        div#output {
+            font-family: inherit;
+            font-size: 10pt;
+            display: block;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px 62px 5px 5px;
+            border: none;
+            background-color: #595959;
+            outline: none;
+            color: white;
+            white-space: pre-wrap;
+            overflow: auto;
+        }
+        a.option_link.abnormal, .abnormal {
+            color: #ff8080;
+        }
+        #copy_button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            z-index: 10;
+            padding: 4px 8px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            background: #444;
+            color: white;
+            font-family: inherit;
+            font-size: 9pt;
+            cursor: pointer;
+        }
+        #copy_button:hover {
+            background: #555;
+        }
+        #copy_button:active {
+            background: #855700;
+        }
+        div#shortcuts {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 29px;
+            border-bottom: 3px solid black;
+            background-color: gray;
+        }
+        a.shortcut {
+            font-size: 10pt;
+            display: inline-block;
+            border: 3px solid transparent;
+            padding: 3px;
+            margin: 0;
+            cursor: default;
+            background-color: gray;
+            color: white;
+            user-select: none;
+        }
+        a.shortcut:hover {
+            border-color: #855700;
+        }
+        a.shortcut:active {
+            background-color: #855700;
+        }
+        #area_selection {
+            position: absolute;
+            top: 32px;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+        }
+        #area_selection table {
+            background-color: #333333;
+            height: 100%;
+            width: 100%;
+            border-collapse: collapse;
+            border-right: 3px solid black;
+        }
+        #area_selection table td {
+            padding: 0;
+        }
+        #selectors td {
+            position: relative;
+        }
+        a.body_area {
+            user-select: none;
+            cursor: default;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column; 
+            border: 3px solid transparent;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #333333;
+            box-sizing:border-box;
+            color: white;
+            font-size: 10pt;
+        }
+        a.body_area:hover {
+            border-color: #855700;
+        }
+        a.body_area:active {
+            background-color: #855700;
+        }
+        .options_container {
+            position: absolute;
+            top: 32px;
+            left: 100px;
+            right: 0;
+            bottom: 0;
+            background-color: #777777;
+            box-sizing:border-box;
+        }
+        
+        a.option_link {
+            user-select: none;
+            display: inline-block;
+            padding: 3px;
+            border: 3px solid transparent;
+            background-color: #444444;
+            margin: 2px;
+            color: white;
+            cursor: default;
+        }
+        a.option_link:hover {
+            border-color: #855700;
+        }
+        a.option_link:active {
+            background-color: #855700
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="left">
+        <div id="output" contenteditable="true" spellcheck="false"></div>
+        <button id="copy_button" type="button">Copy</button>
+    </div>
+    <div id="right" class="right">
+        <div id="shortcuts">
+            <a id="adult_basic" class="shortcut">Adult Basic</a>
+             <a id="sports_phys" class="shortcut">Sports Phys</a>
+            <a id="infant_boy" class="shortcut">Infant Boy</a>
+            <a id="infant_girl" class="shortcut">Infant Girl</a>
+        </div>
+        <div id="area_selection">
+            <table id="selectors">
+            </table>
+        </div>
+    </div>
+</body>
+
+<script>
+var exam_map = {
+    "GEN": [
+        "alert",
+        "*lethargic*",
+        "*somnolent*",
+        "no acute distress",
+        "*diaphoretic*",
+        "well-appearing",
+        "*ill-appearing*",
+        "*cachectic*",
+        "slender",
+        "overweight",
+        "obese",
+        "muscular",
+        "frail"
+    ],
+    "HEAD": [
+        "atraumatic",
+        "normocephalic",
+        "anterior fontanelle flat and soft",
+        "*temporal wasting*",
+    ],
+    "EYES": [
+        "conjunctivae clear",
+        "anicteric",
+        "gaze conjugate",
+        "no proptosis",
+        "*conjunctival injection*",
+        "*subconjunctival hemorrhage*",
+        "red reflex symmetric",
+        "extraocular muscles intact",
+        "pupils equal, round, reactive to light",
+        "*anisocoria*",
+        "*watery discharge*",
+        "*purulent discharge*",
+        "*periorbital edema*"
+    ],
+    "EARS": [
+        "external ears atraumatic",
+        "*auricular swelling*",
+        "*auricular erythema*",
+        "no tragal tenderness",
+        "*tragal tenderness*",
+        "no mastoid tenderness",
+        "*mastoid tenderness*",
+        "external auditory canals clear bilaterally",
+        "*cerumen impaction*",
+        "*canal erythema*",
+        "*canal edema*",
+        "*canal discharge*",
+        "tympanic membranes pearly gray and intact bilaterally",
+        "*tympanic membrane erythematous*",
+        "*tympanic membrane bulging*",
+        "*tympanic membrane perforation*",
+        "*middle ear effusion*",
+        "hearing grossly intact",
+        "*hearing grossly diminished*",
+        "Rinne: air conduction > bone conduction bilaterally",
+        "*Rinne: bone conduction ≥ air conduction*"
+    ],
+    "NOSE": [
+        "external nose atraumatic",
+        "nares patent bilaterally",
+        "*nasal congestion*",
+        "nasal mucosa pink and moist",
+        "*nasal mucosa erythematous*",
+        "*nasal mucosa pale and boggy*",
+        "*nasal discharge*",
+        "*epistaxis*",
+        "septum midline",
+        "*septal deviation*",
+        "*nasal polyp*",
+        "frontal sinus nontender",
+        "*frontal sinus tenderness*",
+        "maxillary sinus nontender",
+        "*maxillary sinus tenderness*"
+        
+    ],
+    "MOUTH": [
+        "lips pink and moist",
+        "*lips dry*",
+        "oral mucosa pink and moist",
+        "*oral mucosa dry*",
+        "dentition intact",
+        "*poor dentition*",
+        "*dental caries*",
+        "gingiva without erythema or swelling",
+        "*gingival erythema*",
+        "*gingival swelling*",
+        "tongue midline",
+        "*tongue deviation*",
+        "*oral thrush*",
+        "oropharynx without erythema",
+        "*oropharyngeal erythema*",
+        "tonsils without enlargement or exudate",
+        "*tonsillar enlargement*",
+        "*tonsillar exudate*",
+        "uvula midline",
+        "*uvular deviation*",
+        "soft palate elevates symmetrically",
+        "*halitosis*",
+        "suck reflex intact",
+        "*suck reflex weak*",
+        "*suck reflex absent*"
+    ],
+    "NECK": [
+        "neck supple",
+        "*neck rigidity*",
+        "*neck tenderness*",
+        "trachea midline",
+        "*tracheal deviation*",
+        "thyroid unenlarged",
+        "*thyromegaly*",
+        "no palpable thyroid nodules",
+        "*palpable thyroid nodule*",
+        "no cervical lymphadenopathy",
+        "*cervical lymphadenopathy*",
+        "no crepitus",
+        "*crepitus*",
+        "no jugular venous distention",
+        "*jugular venous distention*"
+    ],
+    "HEART": [
+        "rate appropriate",
+        "*tachycardic*",
+        "*bradycardic*",
+        "rhythm regular",
+        "*rhythm irregular*",
+        "no murmur appreciated",
+        "*murmur*",
+        "*gallop*",
+        "*pericardial friction rub*",
+        "capillary refill < 3 seconds",
+        "*capillary refill delayed*",
+        "extremities warm",
+        "*extremities cool*",
+        "no lower extremity edema",
+        "*lower extremity edema*",
+        "radial pulses palpable bilaterally",
+        "*radial pulse diminished*",
+        "dorsalis pedis pulses palpable bilaterally",
+        "*dorsalis pedis pulse diminished*"
+    ],
+    "LUNGS": [
+        "respiratory effort unlabored",
+        "*increased work of breathing*",
+        "*accessory muscle use*",
+        "*retractions*",
+    
+        "clear to auscultation bilaterally",
+        "*wheezing*",
+        "*rhonchi*",
+        "*crackles*",
+        "*diminished breath sounds*",
+        "*absent breath sounds*",
+
+        "chest expansion symmetric",
+        "*chest expansion asymmetric*",
+
+        "percussion resonant throughout",
+        "*dullness to percussion*",
+        "*hyperresonance to percussion*",
+
+        "tactile fremitus symmetric",
+        "*increased tactile fremitus*", // suggests consolidation, pneumonia
+        "*decreased tactile fremitus*", // suggests fluid or air
+
+        "no egophony", 
+        "*egophony*", // E --> A change
+
+        "no digital clubbing",
+        "*digital clubbing*",
+        "no cyanosis",
+        "*cyanosis*"
+    ],
+    "CHEST": [
+        "chest wall symmetric",
+        "*chest wall deformity*",
+        "no pectus excavatum or carinatum",
+        "*pectus excavatum*",
+        "*pectus carinatum*",
+        "chest wall nontender",
+        "*chest wall tenderness*",
+        "clavicles without deformity or tenderness",
+        "*clavicular deformity*",
+        "*clavicular tenderness*",
+    ],
+    "BREASTS": [
+        "breasts without palpable mass",
+        "*palpable breast mass*",
+        "breasts nontender",
+        "*breast tenderness*",
+        "no nipple discharge",
+        "*nipple discharge*",
+        "no nipple retraction",
+        "*nipple retraction*",
+        "no skin dimpling",
+        "*skin dimpling*"
+    ],
+    "BACK": [
+        "spine without deformity",
+        "*scoliosis*",
+        "*kyphosis*",
+        "*lordosis*",
+        "no spinal tenderness",
+        "*spinal tenderness*",
+        "no paraspinal tenderness",
+        "*paraspinal tenderness*",
+        "no palpable step-off",
+        "*palpable step-off*",
+        "no costovertebral angle tenderness",
+        "*costovertebral angle tenderness*",
+        "no sacral dimple",
+        "*sacral dimple*",
+        "no sacral hair tuft",
+        "*sacral hair tuft*"
+    ],
+    "ABD": [
+        "nondistended",
+        "*distended*",
+        "soft",
+        "*rigid*",
+        "nontender",
+        "*tender*",
+        "*rebound tenderness*",
+        "*guarding*",
+        "no palpable masses",
+        "*palpable mass*",
+        "no hepatomegaly",
+        "*hepatomegaly*",
+        "no splenomegaly",
+        "*splenomegaly*",
+        "active bowel sounds",
+        "*hypoactive bowel sounds*",
+        "*hyperactive bowel sounds*",
+        "*absent bowel sounds after 5 mins*",
+        "Murphy sign negative",
+        "*Murphy sign positive*",
+        "Rovsing sign negative",
+        "*Rovsing sign positive*",
+        "psoas sign negative",
+        "*psoas sign positive*"
+    ],
+    "GU": [
+        "no external genital lesions",
+        "*external genital lesion*",
+        "circumcised",
+        "uncircumcised",
+        "urethral meatus at distal tip of penis",
+        "*urethral discharge*",
+        "*penile lesion*",
+
+        "testes descended bilaterally",
+        "*undescended testis*",
+        "testes nontender",
+        "*testicular tenderness*",
+        "no testicular mass",
+        "*testicular mass*",
+        "cremasteric reflex intact bilaterally",
+        "*cremasteric reflex absent*",
+        "no inguinal hernia",
+        "*inguinal hernia*"
+    ],
+
+    "PELVIC": [
+        "no external genital lesions",
+        "*external genital lesion*",
+
+        "vaginal mucosa pink and rugated",
+        "*vaginal mucosa pale with decreased rugae*",
+        "*vaginal discharge*",
+        "*vaginal bleeding*",
+        "*vaginal lesion*",
+
+        "cervix without visible lesion",
+        "*cervical lesion*",
+        "*cervical discharge*",
+        "*cervical bleeding*",
+        "no cervical motion tenderness",
+        "*cervical motion tenderness*",
+
+        //"uterus nontender",
+        //"*uterine tenderness*",
+        //"no adnexal tenderness",
+        //"*adnexal tenderness*",
+        //"no adnexal mass",
+        //"*adnexal mass*"
+        //fundus at the umbilicus
+    ],
+    "RECTAL": [
+        "no external hemorrhoids",
+        "*external hemorrhoid*",
+        "*thrombosed external hemorrhoid*",
+        "no anal fissure",
+        "*anal fissure*",
+        "no palpable rectal mass",
+        "*palpable rectal mass*",
+        "rectal tone intact",
+        "*decreased rectal tone*",
+        "no gross blood",
+        "*gross blood*",
+        "prostate nontender",
+        "*prostate tenderness*",
+        "*prostate enlarged*",
+        "*prostate nodule*"
+    ],
+    "MSK": [
+        "no gross musculoskeletal deformity",
+        "*musculoskeletal deformity*",
+        "moves all extremities spontaneously",
+        "*decreased spontaneous movement of extremity*",
+        "strength 5/5 throughout",
+        "*decreased strength*",
+        "full active range of motion",
+        "*active range of motion limited*",
+        "no joint swelling",
+        "*joint swelling*",
+        "no joint erythema",
+        "*joint erythema*",
+        "no joint tenderness",
+        "*joint tenderness*",
+
+        "Barlow and Ortolani maneuvers negative bilaterally",
+        "*positive Barlow maneuver*",
+        "*positive Ortolani maneuver*"
+    ],
+    "SKIN": [
+        "skin warm and dry",
+        "*skin cool*",
+        "no rash",
+        "*rash*",
+        "no wounds",
+        "*wound*",
+        "no jaundice",
+        "*jaundice*",
+        "no pallor",
+        "*pallor*",
+        "skin turgor preserved",
+        "*decreased skin turgor*"
+    ],
+    "NEURO": [
+        "oriented to person, place, and time",
+        "*disoriented*",
+        "responds appropriately to questions",
+        "*confused*",
+
+        "speech clear",
+        "*dysarthria*",
+        "*aphasia*",
+
+        "facial movements symmetric",
+        "*facial movement asymmetry*",
+        "CN II-XII intact",
+
+        "strength 5/5 throughout",
+        "*focal weakness*",
+        "sensation intact to light touch",
+        "*decreased sensation*",
+
+        "gait steady",
+        "*gait unsteady*",
+        "*antalgic gait*",
+
+        "patellar reflexes 2+ bilaterally",
+        "*patellar reflexes diminished*",
+        "*patellar reflexes hyperreflexic*",
+        
+        "brachioradialis reflexes 2+ bilaterally",
+        "*brachioradialis reflexes diminished*",
+        "*brachioradialis reflexes hyperreflexic*",
+
+        "finger-to-nose testing intact",
+        "*finger-to-nose dysmetria*",
+        "heel-to-shin testing intact",
+        "*heel-to-shin dysmetria*",
+        "rapid alternating movements intact",
+        "*dysdiadochokinesia*", // difficulty supinating/pronating hand rapidly
+        "Romberg negative",
+        "*Romberg positive*"
+    ],
+    "PSYCH": [
+        "calm and cooperative",
+        "*anxious*",
+        "*agitated*",
+        "*restless*",
+        "*psychomotor agitation*",
+        "*psychomotor slowing*",
+
+        "appropriate eye contact",
+        "*poor eye contact*",
+
+        "speech fluent with normal rate and volume",
+        "*speech pressured*",
+        "*speech slowed*",
+        "*speech sparse*",
+
+        "affect appropriate",
+        "*affect anxious*",
+        "*affect constricted*",
+        "*affect flat*",
+        "*affect labile*",
+
+        "thought process linear and goal-directed",
+        "*thought process tangential*",
+        "*thought process circumstantial*",
+        "*thought process disorganized*"
+    ],
+}
+
+var body_areas = Object.keys(exam_map);
+var table = document.getElementById("selectors");
+
+var select_color = "#855700";
+var default_color = "#333333";
+
+var right = document.getElementById("right");
+right.addEventListener("wheel", function(event) {
+    var links = document.getElementsByClassName("body_area");
+    var select_index = -1;
+    
+    for (var x = 0; x < links.length; x++) {
+        if (links[x].select) {
+            select_index = x;
+        }
+        links[x].select = false;
+        links[x].style.backgroundColor = default_color;
+    }
+    
+    if (event.deltaY < 0) {
+        if (select_index > 0) {
+            links[select_index - 1].select = true;
+            links[select_index - 1].style.backgroundColor = select_color;
+        }
+        else if (select_index == 0) {
+            links[links.length - 1].select = true;
+            links[links.length - 1].style.backgroundColor = select_color;
+        }
+        select_options_container();
+    }
+    if (event.deltaY > 0) {
+        if (select_index < links.length - 1) {
+            links[select_index + 1].select = true;
+            links[select_index + 1].style.backgroundColor = select_color;
+        }
+        else if (select_index == links.length - 1) {
+            links[0].select = true;
+            links[0].style.backgroundColor = select_color;
+        }
+        select_options_container();
+    }
+});
+
+
+var output = document.getElementById("output");
+
+/*
+ * The editor is rendered as text nodes + <br> elements + abnormal <span>s.
+ * Do not use innerText or Range.toString() for editor state: browser handling
+ * of <br> and block nodes is inconsistent.  Instead, convert the DOM to the
+ * editor's canonical plain-text representation ourselves.
+ */
+var get_editor_lines = function() {
+    return Array.from(output.children).filter(function(node) {
+        return node.nodeType === Node.ELEMENT_NODE;
+    });
+}
+
+var line_to_text = function(line) {
+    if (!line) return "";
+
+    /* A deliberately empty editor line is represented as <div><br></div>. */
+    if (line.childNodes.length === 1 &&
+        line.firstChild.nodeType === Node.ELEMENT_NODE &&
+        line.firstChild.tagName === "BR") {
+        return "";
+    }
+
+    return line.textContent || "";
+}
+
+var get_output_text = function() {
+    var lines = get_editor_lines();
+
+    if (!lines.length) {
+        return output.textContent || "";
+    }
+
+    return lines.map(line_to_text).join("\n").replace(/\r/g, "");
+}
+
+var escape_html = function(text) {
+    return text.replace(/&/g, "&amp;")
+               .replace(/</g, "&lt;")
+               .replace(/>/g, "&gt;")
+               .replace(/\"/g, "&quot;")
+               .replace(/'/g, "&#039;");
+}
+
+var get_top_level_line = function(node) {
+    if (!node) return null;
+
+    if (node === output) {
+        return null;
+    }
+
+    while (node && node.parentNode !== output) {
+        node = node.parentNode;
+    }
+
+    return node && node.parentNode === output
+        ? node
+        : null;
+}
+
+var offset_inside_line = function(line, node, offset) {
+    if (!line) return 0;
+
+    if (node === line) {
+        var total = 0;
+        for (var i = 0; i < Math.min(offset, line.childNodes.length); i++) {
+            total += line.childNodes[i].textContent
+                ? line.childNodes[i].textContent.length
+                : 0;
+        }
+        return total;
+    }
+
+    var range = document.createRange();
+    range.selectNodeContents(line);
+
+    try {
+        range.setEnd(node, offset);
+        return range.toString().length;
+    } catch (err) {
+        return line_to_text(line).length;
+    }
+}
+
+/* Convert a DOM selection point to an offset in the canonical \n-separated text. */
+var point_to_offset = function(element, node, offset) {
+    if (!node ||
+        (!element.contains(node) && node !== element)) {
+        return 0;
+    }
+
+    var lines = get_editor_lines();
+
+    /* Firefox can occasionally put the selection directly on #output. */
+    if (node === element) {
+        var childIndex = Math.max(0, Math.min(offset, lines.length));
+        var totalAtContainer = 0;
+
+        for (var c = 0; c < childIndex; c++) {
+            totalAtContainer += line_to_text(lines[c]).length;
+            if (c < lines.length - 1) totalAtContainer += 1;
+        }
+
+        return totalAtContainer;
+    }
+
+    var line = get_top_level_line(node);
+    if (!line) return 0;
+
+    var total = 0;
+
+    for (var i = 0; i < lines.length; i++) {
+        if (lines[i] === line) {
+            total += offset_inside_line(line, node, offset);
+            return total;
+        }
+
+        total += line_to_text(lines[i]).length;
+        total += 1; // newline between top-level lines
+    }
+
+    return total;
+}
+
+var get_selection_offsets = function(element) {
+    var selection = window.getSelection();
+
+    if (!selection.rangeCount ||
+        (!element.contains(selection.anchorNode) && selection.anchorNode !== element) ||
+        (!element.contains(selection.focusNode) && selection.focusNode !== element)) {
+        return null;
+    }
+
+    var anchor = point_to_offset(
+        element,
+        selection.anchorNode,
+        selection.anchorOffset
+    );
+
+    var focus = point_to_offset(
+        element,
+        selection.focusNode,
+        selection.focusOffset
+    );
+
+    return {
+        start: Math.min(anchor, focus),
+        end: Math.max(anchor, focus)
+    };
+}
+
+var get_caret_offset = function(element) {
+    var offsets = get_selection_offsets(element);
+    return offsets ? offsets.end : 0;
+}
+
+var place_caret_in_line = function(line, offset) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    var walker = document.createTreeWalker(
+        line,
+        NodeFilter.SHOW_TEXT
+    );
+    var node;
+    var remaining = offset;
+
+    while ((node = walker.nextNode())) {
+        if (remaining <= node.nodeValue.length) {
+            range.setStart(node, remaining);
+            range.collapse(true);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            return;
+        }
+
+        remaining -= node.nodeValue.length;
+    }
+
+    /* Empty line: put the caret in the div, before its <br>. */
+    if (line.childNodes.length === 1 &&
+        line.firstChild.nodeType === Node.ELEMENT_NODE &&
+        line.firstChild.tagName === "BR") {
+        range.setStart(line, 0);
+    } else {
+        range.selectNodeContents(line);
+        range.collapse(false);
+    }
+
+    selection.removeAllRanges();
+    selection.addRange(range);
+}
+
+var set_selection_offsets = function(element, start, end) {
+    var max = get_output_text().length;
+    start = Math.max(0, Math.min(start, max));
+    end = Math.max(0, Math.min(end, max));
+
+    var lines = get_editor_lines();
+
+    if (!lines.length) return;
+
+    var locate = function(target) {
+        var remaining = target;
+
+        for (var i = 0; i < lines.length; i++) {
+            var length = line_to_text(lines[i]).length;
+
+            if (remaining <= length) {
+                return {
+                    line: lines[i],
+                    offset: remaining
+                };
+            }
+
+            remaining -= length;
+
+            if (i < lines.length - 1) {
+                /* target immediately after a newline means start of next line */
+                if (remaining === 1) {
+                    return {
+                        line: lines[i + 1],
+                        offset: 0
+                    };
+                }
+                remaining -= 1;
+            }
+        }
+
+        return {
+            line: lines[lines.length - 1],
+            offset: line_to_text(lines[lines.length - 1]).length
+        };
+    };
+
+    var startPos = locate(start);
+    var endPos = locate(end);
+
+    if (start === end) {
+        place_caret_in_line(startPos.line, startPos.offset);
+        return;
+    }
+
+    var makePoint = function(pos) {
+        var walker = document.createTreeWalker(
+            pos.line,
+            NodeFilter.SHOW_TEXT
+        );
+        var node;
+        var remaining = pos.offset;
+
+        while ((node = walker.nextNode())) {
+            if (remaining <= node.nodeValue.length) {
+                return { node: node, offset: remaining };
+            }
+            remaining -= node.nodeValue.length;
+        }
+
+        return {
+            node: pos.line,
+            offset: pos.line.childNodes.length === 1 &&
+                    pos.line.firstChild.tagName === "BR"
+                ? 0
+                : pos.line.childNodes.length
+        };
+    };
+
+    var startDom = makePoint(startPos);
+    var endDom = makePoint(endPos);
+    var selection = window.getSelection();
+    var range = document.createRange();
+
+    range.setStart(startDom.node, startDom.offset);
+    range.setEnd(endDom.node, endDom.offset);
+    selection.removeAllRanges();
+    selection.addRange(range);
+}
+
+var set_caret_offset = function(element, offset) {
+    set_selection_offsets(element, offset, offset);
+}
+
+/*
+ * Render each canonical line as its own top-level DIV.  This removes the
+ * ambiguity of a flat sequence of <br> elements: every newline has a stable
+ * structural representation, including consecutive blank lines.
+ */
+var render_output = function(text, start_offset, end_offset) {
+    var normalized = String(text).replace(/\r\n?/g, "\n");
+    var lines = normalized.split("\n");
+
+    output.innerHTML = "";
+
+    for (var i = 0; i < lines.length; i++) {
+        var div = document.createElement("div");
+
+        if (lines[i] === "") {
+            div.innerHTML = "<br>";
+        } else {
+            div.innerHTML = escape_html(lines[i])
+                .replace(
+                    /\*([^*\n]+)\*/g,
+                    '<span class="abnormal">*$1*</span>'
+                );
+        }
+
+        output.appendChild(div);
+    }
+
+    if (typeof start_offset === "number") {
+        if (typeof end_offset !== "number") {
+            end_offset = start_offset;
+        }
+
+        set_selection_offsets(
+            output,
+            start_offset,
+            end_offset
+        );
+    }
+}
+
+/*
+ * Custom history.
+ *
+ * Applying abnormal highlighting replaces DOM nodes, so browser-native
+ * contenteditable history is not dependable.  History therefore stores the
+ * canonical text plus selection offsets.
+ */
+var undo_stack = [];
+var redo_stack = [];
+var history_limit = 200;
+var suppress_history = false;
+
+var capture_output_state = function() {
+    var offsets = get_selection_offsets(output);
+
+    return {
+        text: get_output_text(),
+        start: offsets ? offsets.start : null,
+        end: offsets ? offsets.end : null
+    };
+}
+
+var states_equal = function(a, b) {
+    return a && b &&
+        a.text === b.text &&
+        a.start === b.start &&
+        a.end === b.end;
+}
+
+var push_undo_state = function(state) {
+    if (!state) return;
+
+    var last = undo_stack.length
+        ? undo_stack[undo_stack.length - 1]
+        : null;
+
+    if (!states_equal(last, state)) {
+        undo_stack.push(state);
+
+        if (undo_stack.length > history_limit) {
+            undo_stack.shift();
+        }
+    }
+}
+
+var last_state = {
+    text: "",
+    start: 0,
+    end: 0
+};
+
+var restore_output_state = function(state) {
+    if (!state) return;
+
+    suppress_history = true;
+
+    render_output(
+        state.text,
+        typeof state.start === "number" ? state.start : state.text.length,
+        typeof state.end === "number" ? state.end : state.text.length
+    );
+
+    last_state = capture_output_state();
+    suppress_history = false;
+}
+
+var undo_output = function() {
+    if (!undo_stack.length) return;
+
+    var current = capture_output_state();
+    redo_stack.push(current);
+
+    restore_output_state(
+        undo_stack.pop()
+    );
+}
+
+var redo_output = function() {
+    if (!redo_stack.length) return;
+
+    var current = capture_output_state();
+    push_undo_state(current);
+
+    restore_output_state(
+        redo_stack.pop()
+    );
+}
+
+/* Programmatic replacement used by exam buttons and shortcuts. */
+var set_output_text = function(text, caret_offset) {
+    if (!suppress_history) {
+        var current = capture_output_state();
+
+        if (current.text !== text) {
+            push_undo_state(current);
+            redo_stack = [];
+        }
+    }
+
+    render_output(
+        text,
+        typeof caret_offset === "number" ? caret_offset : undefined
+    );
+
+    last_state = capture_output_state();
+}
+
+var replace_range = function(start, end, inserted_text) {
+    var oldState = capture_output_state();
+    var text = oldState.text;
+    var next =
+        text.slice(0, start) +
+        inserted_text +
+        text.slice(end);
+    var caret = start + inserted_text.length;
+
+    push_undo_state(oldState);
+    redo_stack = [];
+
+    render_output(next, caret, caret);
+    last_state = capture_output_state();
+}
+
+var replace_selection = function(inserted_text) {
+    var offsets = get_selection_offsets(output);
+
+    if (!offsets) {
+        var length = get_output_text().length;
+        offsets = { start: length, end: length };
+    }
+
+    replace_range(
+        offsets.start,
+        offsets.end,
+        inserted_text
+    );
+}
+
+/*
+ * Ordinary typing/deletion within a line is left to the browser.  Afterward
+ * we reapply abnormal highlighting while restoring the canonical selection.
+ */
+var pending_beforeinput_state = null;
+
+output.addEventListener("beforeinput", function(event) {
+    if (suppress_history) return;
+
+    if (event.inputType === "insertParagraph" ||
+        event.inputType === "insertLineBreak" ||
+        event.inputType === "insertFromPaste" ||
+        event.inputType === "historyUndo" ||
+        event.inputType === "historyRedo") {
+        return;
+    }
+
+    pending_beforeinput_state = capture_output_state();
+});
+
+output.addEventListener("input", function() {
+    if (suppress_history) return;
+
+    var offsets = get_selection_offsets(output);
+    var text = get_output_text();
+
+    if (pending_beforeinput_state &&
+        pending_beforeinput_state.text !== text) {
+        push_undo_state(pending_beforeinput_state);
+        redo_stack = [];
+    }
+
+    pending_beforeinput_state = null;
+
+    render_output(
+        text,
+        offsets ? offsets.start : text.length,
+        offsets ? offsets.end : text.length
+    );
+
+    last_state = capture_output_state();
+});
+
+/* Handle structural/editor commands ourselves. */
+output.addEventListener("keydown", function(event) {
+    var commandKey = event.ctrlKey || event.metaKey;
+
+    if (commandKey) {
+        var key = event.key.toLowerCase();
+
+        if (key === "z" && !event.shiftKey) {
+            event.preventDefault();
+            undo_output();
+            return;
+        }
+
+        if ((key === "z" && event.shiftKey) || key === "y") {
+            event.preventDefault();
+            redo_output();
+            return;
+        }
+    }
+
+    var offsets = get_selection_offsets(output);
+    var text = get_output_text();
+
+    if (event.key === "Enter") {
+        event.preventDefault();
+        replace_selection("\n");
+        return;
+    }
+
+    /*
+     * Crossing a line boundary is structural.  Handle the newline deletion
+     * ourselves instead of letting contenteditable merge DIVs unpredictably.
+     */
+    if (event.key === "Backspace" && offsets &&
+        offsets.start === offsets.end &&
+        offsets.start > 0 &&
+        text.charAt(offsets.start - 1) === "\n") {
+        event.preventDefault();
+        replace_range(
+            offsets.start - 1,
+            offsets.start,
+            ""
+        );
+        return;
+    }
+
+    if (event.key === "Delete" && offsets &&
+        offsets.start === offsets.end &&
+        offsets.start < text.length &&
+        text.charAt(offsets.start) === "\n") {
+        event.preventDefault();
+        replace_range(
+            offsets.start,
+            offsets.start + 1,
+            ""
+        );
+        return;
+    }
+});
+
+output.addEventListener("paste", function(event) {
+    event.preventDefault();
+
+    var clipboard = event.clipboardData || window.clipboardData;
+    var text = clipboard
+        ? clipboard.getData("text/plain")
+        : "";
+
+    replace_selection(
+        text.replace(/\r\n?/g, "\n")
+    );
+});
+
+/* The empty editor still needs one structural line. */
+render_output("", 0, 0);
+last_state = capture_output_state();
+
+
+var display_item = function(item) {
+    return item.replace(/^\*/, "").replace(/\*$/, "");
+}
+
+var is_abnormal_item = function(item) {
+    return /^\*.*\*$/.test(item);
+}
+
+var escape_regexp = function(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+var build_copy_html = function() {
+    var text = get_output_text().trim();
+    var lines = text ? text.split(/\n+/) : [];
+    var rows = [];
+
+    for (var i = 0; i < lines.length; i++) {
+        var match = lines[i].match(/^([^:]+):\s*(.*)$/);
+        if (!match || !match[2].trim()) continue;
+
+        var area = escape_html(match[1].trim() + ":");
+        var parts = match[2].split(/\s*;\s*/).filter(Boolean);
+        var formatted = [];
+        for (var x = 0; x < parts.length; x++) {
+            var part = parts[x];
+            var abnormal = /^\*.*\*$/.test(part);
+            var clean = escape_html(part.replace(/^\*/, "").replace(/\*$/, ""));
+            formatted.push(abnormal ? '<span style="color:red;font-weight:bold;">' + clean + '</span>' : clean);
+        }
+
+        rows.push('    <tr>\n        <th>' + area + '</th>\n        <td>' + formatted.join('; ') + '</td>\n    </tr>');
+    }
+
+    return '<!doctype html>\n<html>\n<head>\n<meta charset="utf-8">\n</head>\n<style>\n    th, td {\n        vertical-align: top;\n        padding-left: 0.05in;\n    }\n</style>\n<body>\n<table style="width: 6in;">\n    <colgroup>\n        <col style="width: 0in;">\n        <col style="width: 6in;">\n    </colgroup>\n' + rows.join('\n') + '\n</table>\n</body>\n</html>';
+}
+
+var build_copy_plain_text = function() {
+    return get_output_text().replace(/\*([^*\n]+)\*/g, '$1');
+}
+
+document.getElementById("copy_button").addEventListener("click", async function() {
+    var html = build_copy_html();
+    var plain = build_copy_plain_text();
+    var button = this;
+    try {
+        if (navigator.clipboard && window.ClipboardItem) {
+            var item = new ClipboardItem({
+                "text/html": new Blob([html], {type: "text/html"}),
+                "text/plain": new Blob([plain], {type: "text/plain"})
+            });
+            await navigator.clipboard.write([item]);
+        } else {
+            var temp = document.createElement("div");
+            temp.contentEditable = "true";
+            temp.style.position = "fixed";
+            temp.style.left = "-9999px";
+            temp.innerHTML = html;
+            document.body.appendChild(temp);
+            var range = document.createRange();
+            range.selectNodeContents(temp);
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand("copy");
+            selection.removeAllRanges();
+            temp.remove();
+        }
+        button.textContent = "Copied";
+        setTimeout(function() { button.textContent = "Copy"; }, 900);
+    } catch (err) {
+        console.error("Copy failed:", err);
+        button.textContent = "Copy failed";
+        setTimeout(function() { button.textContent = "Copy"; }, 1200);
+    }
+});
+
+var sort_lines = function(lines) {
+    var areas = [];
+    for (var i = 0; i < body_areas.length; i++) {
+        areas.push(body_areas[i].toUpperCase());
+    }
+    
+    var new_lines = [];
+    for (var i = 0; i < areas.length; i++) {
+        var intro = new RegExp("^" + areas[i] + ":");
+        var x = 0;
+        while (x < lines.length) {
+            if (lines[x].match(intro)) {
+                if (lines[x].replace(intro, "").replace(/\s+$/, "") == "") {
+                    lines.splice(x, 1);
+                }
+                else {
+                    new_lines.push(lines[x]);
+                    lines.splice(x, 1);
+                    break;
+                }
+            }
+            x++;
+        }
+    }
+    new_lines.push.apply(new_lines, lines);
+    return new_lines;
+}
+
+var select_options_container = function() {
+    var options_containers = document.getElementsByClassName("options_container");
+    for (var i = 0; i < options_containers.length; i++) {
+        options_containers[i].style.display = "none";
+    }
+    var links = document.getElementsByClassName("body_area");
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].select) {
+            options_containers[i].style.display = "block";
+        }
+    }
+}
+
+var get_selection_range = function(text, area, item) {
+    if (text == "") {
+        return {"start": 0, "end": 0};
+    }
+    var pre_lines = [];
+    var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+    var area_pat = new RegExp("^" + area + ":");
+    var line = "";
+    for (var i = 0; i < lines.length; i++) {
+        if (lines[i].match(area_pat)) {
+            line = lines[i];
+            break;
+        }
+        else {
+            pre_lines.push(lines[i]);
+        }
+    }
+    var item_pat = new RegExp(escape_regexp(item) + "[^;]*");
+    var match = line.match(item_pat);
+    if (match) {
+        var start = pre_lines.join("\n").length + match.index;
+        var end = start + item.length;
+        if (pre_lines.length > 0) {
+            start += 1;
+            end += 1;
+        }
+        return {
+            "start": start,
+            "end": end
+        }
+    }
+    else {
+        return text.length;
+    }
+}
+
+for (var i = 0; i < body_areas.length; i++) {
+    var tr = document.createElement("TR");
+    var td = document.createElement("TD");
+    var a = document.createElement("A");
+    
+    a.innerHTML = body_areas[i];
+    a.className = "body_area";
+    if (i == 0) {
+        a.select = true;
+        a.style.backgroundColor = select_color;
+    }
+    a.addEventListener("click", function() {
+        var links = document.getElementsByClassName("body_area");
+        for (var x = 0; x < links.length; x++) {
+            links[x].select = false;
+            links[x].style.backgroundColor = default_color;
+        }
+        
+        this.select = true;
+        this.style.backgroundColor = select_color;
+        select_options_container();
+    });
+    
+    table.appendChild(tr);
+    tr.appendChild(td);
+    td.appendChild(a);
+    
+    var div = document.createElement("div");
+    div.className = "options_container";
+    div.id = body_areas[i];
+    div.style.display = "none";
+    right.appendChild(div);
+    
+    if (i == 0) {
+        div.style.display = "block";
+    }
+    
+    var options = exam_map[body_areas[i]];
+    for (var x = 0; x < options.length; x++) {
+        var a = document.createElement("a");
+        a.dataset.item = options[x];
+        a.textContent = display_item(options[x]);
+        if (is_abnormal_item(options[x])) {
+            a.className = "option_link abnormal";
+        } else {
+            a.className = "option_link";
+        }
+        div.appendChild(a);
+        
+        a.addEventListener("click", function() {
+            var area = this.parentElement.id.toUpperCase();
+                    var text = get_output_text();
+
+            var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+            if (!lines) {
+                lines = [];
+            }
+            var line_found = false
+            var area_pat = new RegExp(area + ":");
+            for (var i = 0; i < lines.length; i++) {
+                if (lines[i].match(area_pat)) {
+                    line_found = true;
+                    this.select = false;
+                    this.style.backgroundColor = "#444444";
+                    var parts = lines[i].replace(area_pat, "").split(/;/g);
+                    for (var x = 0; x < parts.length; x++) {
+                        parts[x] = parts[x].replace(/^\s+/g, "").replace(/\s+$/, "");
+                    }
+                    var x = 0;
+                    var part_pat = new RegExp("^" + escape_regexp(this.dataset.item) + ".*");
+                    var part_found = false;
+                    while (x < parts.length) {
+                        if (parts[x] == "") {
+                            parts.splice(x, 1);
+                        }
+                        else if (parts[x].match(part_pat)) {
+                            parts.splice(x, 1);
+                            part_found = true;
+                        }
+                        else {
+                            x++;
+                        }
+                    }
+                    if (part_found == false) {
+                        parts.push(this.dataset.item);
+                        this.select = true;
+                        this.style.backgroundColor = select_color;
+                    }
+                    lines[i] = area + ": " + parts.join("; ");
+                }
+            }
+            if (line_found == false) {
+                lines.push(area + ": " + this.dataset.item);
+                this.select = true;
+                this.style.backgroundColor = select_color;
+            }
+            lines = sort_lines(lines);
+            set_output_text(lines.join("\n"));
+            var range = get_selection_range(get_output_text(), area, this.dataset.item);
+            output.focus();
+            if (range && typeof range.start === "number" && typeof range.end === "number") {
+                set_selection_offsets(output, range.start, range.end);
+            }
+        });
+    }
+}
+
+var set_selected_options = function() {
+    var text = get_output_text();
+    var lines = text.replace(/^\s+/g, "").replace(/\s+$/, "").match(/[^\r\n]+/g);
+    var dict = {};
+    var keys = [];
+    if (lines && lines.length > 0) {
+        for (var i = 0; i < lines.length; i++) {
+            var area = lines[i].match(/^[A-Z]+/);
+            if (area) {
+                var parts = lines[i].replace(/^[A-Z ]+:/, "").split(/;/g)
+                for (var x = 0; x < parts.length; x++) {
+                    parts[x] = parts[x].replace(/^\s+/g, "").replace(/\s+$/, "");
+                }
+                dict[area] = parts;
+                keys.push(area);
+            }
+        }
+    }
+    
+    var option_links = document.getElementsByClassName("option_link");
+    for (var i = 0; i < option_links.length; i++) {
+        option_links[i].style.backgroundColor = "#444444";
+        option_links[i].select = false;
+        
+        if (dict[option_links[i].parentElement.id.toUpperCase()]) {
+            var key = option_links[i].parentElement.id.toUpperCase();
+            for (var x = 0; x < dict[key].length; x++) {
+                var pat = new RegExp("^" + escape_regexp(option_links[i].dataset.item));
+                if (dict[key][x].match(pat)) {
+                    option_links[i].style.backgroundColor = select_color;
+                    option_links[i].select = false;
+                }
+            }
+        }
+    }
+}
+
+document.getElementById("right").addEventListener("mouseenter", set_selected_options);
+
+document.getElementById("adult_basic").addEventListener("click", function() {
+    set_output_text([
+        "GEN: alert; no acute distress; well-appearing",
+        "HEART: rate appropriate; rhythm regular; no murmur appreciated",
+        "LUNGS: respiratory effort unlabored",
+        "NEURO: responds appropriately to questions",
+        "PSYCH: calm and cooperative; affect appropriate"
+    ].join("\n"));
+    set_selected_options();
+});
+
+document.getElementById("infant_boy").addEventListener("click", function() {
+    set_output_text([
+        "GEN: no acute distress; well-appearing",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: conjunctivae clear; anicteric; gaze conjugate; red reflex symmetric; pupils equal, round, reactive to light",
+        "MOUTH: lips pink and moist",
+        "HEART: rate appropriate; rhythm regular; no murmur appreciated; extremities warm",
+        "LUNGS: respiratory effort unlabored; clear to auscultation bilaterally; chest expansion symmetric; no cyanosis",
+        "CHEST: chest wall symmetric; no pectus excavatum or carinatum; clavicles without deformity or tenderness",
+        "BACK: spine without deformity; no sacral dimple; no sacral hair tuft",
+        "ABD: nondistended; soft; no palpable masses; no hepatomegaly; no splenomegaly",
+        "GU: no external genital lesions; urethral meatus at distal tip of penis; testes descended bilaterally; no inguinal hernia",
+        "MSK: no gross musculoskeletal deformity; moves all extremities spontaneously",
+        "SKIN: skin warm and dry; no rash",
+    ].join("\n"));
+    set_selected_options();
+});
+
+document.getElementById("infant_girl").addEventListener("click", function() {
+    set_output_text([
+        "GEN: no acute distress; well-appearing",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: conjunctivae clear; anicteric; gaze conjugate; red reflex symmetric; pupils equal, round, reactive to light",
+        "MOUTH: lips pink and moist",
+        "HEART: rate appropriate; rhythm regular; no murmur appreciated; extremities warm",
+        "LUNGS: respiratory effort unlabored; clear to auscultation bilaterally; chest expansion symmetric; no cyanosis",
+        "CHEST: chest wall symmetric; no pectus excavatum or carinatum; clavicles without deformity or tenderness",
+        "BACK: spine without deformity; no sacral dimple; no sacral hair tuft",
+        "ABD: nondistended; soft; no palpable masses; no hepatomegaly; no splenomegaly",
+        "GU: no external genital lesions; no inguinal hernia",
+        "MSK: no gross musculoskeletal deformity; moves all extremities spontaneously",
+        "SKIN: skin warm and dry; no rash",
+    ].join("\n"));
+    set_selected_options();
+});
+
+document.getElementById("sports_phys").addEventListener("click", function() {
+    set_output_text([
+        "GEN: alert; no acute distress; well-appearing",
+        "HEAD: atraumatic; normocephalic",
+        "EYES: conjunctivae clear; anicteric; gaze conjugate; red reflex symmetric; pupils equal, round, reactive to light; extraocular muscles intact",
+        "EARS: external ears atraumatic; no tragal tenderness; external auditory canals clear bilaterally; tympanic membranes pearly gray and intact bilaterally; hearing grossly intact",
+        "NOSE: external nose atraumatic; nares patent bilaterally; nasal mucosa pink and moist; septum midline; frontal sinus nontender; maxillary sinus nontender",
+        "MOUTH: lips pink and moist; dentition intact, gingiva without erythema or swelling; oral mucosa pink and moist; tonsils without enlargement or exudate; tongue midline; soft palate elevates symmetrically",
+        "NECK: neck supple; trachea midline; thyroid unenlarged; no palpable thyroid nodules; no cervical lymphadenopathy; no crepitus",
+        "HEART: rate appropriate; rhythm regular; no murmur appreciated; capillary refill < 3 seconds; no lower extremity edema",
+        "LUNGS: respiratory effort unlabored; clear to auscultation bilaterally; clear to auscultation bilaterally; chest expansion symmetric",
+        "BACK: spine without deformity",
+        "ABD: nondistended; soft; nontender; no hepatomegaly; no splenomegaly",
+        "MSK: no gross musculoskeletal deformity; moves all extremities spontaneously; strength 5/5 throughout; full active range of motion",
+        "SKIN: skin warm and dry; no rash; no jaundice",
+        "NEURO: responds appropriately to questions; speech clear; CN II-XII intact",
+        "PSYCH: calm and cooperative"
+    ].join("\n"));
+    set_selected_options();
+});
+
+
+</script>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Benign Prostatic Hyperplasia Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on BPH">
+    <meta name="keywords" content="benign, prostatic, hyperplasia, hypertrophy, prostate">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Benign Prostatic Hyperplasia Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Red Flags:
+(    ) Acute urinary retention
+(    ) Recurrent UTI
+(    ) Gross hematuria
+(    ) Acutely elevated creatinine
+(    ) Neurologic cause suspected
+
+AUA Symptom Score for BPH: [SYMPTOM SCORE]; NOTE: 0-7 = mild, 8-19 = moderate, 20-35 = severe
+
+Patient using the following medications that may contribute to symptoms ("X" = patient taking)
+(    ) Antihistamines (decrease parasympathetic tone)
+(    ) Decongestants (increase sphincter tone)
+(    ) Diuretics (increase urine production)
+(    ) Opiates (impair autonomic function)
+(    ) Tricyclic antidepressants (anticholinergic effect)
+(    ) Sertraline
+(    ) Antiparkinson medications
+
+Medication conditions that may increase symptoms ("X" = patient taking)
+(    ) Bladder cancer
+(    ) Congestive heart failure
+(    ) Diabetes
+(    ) Parkinson's disease
+(    ) Prostate cancer
+(    ) History of stroke
+
+Indicators of large prostate:
+(    ) Age > 60
+(    ) Prolonged duration of lower urinary tract symptoms (LUTS)
+(    ) Poor urinary flow
+(    ) Prior imaging shows > 30 mL size
+(    ) Obviously large prostate on digital rectal exam
+
+Plan:
+-AUA 0-7:
+    -lifestyle changes
+        -double voiding
+        -limit evening fluids, caffeine, alcohol
+-AUA 8-35:
+    -medical management preferred
+    -if smaller prostate, more mild symptoms
+        -start tamsulosin 0.4 mg QHS
+        -follow up in 4 weeks
+        -warn about orthostatic hypotension while using tamsulosin
+    -if enlarged prostate
+        -start tamsulosin 0.4 mg QHS
+        -follow up in 4 weeks
+        -warn about orthostatic hypotension while using tamsulosin
+        -start finasteride 5 mg PO daily
+            -continue at least 6 months
+            -check PSA if life expectancy > 10 years and >48 hrs since last ejaculation
+    -palpable nodule on prostate,
+        -referral to urology
+    -check urinalysis for blood (if blood will workup for bladder cancer)
+</textarea>
+</div>
+
+<div id="notes">
+    <a href="https://www.mdapp.co/aua-symptom-score-for-bph-calculator-526/">AUA Symptom Score for BPH</a>
+    
+    <p>When a patient is taking finasteride, you must double the result of the PSA when interpreding to correct for the effect of the medication</p>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/barretts-esophagus-epidemiology-clinical-manifestations-and-diagnosis">Barrett's esophagus: Epidemiology, clinical manifestations, and diagnosis</a>. Whom to screen is somewhat controversial. I used the list of risk factors from this page.</li>
+        <li>Uptodate <a href="https://www.uptodate.com/contents/medical-treatment-of-benign-prostatic-hyperplasia">Medical treatment of benign prostatic hyperplasia</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/pubs/afp/issues/2008/0515/p1403.html">Diagnosis and Management of Benign Prostatic Hyperplasia</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+<script>
+    last_updateds = document.getElementsByClassName("last_updated");
+    for (var i = 0; i < last_updateds.length; i++) {
+        var mydate = new Date(document.lastModified);
+        var newdate = new Intl.DateTimeFormat("en-US", {year: "numeric", month: "long", day: "numeric"}).format(mydate).replace(/\./g, '-');
+        last_updateds[i].innerHTML = newdate;
+    } 
+</script>
+</html>

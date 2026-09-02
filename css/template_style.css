@@ -1,0 +1,128 @@
+html, body {
+    margin: 0;
+    font-size: 16pt;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+#references, #notes, #disclaimer {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: -1px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    box-sizing: border-box;
+}
+
+#notes {
+    overflow-x: auto;
+}
+
+#references {
+    font-size: 75%;
+    background-color: lightgray;
+}
+
+#references h2 {
+    margin-bottom: 0;
+    font-size: 100%;
+}
+
+#references ul {
+    margin-top: 0;
+    margin-left: -2em;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+.grow-wrap + div {
+    border-top: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+table td, table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.nsection {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: min-content;
+}
+
+.nsection h3, .nsection h4 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.nsection ul {
+    margin: 0;
+}
+
+.nsection li, .nsection h3, .nsection h4 {
+    white-space: nowrap;
+}
+
+table.expanded td {
+    white-space: nowrap;
+}
+
+.mermaid ul {
+    margin: 0;
+}
+.mermaid ul li {
+    text-align: left;
+    margin: 0;
+}
+.mermaid ul.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+.mermaid ul.checklist li {
+    display: grid;
+    grid-template-columns: 1.2em 1fr;
+    white-space: normal;
+}
+
+.mermaid ul.checklist li::before {
+    content: "☐";
+}
+
+.mermaid .green > rect,
+.mermaid .green > polygon,
+.mermaid .green > path {
+    fill: #b6e3a8 !important;
+}
+
+.mermaid .yellow > rect,
+.mermaid .yellow > polygon,
+.mermaid .yellow > path {
+    fill: #ffff99 !important;
+}
+
+.mermaid .orange > rect,
+.mermaid .orange > polygon,
+.mermaid .orange > path {
+    fill: #ffcc80 !important;
+}
+
+.mermaid .red > rect,
+.mermaid .red > polygon,
+.mermaid .red > path {
+    fill: #ff9999 !important;
+}

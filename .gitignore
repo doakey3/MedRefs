@@ -1,0 +1,8 @@
+upload.sh
+questions.txt
+to_study.txt
+rsync_to_laptop.sh
+rsync_to_thumbdrive.sh
+serve.sh
+resources/Meal Planner/fetch_ingredients.py
+robocopy_to_laptop.ps1

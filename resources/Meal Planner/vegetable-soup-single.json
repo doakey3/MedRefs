@@ -1,0 +1,177 @@
+{
+  "title": "Vegetable Soup",
+  "goal": "muscle",
+  "image": null,
+  "instructions": "",
+  "ingredients": [
+    {
+      "type": "divider",
+      "title": "Blended"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2471928,
+      "name": "Ocean's Halo Miso Broth",
+      "grams": 80,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2103092,
+      "name": "Azumaya Tofu, Extra Firm",
+      "grams": 75,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168874,
+      "name": "Quinoa, uncooked",
+      "grams": 34,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2486564,
+      "name": "Nutritional yeast",
+      "grams": 17,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174277,
+      "name": "Soy sauce made from soy and wheat (shoyu)",
+      "grams": 10,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174276,
+      "name": "Soy protein isolate",
+      "grams": 8,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169698,
+      "name": "Cornstarch",
+      "grams": 8,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 173469,
+      "name": "Vinegar, cider",
+      "grams": 5,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169231,
+      "name": "Ginger root, raw",
+      "grams": 4,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2262075,
+      "name": "Flaxseed, ground",
+      "grams": 4,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2515373,
+      "name": "Nuts, brazilnuts, raw",
+      "grams": 4,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746775,
+      "name": "Salt, table, iodized",
+      "grams": 0.6,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748608,
+      "name": "Oil, olive, extra virgin",
+      "grams": 1.2,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170922,
+      "name": "Spices, coriander seed",
+      "grams": 1.2,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170923,
+      "name": "Spices, cumin seed",
+      "grams": 1.2,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 172231,
+      "name": "Spices, turmeric, ground",
+      "grams": 0.6,
+      "comment": ""
+    },
+    {
+      "type": "divider",
+      "title": "Vegetables"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169239,
+      "name": "Kale, frozen, unprepared",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2685572,
+      "name": "Cabbage, bok choy, raw",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168580,
+      "name": "Mushrooms, oyster, raw",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2258590,
+      "name": "Peppers, bell, red, raw",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168469,
+      "name": "Squash, summer, zucchini, includes skin, frozen, unprepared",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746764,
+      "name": "Carrots, frozen, unprepared",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169994,
+      "name": "Chives, raw",
+      "grams": 5,
+      "comment": ""
+    }
+  ]
+}

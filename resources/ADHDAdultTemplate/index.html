@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ADHD Adult Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting on ADHD in adults">
+    <meta name="keywords" content="adhd, adult, template, attention, deficit, hyperactivity, disorder">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>ADHD Adult Template</h1>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">**ASRS Score**:
+
+[ ] A. Persistent inattention and/or hyperactivity-impulsivity
+    [ ] Inattention: &ge;5 symptoms (&ge;6 if age &lt;17)
+        [ ] Misses details or makes careless mistakes
+        [ ] Struggles to sustain attention
+        [ ] Seems not to listen when spoken to
+        [ ] Fails to finish tasks or follow through
+        [ ] Struggles to organize tasks
+        [ ] Avoids tasks requiring sustained mental effort
+        [ ] Often loses needed items
+        [ ] Is easily distracted
+        [ ] Is often forgetful
+    [ ] Hyperactivity/impulsivity: &ge;5 symptoms
+        [ ] &ge;6 symptoms if age &lt;17
+        [ ] Often fidgets or squirms
+        [ ] Leaves seat when expected to remain seated
+        [ ] Feels restless or is inappropriately active
+        [ ] Struggles with quiet leisure activities
+        [ ] Often acts as if "driven by a motor"
+        [ ] Often talks excessively
+        [ ] Answers before a question is finished
+        [ ] Struggles to wait their turn
+        [ ] Interrupts or intrudes on others
+[ ] B. Several symptoms were present before age 12
+[ ] C. Symptoms occur in &ge;2 settings
+    [ ] Home
+    [ ] School or work
+    [ ] With friends or relatives
+    [ ] Other: ______________________
+[ ] D. Symptoms impair or reduce functioning
+    [ ] Social functioning
+    [ ] Academic functioning
+    [ ] Occupational functioning
+[ ] E. Symptoms do not occur only during psychosis
+[ ] F. Another disorder does not better explain symptoms
+    [ ] Mood disorder
+    [ ] Anxiety disorder
+    [ ] Dissociative disorder
+    [ ] Personality disorder
+    [ ] Substance intoxication or withdrawal
+    [ ] Sleep dysfunction
+
+**PHQ-9 Score**:
+**GAD-7 Score**:</div>
+</div>
+
+<div id="notes">
+    <a href="https://www.mdcalc.com/calc/1730/adult-self-report-scale-asrs-adhd">Adult Self-Report Scale (ASRS v1.1) for ADHD</a>
+
+<div class="mermaid">
+flowchart TD
+    A["Adult presents requesting ADHD evaluation"] --> B["Review history and chart"]
+    
+    B --> D["ASRS screening tool"]
+    D --> E["Review DSM-5 ADHD criteria"]
+
+    E --> F{"Meets Dx threshold?"}
+    F -- No --> X["ADHD diagnosis not established"]
+    F -- Yes --> J["Evaluate alternative causes / comorbidities"]
+
+    J --> N{"Better explanation for symptoms?"}
+    N -- Yes --> O["Evaluate / treat alternative condition"]
+    N -- No --> P["Diagnose ADHD"]
+
+    P --> Q["Discuss treatment options and patient preferences"]
+
+    Q --> R{"Pharmacotherapy desired?"}
+    R -- No --> S["Behavioral strategies / CBT / accommodations"]
+    R -- Yes --> T{"Stimulant chosen?"}
+
+    T -- No --> U["Consider atomoxetine, bupropion, etc."]
+    T -- Yes --> V["Assess stimulant safety<br><br>(BP, HR, Anxiety control, Heart health, weight)"]
+
+    V --> Y["Review PDMP and substance-use risk"]
+    Y --> Z["Obtain urine drug screen"]
+
+    Z --> AA{"UDS clinically acceptable / explained?"}
+    AA -- No --> AB["Clarify result / address substance-use concern"]
+    AA -- Yes --> AC["Start stimulant"]
+
+    U --> AD["Follow up within ~30 days"]
+    AC --> AD
+
+    AD --> AE["Assess symptoms, function, adverse effects, BP/HR"]
+    AE --> AF["Titrate treatment as needed"]
+    AF --> AG["Once stable: follow up every 3-6 months"]
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Medication</th>
+            <th>Mechanism</th>
+            <th>Dose</th>
+            <th>Big Side Effects</th>
+            <th>Gotchas</th>
+            <th>Monitor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Adderall XR</b><br>amphetamine/dextroamphetamine</td>
+            <td>&uarr; dopamine + norepinephrine</td>
+            <td>20 mg qAM typical adult start</td>
+            <td>
+                Appetite/weight loss<br>
+                Insomnia<br>
+                Anxiety/irritability<br>
+                &uarr; BP/HR
+            </td>
+            <td rowspan="2">
+                Schedule II; misuse/diversion<br>
+                Avoid MAOI &lt;14 days<br>
+                Avoid serious cardiac disease<br>
+                Caution: mania/psychosis
+            </td>
+            <td>
+                BP/HR<br>
+                Weight/appetite<br>
+                Sleep<br>
+                Function<br>
+                Misuse/diversion
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Vyvanse</b><br>lisdexamfetamine</td>
+            <td>Prodrug &rarr; dextroamphetamine; &uarr; dopamine + norepinephrine</td>
+            <td>30 mg qAM &rarr; 30&ndash;70 mg/day</td>
+            <td>
+                Appetite/weight loss<br>
+                Insomnia<br>
+                Anxiety/irritability<br>
+                &uarr; BP/HR
+            </td>
+            <td>
+                BP/HR<br>
+                Weight/appetite<br>
+                Sleep<br>
+                Function<br>
+                Misuse/diversion
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Bupropion XL</b><br>Wellbutrin XL</td>
+            <td>&uarr; norepinephrine + dopamine</td>
+            <td>150 mg qAM &rarr; usually 300 mg qAM</td>
+            <td>
+                Insomnia<br>
+                Anxiety/agitation<br>
+                Headache<br>
+                &uarr; BP<br>
+                Seizure risk
+            </td>
+            <td>
+                Off-label for ADHD<br>
+                Useful with depression/smoking<br>
+                Avoid seizure disorder/eating disorder<br>
+                Avoid abrupt EtOH/benzo withdrawal<br>
+                CYP2D6 inhibitor
+            </td>
+            <td>
+                BP<br>
+                Sleep/anxiety<br>
+                Mood<br>
+                Function
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Atomoxetine</b><br>Strattera</td>
+            <td>Blocks norepinephrine reuptake</td>
+            <td>40 mg/day &rarr; 80 mg/day; max 100 mg/day</td>
+            <td>
+                <b>Headache</b><br>
+                Nausea/GI upset<br>
+                <b>ED/ejaculatory dysfunction</b><br>
+                Urinary hesitancy<br>
+                &uarr; BP/HR
+            </td>
+            <td>
+                Takes several weeks<br>
+                CYP2D6 interactions<br>
+                Avoid MAOI &lt;14 days<br>
+                Avoid pheochromocytoma<br>
+                Rare serious liver injury
+            </td>
+            <td>
+                BP/HR<br>
+                Weight/appetite<br>
+                Mood<br>
+                Function
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Viloxazine ER</b><br>Qelbree</td>
+            <td>Primarily &uarr; norepinephrine signaling</td>
+            <td>200 mg/day &rarr; +200 mg weekly; max 600 mg/day</td>
+            <td>
+                Insomnia<br>
+                Somnolence/fatigue<br>
+                Headache<br>
+                Nausea<br>
+                &uarr; BP/HR
+            </td>
+            <td>
+                Takes time to work<br>
+                <b>Strong CYP1A2 inhibitor</b><br>
+                Avoid MAOI &lt;14 days<br>
+                Suicidality warning<br>
+                Caution: mania
+            </td>
+            <td>
+                BP/HR<br>
+                Sleep<br>
+                Mood/suicidality<br>
+                Function
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP. <a href="https://www.aafp.org/assets/image/upload/v1769449937/iiwbzemdjxu5hon5fupa.pdf">Adult ADHD Assessment and Diagnosis Approach</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

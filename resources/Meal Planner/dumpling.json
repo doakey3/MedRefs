@@ -1,0 +1,131 @@
+{
+  "title": "Dumpling",
+  "goal": "muscle",
+  "image": null,
+  "instructions": "",
+  "ingredients": [
+    {
+      "type": "ingredient",
+      "fdcId": 168147,
+      "name": "Vital wheat gluten",
+      "grams": 110,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2486564,
+      "name": "Nutritional yeast",
+      "grams": 40,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2477360,
+      "name": "Pea Protein Powder",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174276,
+      "name": "Soy protein isolate",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2671913,
+      "name": "Tapioca Flour",
+      "grams": 10,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2262075,
+      "name": "Flaxseed, ground",
+      "grams": 60,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2671914,
+      "name": "Potato Starch",
+      "grams": 30,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746775,
+      "name": "Salt, table, iodized",
+      "grams": 7,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2449440,
+      "name": "Monosodium Glutamate",
+      "grams": 3,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 172231,
+      "name": "Spices, turmeric, ground",
+      "grams": 3,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170923,
+      "name": "Spices, cumin seed",
+      "grams": 5,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170922,
+      "name": "Spices, coriander seed",
+      "grams": 5,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170093,
+      "name": "Potatoes, baked, flesh and skin, without salt",
+      "grams": 900,
+      "comment": ""
+    },
+    {
+      "type": "divider",
+      "title": "Blended"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168450,
+      "name": "Pumpkin, canned, without salt",
+      "grams": 425,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2258590,
+      "name": "Peppers, bell, red, raw",
+      "grams": 250,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168572,
+      "name": "Cabbage, napa, cooked",
+      "grams": 250,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748608,
+      "name": "Oil, olive, extra virgin",
+      "grams": 30,
+      "comment": ""
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Meal Planner</title>
+
+    <meta name="description" content="A tool for planning meals.">
+    <meta name="keywords" content="meal, planner, nutrition, info">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/ingredients.css">
+    <link rel="stylesheet" href="css/nutrition.css">
+    <link rel="stylesheet" href="css/food-dialog.css">
+    <link rel="stylesheet" href="css/number-slider.css">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+
+<body>
+
+<main class="meal-planner">
+
+    <div class="meal-overview">
+
+        <section class="recipe-panel">
+
+            <header class="recipe-header">
+                <div class="meal-settings">
+                    <label class="meal-setting">
+                        <span>Meal name:</span>
+                        <input id="meal-title" type="text" value="Untitled meal">
+                    </label>
+
+                    <label class="meal-setting">
+                        <span>Goal:</span>
+                        <select id="meal-goal">
+                            <option value="maintenance">Maintenance</option>
+                            <option value="weightLoss">Weight loss</option>
+                            <option value="muscle">Muscle building</option>
+                        </select>
+                    </label>
+                </div>
+            </header>
+
+            <section class="meal-image-panel">
+                <div id="meal-image-drop">Drop meal image here</div>
+            </section>
+
+            <section class="instructions-panel">
+                <label for="meal-instructions"><b>Instructions</b></label>
+                <textarea id="meal-instructions" autocomplete="off" placeholder="Describe how this meal is prepared..."></textarea>
+            </section>
+
+        </section>
+
+        <section class="nutrition-panel">
+            <div class="nutrition-content">
+
+                <div class="nutrition-chart">
+                    <canvas id="macro-chart" width="300" height="300"></canvas>
+                </div>
+
+                <div id="nutrition-summary" class="nutrition-summary">
+                    <div>Calories:<span id="nutrition-calories"></span></div>
+                    <div>Weight:<span id="nutrition-weight"></span></div>
+
+                    <div id="nutrition-protein"></div>
+                    <div id="nutrition-carbs"></div>
+                    <div id="nutrition-fat"></div>
+
+                    <h3>Micronutrients</h3>
+                    <div id="micronutrients"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="ingredients-panel">
+
+        <h2>Ingredients</h2>
+
+        <div id="ingredient-list"></div>
+
+        <div class="ingredient-buttons">
+            <button id="add-food-button" class="add-food-button" type="button" title="Add food">
+                <span class="add-food-plus">+</span>
+                <span>Add food</span>
+            </button>
+
+            <button id="add-divider-button" class="add-divider-button" type="button">
+                <span class="add-divider-plus">+</span>
+                <span>Add divider</span>
+            </button>
+        </div>
+
+        <div class="meal-scale">
+            <label>Scale meal</label>
+            <div id="meal-scale" class="number-slider" data-value="100"></div>
+            <span>%</span>
+        </div>
+
+        <div class="meal-file-buttons">
+            <button id="load-meal-button" type="button">Load meal</button>
+            <button id="save-meal-button" type="button">Save meal</button>
+            <input id="meal-file-input" type="file" accept=".json,application/json" hidden>
+        </div>
+
+    </section>
+
+</main>
+
+<dialog id="food-dialog">
+
+    <div class="food-dialog">
+
+        <header class="food-dialog-header">
+            <h2>Add food</h2>
+            <button id="close-food-dialog" class="dialog-close" type="button" aria-label="Close">×</button>
+        </header>
+
+        <div class="food-search">
+            <input id="food-search-input" type="search" placeholder="Search foods..." autocomplete="off" spellcheck="false">
+        </div>
+
+        <div id="food-search-status" class="food-search-status">Loading food database...</div>
+
+        <div id="food-search-results" class="food-search-results"></div>
+
+    </div>
+
+</dialog>
+
+<script src="js/number-slider.js"></script>
+<script src="js/image.js"></script>
+<script src="js/food-database.js"></script>
+<script src="js/nutrition.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/ingredients.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/meal-planner.js"></script>
+
+</body>
+</html>
