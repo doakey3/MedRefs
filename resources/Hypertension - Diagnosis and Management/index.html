@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hypertension - Diagnosis and Management</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for diagnosing and managing hypertension">
+    <meta name="keywords" content="hypertension, blood, pressure, management, diagnosis, htn">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Hypertension - Diagnosis and Management</h1>
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<br>
+<div class="nsection" style="background-color: #ff6666">
+    <h3>End-Organ Damage</h3>
+    <table>
+        <tr>
+            <th>Organ</th>
+            <th>Signs/Symptoms</th>
+        </tr>
+        <tr>
+            <td>Brain</td>
+            <td>
+                <ul>
+                    <li>Thunderclap headache</li>
+                    <li>Confusion</li>
+                    <li>Focal weakness/numbness</li>
+                    <li>Speech change</li>
+                    <li>Seizure</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Eye</td>
+            <td>
+                <ul>
+                    <li>Vision change</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Heart</td>
+            <td>
+                <ul>
+                    <li>Acute dyspnea</li>
+                    <li>Acute orthopnea</li>
+                    <li>Chest pain</li>
+                    <li>Radiation</li>
+                    <li>Diaphoresis</li>
+                    <li>Tearing chest/back pain</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Kidney</td>
+            <td>
+                <ul>
+                    <li>Cola-colored urine</li>
+                    <li>Acute lower extremity swelling</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="nsection" style="background-color: #ffb3ff">
+    <h3>Home BP Monitoring</h3>
+    <ul>
+        <li>7 Days</li>
+        <li>2 readings separated by &ge;1 minute twice daily (4 readings/day)</li>
+        <li>First reading within 1 hr of waking, after urination, before meds</li>
+    </ul>
+</div>
+
+<h3>Diagnosis</h3>
+<div class="mermaid">
+flowchart TD
+    A["BP &ge;130/80"] --> B{"Acute end-<br>organ damage?"}
+    B -- Yes --> C["ED"]
+    B -- No --> D{"BP &ge;160/100?"}
+    D -- Yes --> E{"Any of:<ul><li>Hx of MI</li><li>HF</li><li>LVH</li><li>CVD</li><li>Retinopathy</li><li>CKD</li></ul>"}
+    E -- Yes --> F["Hypertension Diagnosed"]
+    E -- No --> G["Home BP monitoring x1 wk"]
+    D -- No --> G
+    G -- Done --> H{"Home BP<br>avg &ge;130/80?"}
+    H -- Yes --> HTN["Hypertension<br>diagnosed"]
+    H -- No --> WCHTN["White coat<br>hypertension"]
+    G -- Not Done --> I{"BP avg &ge;130/80<br>for 3 office visits?"}
+    I -- Yes --> ClHTN["Clinical diagnosis<br>of Hypertension<br><br>Whitecoat hypertension<br>not excluded"]
+    I -- No --> NoHTN["Hypertension<br>not confirmed"]
+
+    style B fill: #ff6666
+    style G fill: #ffb3ff
+</div>
+<p><b>Note:</b>Ambulatory blood pressure monitoring is useful for identifying whitecoat hypertension, if it is available.</p>
+
+<hr>
+<div class="nsection">
+
+<h3>Considerations for individualizing antihypertensive therapy</h3>
+<table class="htn-table">
+  <thead>
+    <tr>
+      <th scope="col">Indication or contraindication</th>
+      <th scope="col">Antihypertensive drugs</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="section-heading">
+      <th colspan="2" scope="colgroup">
+        Compelling indications
+        (major improvement in outcome independent of blood pressure)
+      </th>
+    </tr>
+    <tr>
+      <td>Heart failure with reduced ejection fraction</td>
+      <td>
+        ACE inhibitor or ARB, beta blocker, diuretic,
+        aldosterone antagonist
+      </td>
+    </tr>
+    <tr>
+      <td>Postmyocardial infarction</td>
+      <td>
+        ACE inhibitor or ARB, beta blocker, aldosterone antagonist
+      </td>
+    </tr>
+    <tr>
+      <td>Proteinuric chronic kidney disease</td>
+      <td>ACE inhibitor or ARB</td>
+    </tr>
+    <tr>
+      <td>Angina pectoris</td>
+      <td>Beta blocker, calcium channel blocker</td>
+    </tr>
+    <tr>
+      <td>Atrial fibrillation rate control</td>
+      <td>
+        Beta blocker, nondihydropyridine calcium channel blocker
+      </td>
+    </tr>
+    <tr>
+      <td>Atrial flutter rate control</td>
+      <td>
+        Beta blocker, nondihydropyridine calcium channel blocker
+      </td>
+    </tr>
+    <tr>
+      <td>Hypokalemia</td>
+      <td>Aldosterone antagonist</td>
+    </tr>
+
+    <tr class="section-heading">
+      <th colspan="2" scope="colgroup">
+        Likely to have a favorable effect on symptoms in comorbid conditions
+      </th>
+    </tr>
+    <tr>
+      <td>Benign prostatic hyperplasia</td>
+      <td>Alpha blocker</td>
+    </tr>
+    <tr>
+      <td>Essential tremor</td>
+      <td>Beta blocker (noncardioselective)</td>
+    </tr>
+    <tr>
+      <td>Hyperthyroidism</td>
+      <td>Beta blocker</td>
+    </tr>
+    <tr>
+      <td>Migraine</td>
+      <td>Beta blocker, calcium channel blocker</td>
+    </tr>
+    <tr>
+      <td>Osteoporosis</td>
+      <td>Thiazide diuretic</td>
+    </tr>
+    <tr>
+      <td>Raynaud phenomenon</td>
+      <td>Dihydropyridine calcium channel blocker</td>
+    </tr>
+
+    <tr class="section-heading">
+      <th colspan="2" scope="colgroup">Contraindications</th>
+    </tr>
+    <tr>
+      <td>Angioedema</td>
+      <td>Do not use an ACE inhibitor</td>
+    </tr>
+    <tr>
+      <td>Bronchospastic disease</td>
+      <td>Do not use a nonselective beta blocker</td>
+    </tr>
+    <tr>
+      <td>Liver disease</td>
+      <td>Do not use methyldopa</td>
+    </tr>
+    <tr>
+      <td>Pregnancy (or at risk for)</td>
+      <td>
+        Do not use an ACE inhibitor, ARB, or renin inhibitor
+        (eg, aliskiren)
+      </td>
+    </tr>
+    <tr>
+      <td>Second- or third-degree heart block</td>
+      <td>
+        Do not use a beta blocker or nondihydropyridine calcium channel
+        blocker unless a functioning ventricular pacemaker is present
+      </td>
+    </tr>
+
+    <tr class="section-heading">
+      <th colspan="2" scope="colgroup">
+        Drug classes that may have adverse effects on comorbid conditions
+      </th>
+    </tr>
+    <tr>
+      <td>Depression</td>
+      <td>Generally avoid beta blocker, central alpha-2 agonist</td>
+    </tr>
+    <tr>
+      <td>Gout</td>
+      <td>Generally avoid loop or thiazide diuretic</td>
+    </tr>
+    <tr>
+      <td>Hyperkalemia</td>
+      <td>
+        Generally avoid aldosterone antagonist, ACE inhibitor, ARB,
+        renin inhibitor
+      </td>
+    </tr>
+    <tr>
+      <td>Hyponatremia</td>
+      <td>Generally avoid thiazide diuretic</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #b3ffff">
+    <h3>Comorbidity-Specific Recommendations</h3>
+    <table class="htn-table">
+  <thead>
+    <tr>
+      <th>Clinical indication</th>
+      <th>Preferred drug class(es)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Osteoporosis, edema, or calcium nephrolithiasis with hypercalciuria</td>
+      <td>Thiazide-like diuretic</td>
+    </tr>
+    <tr>
+      <td>CKD with albuminuria</td>
+      <td>ACEi or ARB</td>
+    </tr>
+    <tr>
+      <td>Atrial fibrillation</td>
+      <td>Beta blocker or non-DHP CCB</td>
+    </tr>
+    <tr>
+      <td>Recent MI</td>
+      <td>Beta blocker, ACEi, or ARB</td>
+    </tr>
+    <tr>
+      <td>Orthostatic hypotension</td>
+      <td>DHP-CCB, ACEi, or ARB</td>
+    </tr>
+    <tr>
+      <td>Heart failure with reduced, mildly reduced, or preserved EF</td>
+      <td>
+        ACEi, ARB, beta blocker, diuretic, MRA, or other indicated therapy
+      </td>
+    </tr>
+    <tr>
+      <td>Patient who may become pregnant</td>
+      <td>DHP-CCB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #ffffb3">
+    <table class="htn-table">
+  <thead>
+    <tr>
+      <th>Study</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="section-heading">
+      <th colspan="2">Initial evaluation</th>
+    </tr>
+
+    <tr>
+      <td>BMP</td>
+      <td>Establish Na, K, Ca, creatinine, and eGFR before treatment. May reveal CKD, hyperaldosteronism, or another secondary cause and guides drug selection.</td>
+    </tr>
+
+    <tr>
+      <td>Urine Alb:Cr</td>
+      <td>Detects albuminuria and hypertensive kidney damage. Albuminuria increases CV risk and favors an ACEi or ARB.</td>
+    </tr>
+
+    <tr>
+      <td>Urinalysis</td>
+      <td>Screens for hematuria, proteinuria, glycosuria, and evidence suggesting intrinsic renal disease.
+      </td>
+    </tr>
+
+    <tr>
+      <td>HbA1c or fasting glucose</td>
+      <td>Detects diabetes or prediabetes, which substantially affects CV-risk assessment and treatment decisions.</td>
+    </tr>
+
+    <tr>
+      <td>Lipid panel</td>
+      <td>Required for overall ASCVD-risk assessment and identification of a separate indication for lipid-lowering therapy.</td>
+    </tr>
+
+    <tr>
+      <td>CBC</td>
+      <td>Detects anemia or erythrocytosis that may suggest CKD, hypoxemia, or another comorbidity.</td>
+    </tr>
+
+    <tr>
+      <td>TSH</td>
+      <td>Screens for thyroid disease as a potentially reversible contributor to hypertension. Repeat only when clinically indicated.</td>
+    </tr>
+
+    <tr>
+      <td>12-lead ECG</td>
+      <td>Assesses rhythm, prior MI, conduction disease, and possible LVH. Echocardiography is not routinely required unless the examination, symptoms, or ECG suggests structural heart disease.</td>
+    </tr>
+
+    <tr class="section-heading">
+      <th colspan="2">Annual monitoring</th>
+    </tr>
+
+    <tr>
+      <td>BMP</td>
+      <td>Monitor renal function and electrolytes, particularly with ACEi, ARB, MRA, or diuretic therapy. Check sooner after initiation or dose changes and more often with CKD or electrolyte abnormalities.</td>
+    </tr>
+
+    <tr>
+      <td>Urine Alb:Cr</td>
+      <td>Repeat annually when CKD, diabetes, or prior albuminuria is present. In uncomplicated hypertension with a normal baseline result, the optimal repeat interval is not firmly established.</td>
+    </tr>
+
+    <tr>
+      <td>HbA1c or fasting glucose</td>
+      <td>Repeat according to diabetes and prediabetes screening intervals; annually is reasonable with prediabetes or substantial metabolic risk. Hypertension alone does not necessarily require annual HbA1c.</td>
+    </tr>
+
+    <tr>
+      <td>Lipid panel</td>
+      <td>Repeat according to ASCVD risk and lipid-management needs. Annual testing is useful during active treatment but is not mandatory for every patient with hypertension.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Treatment</h3>
+<div class="mermaid">
+flowchart TD
+    A["Hypertension"] --> BANG["Sleep study<br>if STOP-BANG high"]
+    BANG --> Labs["Studies"]
+    Labs --> B{"BP &ge;180/120<br>&amp; <span style="background-color: #ff6666">acute end<br>-organ damage</span>?"}
+
+    B -- Yes --> ED["ED"]
+    B -- No --> P{"Could<br>become<br>pregnant?"}
+
+    P -- Yes --> P1["Start nifedipine ER<br>Amlodipine acceptable"]
+    P1 --> PC1{"BP controlled?"}
+    PC1 -- Yes --> PMON["Routine monitoring"]
+    PC1 -- No --> P2["Add thiazide-like diuretic"]
+    P2 --> PC2{"BP controlled?"}
+    PC2 -- Yes --> PMON
+    PC2 -- No --> P3["Add labetalol<br>Carvedilol or metoprolol acceptable"]
+    P3 --> PC3{"BP controlled?"}
+    PC3 -- Yes --> PMON
+    PC3 -- No --> SPEC["HTN specialist<br>Evaluate secondary HTN"]
+
+    P -- No --> STAGE{"BP stage?"}
+
+    STAGE -- "130–139/80–89" --> RISK{"ASCVD, HF, DM, CKD,<br>age ≥65, or elevated<br>10-y CVD risk?"}
+    RISK -- No --> LIFE["Lifestyle treatment<br>Reassess in 3–6 mo"]
+    LIFE --> LC{"Still ≥130/80?"}
+    LC -- No --> MON["Routine monitoring"]
+    LC -- Yes --> MONO
+    RISK -- Yes --> MONO["Monotherapy"]
+
+    STAGE -- "140–180/90–120" --> FR{"Age &gt;75, frail,<br>underweight, or multiple<br>drug intolerances?"}
+    FR -- Yes --> MONO
+    FR -- No --> COMBO["2-drug combination<br>Prefer single pill"]
+
+    MONO --> MSEL{"Relevant<br>comorbidity?"}
+    MSEL -- No --> M1["ACEi, ARB, or DHP-CCB"]
+    MSEL -- Yes --> IND["Select indicated class"]
+    M1 --> MON
+    IND --> MON
+
+    COMBO --> CSEL{"Relevant<br>comorbidity?"}
+    CSEL -- No --> C1["DHP-CCB + ACEi/ARB"]
+    CSEL -- Yes --> C2["Select 2 complementary<br>indicated classes"]
+    C1 --> MON
+    C2 --> MON
+
+    style MSEL fill: #b3ffff
+    style IND fill: #b3ffff
+    style C2 fill: #b3ffff
+    style CSEL fill: #b3ffff
+    style Labs fill: #ffffb3
+    style MON fill: #ffffb3
+    style PMON fill: #ffffb3
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/overview-of-hypertension-in-adults">Overview of hypertension in adults</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/hypertension-in-adults-initial-management">Hypertension in adults: Initial management</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-09-06";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

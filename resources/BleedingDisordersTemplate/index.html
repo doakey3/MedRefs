@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bleeding Disorders Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting on bleeding disorders">
+    <meta name="keywords" content="bleeding, disorders, template, coagulopathy">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Bleeding Disorders Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+ISTH-BAT Score: [4 or more is high for men, 6 or more is high for women]
+
+Medications that Cause Bleeding:
+(    ) Apixaban
+(    ) Dabigatran
+(    ) Lovenox
+(    ) Heparin
+(    ) Rivaroxaban
+(    ) Warfarin
+(    ) Aspirin
+(    ) NSAIDs (However, these can help reduce menstrual bleeding)
+(    ) Corticosteroids
+(    ) Clopidogrel
+(    ) Fish oil
+(    ) SSRIs
+(    ) Alcohol
+(    ) Cephalosporins
+(    ) Nitrofurantoin
+(    ) Penicillin
+(    ) Sulfonamides
+(    ) Vancomycin
+(    ) Carbamazepine
+(    ) Quinine
+(    ) Hydrochlorothiazide
+(    ) Valproic acid
+
+PLAN (if ISTH-BAT Score is high)
+-Peripheral smear
+-CBC
+-PT/PTT/INR
+-CMP
+
+(Then look at the AAFP algorithm for what to do next)
+</textarea>
+</div>
+
+<div id="notes">
+<img src="media/algorithm.gif" style="width: 1248px;">
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Practical Haemostasis.com: <a href="https://practical-haemostasis.com/Clinical%20Prediction%20Scores/Formulae%20code%20and%20formulae/Formulae/Bleeding-Risk-Assessment-Score/ISTH_BAT_score.html">Bleeding Assessment: The ISTH-SSC Bleeding Assessment Tool</a>.</li>
+        <li>AAFP: <a href="https://www.aafp.org/pubs/afp/issues/2016/0215/p279.html">Clinical Evaluation of Bleeding and Bruising in Primary Care</a>.</li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

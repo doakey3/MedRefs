@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Osteoporosis - Diagnosis and Management</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for diagnosing and managing osteoporosis">
+    <meta name="keywords" content="osteoporosis, diagnosis, and, management, bisphosphonate, fosamax, osteopenia">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Osteoporosis - Diagnosis and Management</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<br>
+<a href="https://www.sheffield.ac.uk/FRAX/tool.aspx">FRAX Score Calculator</a>
+<br>
+<br>
+<div class="nsection" style="background-color: #ffa366">
+    <h3>Clinical Risk Factors for Fracture</h3>
+    <ul>
+        <li>Man &ge; 70 years old</li>
+        <li>High Fall Risk
+            <ul>
+                <li>Timed Up-and-Go &ge;12 sec</li>
+                <li>&ge;2 falls in past year</li>
+                <li>Long-term use of a walker/gait aid</li>
+            </ul>
+        </li>
+        <li>History of fragility fracture<sup>*</sup></li>
+        <li>&ge;3 months of systemic prednisone-equivalent &ge;5 mg/day</li>
+        <li>BMI &lt;20 or weight &lt; 58 kg</li>
+        <li>Parental history of hip fracture</li>
+        <li>Loss of height as an adult &gt;1.5 inches</li>
+        <li>Hyperkyphosis (standing cobb angle &ge;50°)</li>
+        <li>Current cigarette smoking</li>
+        <li>Alcohol &ge;3 drinks/day</li>
+        <li>Inflammatory Diseases
+            <ul>
+                <li>Rheumatoid Arthritis</li>
+                <li>Inflammatory Bowel Disease</li>
+            </ul>
+        </li>
+        <li>Hyperthyroidism</li>
+        <li>Primary Hyperparathyroidism</li>
+        <li>Hypogonadism
+            <ul>
+                <li>Aromatase inhibitor use (letrozole, anastrozole, exemestane)</li>
+                <li>Menopause @ &lt;45 years</li>
+                <li>Anti-androgen therapy: leuprolide, degarelix, relugolix, or orchiectomy</li>
+            </ul>
+        </li>
+        <li>Malabsorptive states
+            <ul>
+                <li>Celiac</li>
+                <li>Bariatric surgery, particularly gastric bypass</li>
+            </ul>
+        </li>
+    </ul>
+    <p><sup>*</sup><b>Fragility Fracture</b>: fracture from ground-level fall or less that would not have caused a fracture in most healthy persons</p>
+</div>
+
+<h3>Diagnosis Flowchart</h3>
+<div class="mermaid">
+flowchart TD
+    A["Postmenopausal woman<br>OR<br>Man &ge;50 years"] --> B{"Woman &ge;65 yo<br>OR<br>&ge;1 <span style="background-color: #ffa366">risk factor</span>"}
+    B -- Yes --> C["DEXA Scan"]
+    B -- No --> D["Reassess in 2-5 years"]
+    C --> E["Lowest valid T-score<ul><li>Lumbar spine</li><li>Femoral neck</li><li>Total Hip</li></ul>"]
+    E -- &ge;-1.0 --> F["Normal"]
+    E -- &lt; −1.0 and &gt; −2.5 --> G{"FRAX<br>Score"}
+    E -- &le;-2.5 --> H{"History of<br>Fragility Fracture?"}
+    H -- No --> I["Osteoporosis"]
+    H -- Yes --> J["Severe Osteoporosis"]
+    G -- MOF &lt;20%<br>AND<br>Hip &lt;3% --> K["Osteopenia"]
+    G -- MOF &ge;20%<br>OR<br>Hip &ge;3% --> I
+</div>
+
+<hr>
+
+<div class="nsection" style="background-color: #ffffb3">
+    <h3>Labs</h3>
+
+    <h4>Initial Laboratory Evaluation</h4>
+
+<table>
+
+    <tr>
+      <th>Lab Test</th>
+      <th>Notes</th>
+    </tr>
+
+    <tr>
+      <td>CBC</td>
+      <td>may identify anemia/cytopenias suggesting secondary disease.</td>
+    </tr>
+
+    <tr>
+      <td>CMP</td>
+      <td>
+        <b>Calcium:</b> Hyperparathyroidism, malignancy, or hypocalcemia.<br>
+        <b>Renal function:</b> CKD and medication eligibility.<br>
+        <b>Alkaline phosphatase:</b> High bone turnover, osteomalacia, Paget disease, or hepatobiliary disease.<br>
+        <b>Albumin and liver tests:</b> Interpretation of total calcium, malnutrition, and chronic liver disease.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Serum Phosphate</td>
+      <td>Hypophosphatemia may suggest vitamin D deficiency, malabsorption, hyperparathyroidism, or renal phosphate wasting. Hyperphosphatemia may occur with advanced CKD or hypoparathyroidism.</td>
+    </tr>
+
+    <tr>
+      <td>25-Hydroxyvitamin D</td>
+      <td>Look for vitamin D deficiency or insufficiency contributing to secondary hyperparathyroidism, impaired calcium absorption, and osteomalacia.</td>
+    </tr>
+
+    <tr>
+      <td>TSH with Reflex Free T4</td>
+      <td>Look for overt hyperthyroidism or excessive thyroid-hormone replacement causing accelerated bone loss.</td>
+    </tr>
+
+    <tr>
+      <td>Intact PTH</td>
+      <td>Look for primary hyperparathyroidism or secondary hyperparathyroidism caused by vitamin D deficiency, inadequate calcium intake, malabsorption, or CKD. Interpret with calcium, phosphate, vitamin D, and renal function.</td>
+    </tr>
+
+    <tr>
+      <td>24-Hour Urine Calcium, Sodium, Creatinine</td>
+      <td>Obtain after vitamin D repletion and 2 weeks of 1200 mg daily calcium intake.<br>
+        <b>High urinary calcium:</b> Hypercalciuria or excessive calcium loss, with possible nephrolithiasis risk.<br>
+        <b>Low urinary calcium:</b> Low calcium intake, malabsorption, or an incomplete collection.<br> Urine creatinine helps assess collection completeness.<br>
+        <b>Sodium:</b> Helpful for interpreting a high urinary calcium level.
+      </td>
+    </tr>
+</table>
+
+<h4>Follow-Up Laboratory Monitoring</h4>
+<table>
+    <tr>
+      <th>Lab Test</th>
+      <th>Notes</th>
+    </tr>
+    
+    <tr>
+      <td>BMP</td>
+      <td>Usually obtained annually during treatment and before IV bisphosphonate doses.<br>
+        <b>Creatinine/eGFR:</b> Monitor renal function and continued medication eligibility.<br>
+        <b>Calcium:</b> Look for treatment-associated hypocalcemia or hypercalcemia from excessive supplementation or another disorder.<br>
+      </td>
+    </tr>
+
+    <tr>
+      <td>25-Hydroxyvitamin D</td>
+      <td> Repeat every 1–2 years in patients with malabsorption, bariatric surgery, CKD, low sun exposure, obesity, poor adherence, or medications affecting vitamin D metabolism. Routine repeat testing is generally unnecessary in stable, vitamin-D-replete patients without ongoing risk factors.</td>
+    </tr>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #b3ffb3">
+    <h3>General Treatment</h3>
+    <ul>
+        <li>Weight-bearing exercise</li>
+        <li>Balance training</li>
+        <li>Calcium intake: 1200 mg daily (supplementation + diet)</li>
+        <li>Vitamin D supplementation: &ge;800 IU daily (higher if malabsorptive or on anti-seizure meds)</li>
+        <li>Quit smoking</li>
+        <li>Avoid heavy alcohol consumption</li>
+        <li>Limit glucocorticoids to lowest effective dose for shortest duration</li>
+        <li>&le;2 servings caffeine/day</li>
+        <li>Protein intake &ge;0.8 g/kg/day</li>
+        <li>Maintain healthy weight</li>
+        <li>Fall prevention
+            <ul>
+                <li>Avoid Beer's List Meds</li>
+                <li>Grab bars (toilet, shower)</li>
+                <li>Declutter walkways</li>
+                <li>Avoid rugs</li>
+                <li>Good lighting
+                    <ul>
+                        <li>Switches at top and bottom of stairs</li>
+                        <li>Night lights</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="nsection" style="background-color: #dd99ff">
+    <h3>Very High Fracture Risk</h3>
+    <ul>
+        <li>T-Score &le;-3.0</li>
+        <li>FRAX: MOF&ge;30% or &ge;4.5% Hip</li>
+        <li>Fragility fracture in previous 12 months or while on osteoporosis therapy</li>
+    </ul>
+
+    <h3>High Fracture Risk</h3>
+    <ul>
+        <li>T-Score &le;-2.5</li>
+        <li>FRAX: MOF&ge;20% or &ge;3% Hip</li>
+        <li>Prior spine or hip fracture</li>
+    </ul>
+</div>
+
+<div class="nsection" style="background-color: #ffb380">
+    <h3>Oral Bisphosphonate</h3>
+    <h4>Contraindications</h4>
+    <ul>
+        <li>Achalasia</li>
+        <li>Esophageal strictures</li>
+        <li>Esophageal varices</li>
+        <li>History of Roux-en-Y/Gastric Bypass</li>
+        <li>Inability to remain upright x&ge;30 mins</li>
+        <li>Hypocalcemia</li>
+    </ul>
+    <br>
+    <h4>Relative Contraindications</h4>
+    <ul>
+        <li>Barrett's Esophagus</li>
+        <li>GERD</li>
+        <li>History of stomach ulcers</li>
+        <li>Difficulty remembering to use medication</li>
+    </ul>
+</div>
+
+<div class="nsection" style="background-color: #b3ccff">
+    <h3>Choosing a Medication For Very High Risk Patients</h3>
+    <table>
+        <tr>
+            <th>Medication</th>
+            <th>Regimen</th>
+            <th>Best Fit</th>
+        </tr>
+
+        <tr>
+            <td>Romosozumab (Evenity)</td>
+            <td>2 x 105 mg SC monthly x 12 months</td>
+            <td><b>Best BMD gains</b>. <b>Most convenient</b>. <b>Women only</b>. (monthly dosing). Avoid in those with history of MI, stroke, or are high cardiovascular risk. Avoid in those with upcoming invasive dental procedure (small <b>risk of osteonecrosis of jaw</b>)</td>
+        </tr>
+
+        <tr>
+            <td>Abaloparatide (Tymlos)</td>
+            <td>80 mcg SC daily x18-24 mo</td>
+            <td>Next best choice. Low likelihood of cardiovascular events. Avoid in those with prior skeletal radiation, Paget disease, unexplained alkaline phosphatase elevation, or history of bone metastasis. No osteonecrosis risk.</td>
+        </tr>
+
+        <tr>
+            <td>Teriparatide (Forteo)</td>
+            <td>20 mcg SC daily x2 yr</td>
+            <td>Avoid in those with prior skeletal radiation, Paget disease, unexplained alkaline phosphatase elevation, or history of bone metastasis. No osteonecrosis risk. Avoid in patients with renal disease</td>
+        </tr>
+    </table>
+</div>
+
+<div class="nsection" style="background-color: #cccccc">
+<h3>Choosing an Antiresorptive Medication</h3>
+<table>
+    <tr>
+        <th>Medication</th>
+        <th>Regimen</th>
+        <th>Notes</th>
+    </tr>
+
+    <tr>
+        <td>Alendronate (Fosamax)</td>
+        <td>70 mg PO weekly (or 10 mg PO daily)</td>
+        <td><b>First-line.</b> Reduces vertebral, nonvertebral, and hip fractures. Take on empty stomach with full glass of water, remain <b>upright &ge;30 min</b>. Avoid if <b>CrCl &lt;35 mL/min</b>. Contraindicated in achalasia, esophageal stricture/Barrett, hypocalcemia. Reassess at 3–5 yr for possible drug holiday. Rare ONJ/atypical femur fracture with long-term use.</td>
+    </tr>
+
+    <tr>
+        <td>Risedronate (Actonel)</td>
+        <td>35 mg PO weekly (or 5 mg daily; 150 mg monthly)</td>
+        <td><b>First-line alternative to alendronate.</b> Same upright/empty-stomach rules. Slightly less restrictive renal cutoff (<b>avoid if CrCl &lt;30</b>). Best CKD safety data among oral agents.</td>
+    </tr>
+
+    <tr>
+        <td>Zoledronic acid (Reclast)</td>
+        <td>5 mg IV once yearly (infuse over &ge;15 min)</td>
+        <td><b>Best choice when adherence is a concern or oral route not tolerated</b> No rebound if next dose is late. <b>Contraindicated if CrCl &lt;35 mL/min</b> - check renal function and hydrate before each dose. <b>Acute-phase reaction</b> (flu-like symptoms) in ~30% after first infusion, pretreat with acetaminophen.</td>
+    </tr>
+
+    <tr>
+        <td>Denosumab (Prolia)</td>
+        <td>60 mg SC every 6 months</td>
+        <td><b>Greatest BMD gains among antiresorptives</b>; reduces vertebral, nonvertebral, and hip fractures. Useful when bisphosphonates are contraindicated, including <b>renal impairment</b> (not renally cleared). <b>Critical gotcha: do NOT delay or stop.</b> Avoid delays; do not discontinue without a planned antiresorptive transition, usually a bisphosphonate. Check/correct <b>vitamin D and calcium first</b> (hypocalcemia risk, especially in CKD). Rare ONJ/atypical femur fracture.</td>
+    </tr>
+</table>
+</div>
+
+<h3>Treatment Flowchart</h3>
+<div class="mermaid">
+flowchart TD
+    A["Osteoporosis<br>OR<br>Fragility Fx of Hip/Vertebra"] --> Labs["Labs<br><br>Review results, address hypocalcemia &amp; secondary bone diseases."]
+    Labs --> Gen["General Treatment"]
+    Gen --> B{"Very High<br>Fracture Risk?"}
+    B -- No --> Dental{"Upcoming<br>invasive jaw<br>procedure?"}
+    Dental -- No --> C{"CrCl &ge;35?"}
+    Dental -- Yes --> Delay["Coordinate timing w/Dentist"]
+    Delay --> C
+    B -- Yes --> D["<b>Special Meds</b>:<ul><li>Evenity x1 yr</li><li>Tymlos x18-24 mo</li><li>Forteo x2 yr</li></ul><br>Finish course, DEXA, then..."]
+    D --> Dental
+    C -- No --> E{"CrCl &ge;30?"}
+    E -- No --> Refer["Referral to endocrinology<br>(Treatment selection)"]
+    E -- Yes --> RisContra{"Oral bisphosphonate<br>contraindicated?"}
+    RisContra -- Yes --> Refer
+    RisContra -- No --> Risedronate["Risedronate 35 mg PO Qwk<br>30 mins AC<br>DEXA at 2, 5 yrs<br><br>BMD↓/Fragility Fx?: switch to <span style="background-color: #b3ccff">Special Meds</span>"]
+
+    C -- Yes --> BisContra{"Oral bisphosphonate<br>contraindicated?"}
+    BisContra -- No --> Alen["Alendronate 70 mg PO QWk<br>30 mins AC<br>DEXA at 2, 5 yrs<br><br>BMD↓/Fragility Fx?: switch to <span style="background-color: #b3ccff">Special Meds</span>"]
+    BisContra -- Yes --> Zal["Reclast 5 mg IV QYr<br>x3 yrs → DEXA<br>BMP ↶ QDose<br>Tylenol ↶ 1st dose<br><br>BMD↓/Fragility Fx?: switch to <span style="background-color: #b3ccff">Special Meds</span>"]
+
+    Alen -- 5 Yrs --> HighRisk{"Patient at high risk or very high risk of fracture?"}
+    Risedronate -- 5 Yrs --> HighRisk
+    Zal -- 3 Yrs --> HighRisk
+
+    HighRisk -- Yes --> Continue["Continue/restart bisphosphonate<br>for another course"]
+    HighRisk -- No --> DrugHoliday["Drug holiday"]
+    DrugHoliday --> Dexa["Dexa Q2-4Y"]
+    Dexa --> HighRisk
+
+    style Labs fill: #ffffb3
+    style Gen fill: #b3ffb3
+    style B fill: #dd99ff
+    style D fill: #b3ccff
+    style RisContra fill: #ffb380
+    style BisContra fill: #ffb380
+    style Risedronate fill: #cccccc
+    style Alen fill: #cccccc
+    style Zal fill: #cccccc
+    style HighRisk fill: #dd99ff
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/screening-for-osteoporosis-in-men-aged-50-years-and-postmenopausal-women">Screening for osteoporosis in men aged ≥50 years and postmenopausal women</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2023/0700/practice-guidelines-osteoporosis-treatment">Osteoporosis Treatment: Updated Guidelines From ACOG</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2023/0300/osteoporosis">Osteoporosis: Common Questions and Answers</a></li>
+        <li>USPSTF. <a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening">Osteoporosis to Prevent Fractures: Screening</a>
+        <li>Jama. <a href="https://jamanetwork.com/journals/jama/fullarticle/2685995">Screening for Osteoporosis to Prevent Fractures</a>
+        <li>NIH. <a href="https://www.nia.nih.gov/health/falls-and-falls-prevention/preventing-falls-home-room-room">Preventing Falls at Home: Room by Room</a>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-09-06";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

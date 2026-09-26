@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    background-color: #333333;
+}
+
+#searchbar {
+    font-family: tahoma;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    height: 38px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 32px;
+    border: 3px solid #333333;
+    padding-left: 28px;
+    background-color: white;
+}
+
+#searchbar:focus {
+    outline: none;
+}
+
+#searchbar {background-image: url("../icons/search.svg")}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: black;
+}
+
+#scroll_list_container {
+    cursor: auto;
+    position: absolute;
+    top: 38px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333333;
+    overflow-y: scroll;
+}
+
+#scroll_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#scroll_list li {
+    position: relative;
+    height: 38px;
+    background-color: #333333;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+#scroll_list li:nth-child(2n) {
+    background-color: #3e3e3e;
+}
+
+#scroll_list li.selected {
+    background-color: #855700;
+}
+
+#scroll_list li a.filelink {
+    font-family: tahoma;
+    border: 3px solid transparent;
+    line-height: 32px;
+    padding-left: 33px;
+    padding-right: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #FCFCFC;
+    display: inline-block;
+    outline: none;
+    cursor: default;
+    white-space: nowrap;
+}
+
+#scroll_list li a.filelink:hover {
+    border: 3px solid #855700;
+}
+
+.date_span {
+    position: absolute;
+    right: 1em;
+    line-height: 32px;
+    font-family: consolas;
+    font-weight: bold;
+}
+
+li {background-image: url("../icons/unknown.svg")}
+li.csv {background-image: url("../icons/csv.svg")}
+li.xls {background-image: url("../icons/csv.svg")}
+li.xlsx {background-image: url("../icons/csv.svg")}
+li.doc {background-image: url("../icons/doc.svg")}
+li.docx {background-image: url("../icons/doc.svg")}
+li.folder {background-image: url("../icons/folder.svg")}
+li.html {background-image: url("../icons/html.svg")}
+li.link {background-image: url("../icons/link.svg")}
+li.pdf {background-image: url("../icons/pdf.svg")}
+li.ppt {background-image: url("../icons/ppt.svg")}
+li.pptx {background-image: url("../icons/ppt.svg")}
+li.svg {background-image: url("../icons/svg.svg")}
+li.txt {background-image: url("../icons/txt.svg")}

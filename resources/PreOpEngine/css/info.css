@@ -1,0 +1,52 @@
+.info {
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.info {background-image: url("../icons/info.svg")}
+.info:hover {border: 1px solid #ffca69;}
+.info:active, .info.clicked {border: 1px solid red;}
+
+.info_window {
+    position: absolute;
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0;
+    max-width: 512px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.info_window h1 {
+	font-size: 14pt;
+	margin: 0;
+}
+
+.info_window ul {
+	margin-left: -15px;
+}
+
+.info_window table.inside_overdiv {
+	border-collapse: collapse;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.info_window table.inside_overdiv td {
+	border: 1px solid black;
+}
+
+.info_window table.inside_overdiv ul {
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}

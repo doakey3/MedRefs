@@ -1,0 +1,74 @@
+body {
+    font-family: tahoma;
+}
+
+#codes {
+    border-collapse: collapse;
+}
+#codes td, #codes th {
+    padding-left: 1em;
+    padding-right: 1em;
+    cursor: default;
+    border-top: 3px solid transparent;
+}
+
+#codes tr {
+    border-bottom: 3px solid transparent;
+}
+
+#codes td {
+    height: 32px;
+}
+
+#codes tr td:first-child {
+    border-left: 3px solid transparent;
+}
+
+#codes tr td:last-child {
+    border-right: 3px solid transparent;
+}
+
+#codes tr:hover td {
+    border-top: 3px solid blue;
+    border-bottom: 3px solid blue;
+}
+
+#codes tr:hover td:first-child {
+    border-left: 3px solid blue;
+}
+#codes tr:hover td:last-child {
+    border-right: 3px solid blue;
+}
+
+#codes tr:nth-child(2n) {
+    background-color: #d9d9d9;
+}
+
+#codes tr:active {
+    background-color: #ffffe6;
+}
+
+#codes tr:first-child {
+    background-color: #a6a6a6;
+}
+
+#searchbar {
+    font-family: tahoma;
+    background-position: 5px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 32px;
+}
+
+#searchbar {background-image: url("../icons/search.svg")}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}

@@ -1,0 +1,52 @@
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+table.equipment_list {
+    border-collapse: collapse;
+}
+
+table.equipment_list td {
+    border: 2px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+}
+
+table.equipment_list img {
+    max-width: 160px;
+    max-height: 90px;
+}
+
+table.equipment_list td:first-child, table.equipment_list td:nth-child(2n) {
+    text-align: center;
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+
+@media print {
+    video {
+        display: none;
+    }
+    table.equipment_list img {
+        max-width: 80px;
+        max-height: 45px;
+    }
+    table.equipment_list td {
+        border: 1px solid black;
+        padding-left: 1em;
+        padding-right: 1em;
+        box-sizing: border-box;
+    }
+    br {
+        display: none;
+    }
+
+    body {
+        font-size: 11.5pt;
+    }
+}

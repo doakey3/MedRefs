@@ -1,0 +1,188 @@
+{
+  "title": "Vegetable Soup",
+  "goal": "muscle",
+  "image": null,
+  "instructions": "Mix the spice blend and blend, using only enough water to make a smooth paste. Pour into 12 silicon molds.\n\nRinse the quinoa and cook in rice-cooker using the vegetable broth. When cooked, add to blender and blend using only enough water to make a smooth paste. Pour into 12 silicon molds over the spice paste. Should fill up a 1/2 cup mold. Freeze the molds.\n\nAdd a frozen blocks of quinoa paste + spice paste to 7\"x8\" sandwhich bags. Into each bag, add tofu and vegetables. Seal the bag with 1\" Kraft paper tape.\n\nWhen ready to eat, add the contents of the bag to a bowel and add water. Cook in the microwave for 6 minutes, stir, then cook for an addition 4 minutes. \n\n\n",
+  "ingredients": [
+    {
+      "type": "divider",
+      "title": "Spice Blend"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2486564,
+      "name": "Nutritional yeast",
+      "grams": 17,
+      "comment": "x12=204"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174277,
+      "name": "Soy sauce made from soy and wheat (shoyu)",
+      "grams": 10,
+      "comment": "x12=120"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174276,
+      "name": "Soy protein isolate",
+      "grams": 9,
+      "comment": "x12=108"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169698,
+      "name": "Cornstarch",
+      "grams": 9,
+      "comment": "x12=108"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 173469,
+      "name": "Vinegar, cider",
+      "grams": 5,
+      "comment": "x12=60"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169231,
+      "name": "Ginger root, raw",
+      "grams": 4,
+      "comment": "x12=48"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2262075,
+      "name": "Flaxseed, ground",
+      "grams": 4,
+      "comment": "x12=48"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2515373,
+      "name": "Nuts, brazilnuts, raw",
+      "grams": 4,
+      "comment": "x12=48"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746775,
+      "name": "Salt, table, iodized",
+      "grams": 1,
+      "comment": "x12=12"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748608,
+      "name": "Oil, olive, extra virgin",
+      "grams": 2,
+      "comment": "x12=24"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170922,
+      "name": "Spices, coriander seed",
+      "grams": 1,
+      "comment": "x12=12"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170923,
+      "name": "Spices, cumin seed",
+      "grams": 1,
+      "comment": "x12=12"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 172231,
+      "name": "Spices, turmeric, ground",
+      "grams": 0.5,
+      "comment": "x12=6"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2449440,
+      "name": "Monosodium Glutamate",
+      "grams": 0.5,
+      "comment": "x12=6"
+    },
+    {
+      "type": "divider",
+      "title": "Quinoa Paste"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168874,
+      "name": "Quinoa, uncooked",
+      "grams": 34,
+      "comment": "x12=408"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 171583,
+      "name": "Soup, vegetable broth, ready to serve",
+      "grams": 82,
+      "comment": "x12=984"
+    },
+    {
+      "type": "divider",
+      "title": "Vegetables"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2103092,
+      "name": "Azumaya Tofu, Extra Firm",
+      "grams": 75.4,
+      "comment": "1/6th block"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169239,
+      "name": "Kale, frozen, unprepared",
+      "grams": 40,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2685572,
+      "name": "Cabbage, bok choy, raw",
+      "grams": 40,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168580,
+      "name": "Mushrooms, oyster, raw",
+      "grams": 25,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2258590,
+      "name": "Peppers, bell, red, raw",
+      "grams": 40,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168469,
+      "name": "Squash, summer, zucchini, includes skin, frozen, unprepared",
+      "grams": 40,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746764,
+      "name": "Carrots, frozen, unprepared",
+      "grams": 40,
+      "comment": "handful"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 169994,
+      "name": "Chives, raw",
+      "grams": 15,
+      "comment": "handful"
+    }
+  ]
+}

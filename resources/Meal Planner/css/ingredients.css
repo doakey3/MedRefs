@@ -1,0 +1,193 @@
+#ingredient-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ingredient-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+}
+
+.ingredient-row:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.drag-handle {
+    color: #888;
+    cursor: grab;
+    user-select: none;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.ingredient-row.dragging {
+    opacity: 0.35;
+}
+
+.ingredient-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ingredient-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ingredient-unit {
+    color: #666;
+}
+
+.ingredient-comment {
+    width: 120px;
+    padding: 5px 8px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.ingredient-comment:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.ingredient-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.ingredient-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+.ingredient-divider::before,
+.ingredient-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #bbb;
+}
+
+.divider-input {
+    width: 160px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-weight: 600;
+    font-size: inherit;
+    color: inherit;
+}
+
+.divider-input:focus {
+    outline: 1px solid #aaa;
+    background: white;
+}
+
+.delete-ingredient {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-ingredient:hover {
+    background: #eee;
+    color: #b00020;
+}
+
+
+/* Drag/drop insertion indicator */
+
+.ingredient-drop-indicator {
+    height: 4px;
+    margin: 0;
+    background: #278a45;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(39, 138, 69, 0.18);
+    pointer-events: none;
+}
+
+.ingredient-drop-indicator[hidden] {
+    display: none;
+}
+
+
+/* Add food */
+
+.add-food-button, .add-divider-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: #278a45;
+    color: white;
+    cursor: pointer;
+}
+
+.add-food-button:hover, .add-divider-button:hover {
+    background: #20763a;
+}
+
+.add-food-plus, .add-divider-plus {
+    font-size: 22px;
+    line-height: 16px;
+}
+
+
+/* Meal scaling */
+
+.meal-scale {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.meal-scale label {
+    margin-right: auto;
+}
+
+
+/* Load/save */
+
+.meal-file-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.meal-file-buttons button {
+    padding: 7px 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.meal-file-buttons button:hover {
+    background: #eee;
+}

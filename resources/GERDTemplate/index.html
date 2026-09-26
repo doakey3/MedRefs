@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GERD Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="description" content="A template for charting on GERD">
+    <meta name="keywords" content="GERD, gastro, gastroesophageal, reflux, disease, heartburn, acid, stomach, template">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>GERD Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Risk Factors for Barrett's (2 or more positives may indicate EGD):
+(    ) Hiatal hernia
+(    ) Age >= 50 years
+(    ) Male gender
+(    ) Chronic GERD (> 5 years)
+(    ) Caucasian race
+(    ) Central obesity
+(    ) Tobacco use
+(    ) Confirmed history of Barrett's esophagus or adenocarcinoma in a first-degree relative
+
+Alarm Symptoms (1 positive would indicate EGD):
+(    ) Dysphagia
+(    ) Odynophagia
+(    ) Bleeding
+(    ) Weight loss
+
+Recommended Lifestyle Modifications:
+- elevate head of bed 6 inches at night
+- decrease fat intake
+- smoking cessation
+- weight loss
+- avoid laying flat 3 hours after eating
+- avoid large meals
+- avoid triggering foods (peppermint, chocolate, spicy, citrus, tomato-based, alcohol)</textarea>
+</div>
+
+<div id="notes">
+    <img src="media/wedge_pillow.jpg"><br>
+    <img src="media/bed_raiser.jpg"><br>
+    <img src="media/GERDmap.gif"><br>
+    <img src="media/barretts.jpg">
+
+    <p>Endoscopy may be repeated in 3 years per the American College of Gastroenterology.</p>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/barretts-esophagus-epidemiology-clinical-manifestations-and-diagnosis">Barrett's esophagus: Epidemiology, clinical manifestations, and diagnosis</a>. Whom to screen is somewhat controversial. I used the list of risk factors from this page.</li>
+        <li>Uptodate <a href="https://www.uptodate.com/contents/medical-management-of-gastroesophageal-reflux-disease-in-adults">Medical Management of gastroesophageal reflux disease in adults</a> The algorithm image above comes from this website.</li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2004/0501/p2113.html">Barrett's Esophagus</a>. The list of alarm symptoms indicating prompt endoscopy come from this page. The recommendation to repeat EGD every 3 years also comes from this page.</li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/1999/0301/p1161.html">Gastroesophageal Reflux Disease: Diagnosis and Management</a>. The list of lifestyle management recommendations comes from this site.</li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EKG Interpretation</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A rapid guide for interpreting EKGs">
+    <meta name="keywords" content="ecg, ekg, interpretation, guide">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+
+    <style>
+        .ecg-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            clear: both;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .ecg-figure {
+            width: 303px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .svg-stack {
+            position: relative;
+            width: 303px;
+            height: 103px;
+        }
+
+        .svg-stack img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .svg-overlay {
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .ecg-figure figcaption {
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+<div id="notes">
+<br>
+<div class="nsection" style="background-color: #ff6666">
+    <h1>MI Signs and Symptoms</h1>
+    <ul>
+        <li>Chest pressure, squeezing, heaviness, tightness, or pain</li>
+        <li>Pain radiating to the arm, shoulder, neck, jaw, back, or epigastrium</li>
+        <li>Dyspnea</li>
+        <li>Diaphoresis</li>
+        <li>Nausea or vomiting</li>
+        <li>Lightheadedness, presyncope, or syncope</li>
+        <li>Palpitations</li>
+        <li>Sudden weakness or unusual fatigue</li>
+        <li>Acute anxiety or a sense of impending doom</li>
+        <li>Hypotension or signs of shock</li>
+        <li>New pulmonary edema or acute heart failure</li>
+        <li>Cardiac arrest</li>
+    </ul>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A["New, changed, or unexplained acute chest pain"] --> B{"High-risk presentation?"}
+
+    B -->|"Yes"| C["Call EMS"]
+    B -->|"No"| D["Focused history, examination,<br>vitals, and ECG"]
+
+    D --> E{"Acute ischemic or<br>occlusion-pattern ECG?"}
+    E -->|"Yes"| C
+    E -->|"No"| F{"Clearly noncardiac explanation?"}
+    F -->|"No"| H["Apply clinical risk assessment<br>Consider INTERCHEST"]
+
+    H --> I{"ACS suspicion after assessment"}
+    I -->|"Meaningful suspicion"| C
+    I -->|"Low suspicion"| G
+    F -->|"Yes"| G["Treat or evaluate outpatient"]
+</div>
+
+<h3>ECG Findings Requiring Urgent Action</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>ECG pattern</th>
+            <th>Key appearance</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Standard STEMI</strong></td>
+            <td>
+                ST elevation at the J point in &ge;2 contiguous leads,
+                meeting the thresholds below
+            </td>
+            <td><strong>Call EMS; activate STEMI pathway</strong></td>
+        </tr>
+
+        <tr>
+            <td><strong>Posterior coronary occlusion</strong></td>
+            <td>
+                ST depression in V1&ndash;V3, often horizontal, with tall
+                R waves and upright T waves; confirm with V7&ndash;V9
+            </td>
+            <td><strong>Call EMS; emergent evaluation</strong></td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>LBBB or ventricular-paced rhythm meeting modified Sgarbossa criteria</strong>
+            </td>
+            <td>
+                Concordant ST elevation, concordant ST depression in
+                V1&ndash;V3, or proportionally excessive discordant ST elevation
+            </td>
+            <td><strong>Call EMS; emergent evaluation</strong></td>
+        </tr>
+
+        <tr>
+            <td><strong>Other acute coronary occlusion pattern</strong></td>
+            <td>
+                De Winter pattern, regional hyperacute T waves, or dynamic
+                ST changes with reciprocal changes
+            </td>
+            <td><strong>Call EMS; urgent expert interpretation</strong></td>
+        </tr>
+
+        <tr>
+            <td><strong>Regional or dynamic ischemic changes</strong></td>
+            <td>
+                New horizontal or downsloping ST depression and/or
+                regional T-wave inversion without STEMI criteria
+            </td>
+            <td><strong>Send to ED for serial ECGs and troponins</strong></td>
+        </tr>
+
+        <tr>
+            <td><strong>Diffuse ST depression with ST elevation in aVR</strong></td>
+            <td>
+                Pattern of widespread subendocardial ischemia; consider
+                severe coronary disease or supply&ndash;demand mismatch
+            </td>
+            <td><strong>Send to ED; assess urgently for instability</strong></td>
+        </tr>
+
+        <tr>
+            <td><strong>Normal or nondiagnostic ECG</strong></td>
+            <td>No definite acute ischemic changes</td>
+            <td>
+                Does not exclude ACS; send to the ED if ACS remains
+                clinically plausible
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div class="nsection">
+    <h3>Standard STEMI Thresholds</h3>
+
+    <p>New ST elevation measured at the J point in<strong>&ge;2 anatomically contiguous leads</strong>:</p>
+
+    <table class="expanded">
+        <thead>
+            <tr>
+                <th>Affected contiguous leads</th>
+                <th>Required elevation in each lead</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Any contiguous lead pair not involving V2&ndash;V3</td>
+                <td><strong>&ge;1 mm</strong></td>
+            </tr>
+            <tr>
+                <td>V2&ndash;V3 in men &ge;40 years</td>
+                <td><strong>&ge;2 mm</strong></td>
+            </tr>
+            <tr>
+                <td>V2&ndash;V3 in men &lt;40 years</td>
+                <td><strong>&ge;2.5 mm</strong></td>
+            </tr>
+            <tr>
+                <td>V2&ndash;V3 in women of any age</td>
+                <td><strong>&ge;1.5 mm</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <small>
+            Assumes standard ECG calibration of 10 mm/mV. These thresholds
+            are less reliable when LVH, LBBB, or ventricular pacing distorts
+            ventricular repolarization.
+        </small>
+    </p>
+</div>
+
+<hr>
+    
+<h1>EKG Interpretation</h1>
+<ol>
+    <li>Rate</li>
+    <li>Rhythm
+        <ul>
+            <li>Regular/Irregular?</li>
+            <li>Narrow/Wide?</li>
+            <li>Morphology</li>
+        </ul>
+    </li>
+    <li>Axis</li>
+    <li>Bundle Branches</li>
+    <li>QRS Morphology
+        <ul>
+            <li>Pathologic Q-Waves?</li>
+            <li>RVH?</li>
+            <li>LVH?</li>
+        </ul>
+    </li>
+    <li>ST Segment</li>
+    <li>T-Waves</li>
+    <li>QTc</li>
+</ol>
+<!-- sinus, atrial, ventricular, atrial -->
+<div class="lead-table-container">
+    <style>
+        .lead-table-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .lead-table {
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 340px;
+        }
+
+        .lead-table caption {
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .lead-table td {
+            box-sizing: border-box;
+            width: 50%;
+            height: 100px;
+            padding: 0.5rem;
+            border: 3px solid;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .lead-name {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .lead-region {
+            display: block;
+            font-size: 0.95rem;
+            line-height: 1.15;
+        }
+
+        /* Inferior: II, III, aVF */
+        .lead-inferior {
+            background: #e8f5e9;
+            border-color: #2e7d32 !important;
+        }
+
+        /* Anteroseptal: V1–V4 */
+        .lead-anteroseptal {
+            background: #fff3e0;
+            border-color: #ef6c00 !important;
+        }
+
+        /* Lateral: I, aVL, V5, V6 */
+        .lead-lateral {
+            background: #e3f2fd;
+            border-color: #1565c0 !important;
+        }
+
+        /* aVR does not represent a single LV wall territory */
+        .lead-rightward {
+            background: #eeeeee;
+            border-color: #616161 !important;
+        }
+    </style>
+
+    <table class="lead-table">
+        <caption>Limb Leads</caption>
+        <tbody>
+            <tr>
+                <td class="lead-lateral">
+                    <span class="lead-name">I</span>
+                    <span class="lead-region">Lateral</span>
+                </td>
+
+                <td class="lead-rightward">
+                    <span class="lead-name">aVR</span>
+                    <span class="lead-region">Rightward view</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="lead-inferior">
+                    <span class="lead-name">II</span>
+                    <span class="lead-region">Inferior</span>
+                </td>
+
+                <td class="lead-lateral">
+                    <span class="lead-name">aVL</span>
+                    <span class="lead-region">High lateral</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="lead-inferior">
+                    <span class="lead-name">III</span>
+                    <span class="lead-region">Inferior</span>
+                </td>
+
+                <td class="lead-inferior">
+                    <span class="lead-name">aVF</span>
+                    <span class="lead-region">Inferior</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="lead-table">
+        <caption>Precordial Leads</caption>
+        <tbody>
+            <tr>
+                <td class="lead-anteroseptal">
+                    <span class="lead-name">V1</span>
+                    <span class="lead-region">Septal / right ventricular</span>
+                </td>
+
+                <td class="lead-anteroseptal">
+                    <span class="lead-name">V4</span>
+                    <span class="lead-region">Anterior</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="lead-anteroseptal">
+                    <span class="lead-name">V2</span>
+                    <span class="lead-region">Septal</span>
+                </td>
+
+                <td class="lead-lateral">
+                    <span class="lead-name">V5</span>
+                    <span class="lead-region">Lateral</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="lead-anteroseptal">
+                    <span class="lead-name">V3</span>
+                    <span class="lead-region">Anterior</span>
+                </td>
+
+                <td class="lead-lateral">
+                    <span class="lead-name">V6</span>
+                    <span class="lead-region">Lateral</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+<div class="nsection">
+    <h3>ECG Anatomy</h3>
+    <img src="media/ecg_anatomy.jpg">
+    <ul>
+        <li>Q wave: the first negative deflection before any positive deflection</li>
+        <li>R wave: the first positive deflection.</li>
+        <li>S wave: the first negative deflection after an R wave.</li>
+    </ul>
+    
+    <table class="expanded">
+      <thead>
+        <tr>
+          <th>ECG component</th>
+          <th>Normal duration</th>
+          <th>Small boxes</th>
+          <th>Large boxes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P wave</td>
+          <td>&lt; 0.12 seconds</td>
+          <td>&lt; 3</td>
+          <td>&lt; 0.6</td>
+        </tr>
+        <tr>
+          <td>PR interval</td>
+          <td>0.12–0.20 seconds</td>
+          <td>3–5</td>
+          <td>0.6–1</td>
+        </tr>
+        <tr>
+          <td>QRS complex</td>
+          <td>&lt; 0.12 seconds</td>
+          <td>&lt; 3</td>
+          <td>&lt; 0.6</td>
+        </tr>
+        <tr>
+          <td>QTc</td>
+          <td>
+            &lt; 0.45 seconds in men<br>
+            &lt; 0.46 seconds in women
+          </td>
+          <td>
+            &lt; 11.25 in men<br>
+            &lt; 11.5 in women
+          </td>
+          <td>
+            &lt; 2.25 in men<br>
+            &lt; 2.3 in women
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<hr>
+<div class="nsection">
+    <h3>Rate</h3>
+    <img src="media/rate_assessment.jpg">
+</div>
+<hr>
+<h3>Rhythm</h3>
+<h4>Regular R-R, Narrow QRS</h4>
+<div class="mermaid">
+flowchart TD
+    A["Regular R–R<br>Narrow QRS"] --> B{"P–QRS relationship"}
+
+    B -->|"Sinus P before every QRS"| C{"PR interval"}
+    C -->|"Over 200 ms"| D["1st-degree AV block"]
+    C -->|"200 ms or less"| E{"Rate"}
+    E -->|"Under 60"| F["Sinus bradycardia"]
+    E -->|"60–100"| G["Normal sinus rhythm"]
+    E -->|"Over 100"| H["Sinus tachycardia"]
+
+    B -->|"P and QRS dissociated"| I["3rd-degree AV block<br>with junctional escape"]
+
+    B -->|"More P waves than QRS"| J{"Sawtooth flutter waves?"}
+    J -->|Yes| K["Atrial flutter<br>with fixed conduction"]
+    J -->|No| L["Fixed-ratio AV block<br>such as 2:1 block"]
+
+    B -->|"P hidden or retrograde"| M{"Rate"}
+    M -->|"40–60"| N["Junctional escape rhythm"]
+    M -->|"Over 100"| O["SVT"]
+
+    B -->|"Abnormal P before every QRS"| P{"Rate"}
+    P -->|"100 or less"| Q["Ectopic atrial rhythm"]
+    P -->|"Over 100"| R["Atrial tachycardia"]
+
+    style D stroke:#7B1FA2,stroke-width:3px
+    style F stroke:#1565C0,stroke-width:3px
+    style G stroke:#2E7D32,stroke-width:3px
+    style H stroke:#EF6C00,stroke-width:3px
+    style I stroke:#C62828,stroke-width:3px
+    style K stroke:#00838F,stroke-width:3px
+    style O stroke:#AD1457,stroke-width:3px
+</div>
+<div class="ecg-gallery">
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #1565C0">
+        <img class="svg-overlay" src="media/rhythm_Sinus_Bradycardia.svg">
+      </div>
+      <figcaption>Sinus Bradycardia<br>HR &lt;60bpm</figcaption>
+    </figure>
+    
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #2E7D32">
+        <img class="svg-overlay" src="media/rhythm_Normal_Sinus_Rhythm.svg">
+      </div>
+      <figcaption>Normal Sinus Rhythm<br>(↑P II|↓P aVR|1:1 P-QRS)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #EF6C00">
+        <img class="svg-overlay" src="media/rhythm_Sinus_Tachycardia.svg">
+      </div>
+      <figcaption>Sinus Tachycardia<br>HR &gt;100bpm</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #7B1FA2">
+        <img class="svg-overlay" src="media/rhythm_1st_Degree_AV_Block.svg">
+      </div>
+      <figcaption>1st Degree AV Block<br>(PR &gt; 200 ms)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #C62828">
+        <img class="svg-overlay" src="media/rhythm_3rd_Degree_AV_Block.svg">
+      </div>
+      <figcaption>3rd Degree AV Block<br>(P:QRS disconnect)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #00838F">
+        <img class="svg-overlay" src="media/rhythm_Atrial_Flutter.svg">
+      </div>
+      <figcaption>Atrial Flutter<br>(Sawtooth, regular)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #AD1457">
+        <img class="svg-overlay" src="media/rhythm_Normal_Sinus_Rhythm.svg">
+      </div>
+      <figcaption>Supraventricular Tachycardia<br>(Narrow; &gt;150bpm; ∅P)</figcaption>
+    </figure>
+</div>
+
+<h4>Irregular R-R, Narrow QRS</h4>
+<div class="mermaid">
+flowchart TD
+    A["Irregular R–R, narrow QRS"] --> B{"Atrial activity"}
+
+    B -->|"No discrete P waves"| C["Atrial fibrillation"]
+    B -->|"Flutter waves"| D["Atrial flutter<br>with variable block"]
+
+    B -->|"Sinus P before every QRS"| E{"R–R pattern"}
+    E -->|"Gradual respiratory variation"| F["Sinus arrhythmia"]
+    E -->|"Abrupt pause or missing sinus cycle"| G["Sinus pause or SA exit block"]
+
+    B -->|"Early narrow QRS"| H{"Premature P before QRS?"}
+    H -->|"Yes; different from sinus P"| I["PAC"]
+    H -->|"No"| K["PJC"]
+
+    B -->|"Three or more P morphologies"| M{"Rate"}
+    M -->|"Over 100"| N["Multifocal atrial tachycardia"]
+    M -->|"100 or less"| O["Wandering atrial pacemaker"]
+
+    B -->|"P waves with dropped QRS"| P{"PR behavior"}
+    P -->|"Progressively longer, then drop"| Q["Mobitz I"]
+    P -->|"Constant, then sudden drop"| R["Mobitz II"]
+    P -->|"Two or more consecutive blocked P waves"| S["High-grade AV block"]
+    P -->|"Every other P wave blocked"| T["2:1 AV block<br>type often indeterminate"]  
+
+    style C stroke:#C62828,stroke-width:3px
+    style F stroke:#2E7D32,stroke-width:3px
+    style I stroke:#1565C0,stroke-width:3px
+    style K stroke:#7B1FA2,stroke-width:3px
+    style N stroke:#AD1457,stroke-width:3px
+    style O stroke:#00838F,stroke-width:3px
+    style Q stroke:#EF6C00,stroke-width:3px
+    style R stroke:#D84315,stroke-width:3px
+</div>
+
+<div class="ecg-gallery">    
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #C62828">
+        <img class="svg-overlay" src="media/rhythm_Atrial_Fibrillation.svg">
+      </div>
+      <figcaption>Atrial Fibrillation<br>(∅P, irreg irreg)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #2E7D32">
+        <img class="svg-overlay" src="media/rhythm_Sinus_Arrhythmia.svg">
+      </div>
+      <figcaption>Sinus Arrhythmia<br>(ΔR-R w/breath)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #1565C0">
+        <img class="svg-overlay" src="media/rhythm_Premature_Atrial_Complex.svg">
+      </div>
+      <figcaption>Premature Atrial Complex</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #7B1FA2">
+        <img class="svg-overlay" src="media/rhythm_Premature_Junctional_Complex.svg">
+      </div>
+      <figcaption>Premature Junctional Complex</figcaption>
+    </figure>
+
+        <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #EF6C00">
+        <img class="svg-overlay" src="media/rhythm_2nd_Degree_AV_Block_(Mobitz_II).svg">
+      </div>
+      <figcaption>2nd Degree AV Block (Mobitz I)<br>(PR widening→QRS Drop)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #D84315">
+        <img class="svg-overlay" src="media/rhythm_2nd_Degree_AV_Block_(Mobitz_II).svg">
+      </div>
+      <figcaption>2nd Degree AV Block (Mobitz II)<br>(Reg Irreg, Dropped QRS's)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #00838F">
+        <img class="svg-overlay" src="media/rhythm_Wandering_Atrial_Pacemaker.svg">
+      </div>
+      <figcaption>Wandering Atrial Pacemaker</figcaption>
+    </figure>
+</div>
+
+<h4>Regular R-R, Wide QRS</h4>
+<div class="mermaid">
+ flowchart TD
+    A["Regular R–R<br>Wide QRS"] --> B{"Rate"}
+
+    B -->|"Over 100"| C{"Morphology"}
+    C -->|"Uniform wide QRS complexes"| D["Monomorphic Ventricular tachycardia"]
+    C -->|"Sine-wave pattern without separate QRS and T"| E["Ventricular flutter"]
+    C -->|"Known identical BBB pattern"| F["SVT with aberrancy"]
+
+    B -->|"100 or less"| G{"Key feature"}
+    G -->|"Pacing spikes"| H["Ventricular paced rhythm"]
+    G -->|"P and QRS dissociated"| I["Third-degree AV block with ventricular escape"]
+    G -->|"No related P waves; 20–40 bpm"| J["Idioventricular escape rhythm"]
+    G -->|"No related P waves; 40–100 bpm"| K["Accelerated idioventricular rhythm"]
+    G -->|"Sinus P before every QRS"| L["Sinus rhythm with bundle-branch block"]   
+
+    style D stroke:#C62828,stroke-width:3px
+    style E stroke:#AD1457,stroke-width:3px
+</div>
+
+<div class="ecg-gallery">    
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #C62828">
+        <img class="svg-overlay" src="media/rhythm_Ventricular_Tachycardia.svg">
+      </div>
+      <figcaption>Monomorphic VT<br>(Uniform wide QRS, ∅P)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #AD1457">
+        <img class="svg-overlay" src="media/rhythm_Ventricular_Flutter.svg">
+      </div>
+      <figcaption>Ventricular Flutter<br>(Sine-wave, ∅P)</figcaption>
+    </figure>
+</div>
+
+<h4>Irregular R-R, Wide QRS</h4>
+<div class="mermaid">
+flowchart TD
+    A["Irregular R–R, Wide QRS"] --> B{"Waveform"}
+
+    B -->|"Chaotic; no identifiable QRS"| C["Ventricular fibrillation"]
+    B -->|"Continuously changing QRS axis"| D["Polymorphic VT or torsades"]
+    B -->|"Irregularly irregular"| E["AF with BBB or pre-excitation"]
+    B -->|"Mostly normal beats with early wide beats"| F["PVCs"]
+
+    B -->|"Sinus P before each QRS"| G{"Pattern"}
+    G -->|"Gradual respiratory variation"| H["Sinus arrhythmia with BBB"]
+    G -->|"Intermittent wide premature beats"| I["Ventricular ectopy"]
+
+    B -->|"P waves with dropped QRS"| J["Second-degree AV block with BBB"]
+    B -->|"Three or more P morphologies"| K["MAT or WAP with aberrancy"]
+
+    style D stroke:#7B1FA2,stroke-width:3px
+</div>
+
+<div class="ecg-gallery"> 
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #7B1FA2">
+        <img class="svg-overlay" src="media/rhythm_Torsades.svg">
+      </div>
+      <figcaption>Polymorphic Tachycardia<br>(Torsades/Twisted Ribbon)</figcaption>
+    </figure>
+
+    <figure class="ecg-figure">
+      <div class="svg-stack">
+        <img src="media/ekg_base.svg" alt="" style="border: 3px solid #616161">
+        <img class="svg-overlay" src="media/rhythm_asystole.svg">
+      </div>
+      <figcaption>Asystole<br>(No activity)</figcaption>
+    </figure>
+
+</div>
+
+<hr>
+<div class="nsection">
+    <h3>QRS Axis</h3>
+    <table class="bordered">
+        <tr>
+            <th>II</th>
+            <th>Axis</th>
+            <th>aVF</th>
+        </tr>
+        
+        <tr>
+            <td><img style="transform: scaleX(-1);" src="media/thumbs_up.jpg"></td>
+            <td><center><img src="media/normal.png"><br>Normal</center></td>
+            <td><img src="media/thumbs_up.jpg"</td>
+        </tr>
+
+        <tr>
+            <td><img style="transform: scaleX(-1);" src="media/thumbs_up.jpg"></td>
+            <td><center><img style="transform: scaleX(-1);" src="media/right.png"><br>Left</center></td>
+            <td><img src="media/thumbs_down.jpg"</td>
+        </tr>
+
+        <tr>
+            <td><img style="transform: scaleX(-1);" src="media/thumbs_down.jpg"></td>
+            <td><center><img src="media/right.png"><br>Right</center></td>
+            <td><img src="media/thumbs_up.jpg"</td>
+        </tr>
+    </table>
+</div>
+
+<hr>
+
+<h3>Bundle Branch Block</h3>
+<div class="nsection">
+    <h4>Normal R-Wave Progression</h4>
+    <ul>
+        <li>V1: Little R, Tall S</li>
+        <li>V2-3: R grows, S shrings</li>
+        <li>V3-4: R becomes larger than S</li>
+        <li>V5-6: Tall R, Little S</li>
+    </ul>
+</div>
+
+<div class="nsection">
+    <h4>Right Bundle Branch Block</h4>
+    <p>"MaRRoW"</p>
+    <ul>
+        <li>QRS &gt; 120</li>
+        <li>"M" in V1</li>
+        <li>"W" in V6</li>
+    </ul>
+    <img src="media/RBBB.svg">
+    <p>MI symptoms + new RBBB = Go to ED</p>
+</div>
+
+<div class="nsection">
+    <h4>Left Bundle Branch Block</h4>
+    <p>WiLLiaM</p>
+    <ul>
+        <li>QRS &gt; 120</li>
+        <li>"W" in V1</li>
+        <li>"M" in V6"</li>
+        <li>Left axis deviation</li>
+        <li>Poor R-Wave Progression</li>
+    </ul>
+    <img src="media/LBBB.svg">
+    <p>Acute chest pain + new LBBB = Go to ED (possible obsurred MI)</p>
+</div>
+
+<div class="nsection">
+    <h4>Left Anterior Fascicular Block</h4>
+    <ul>
+        <li>Left axis deviation</li>
+        <li>qR in I, aVL</li>
+        <li>rS in II, III, aVF</li>
+        <li>R waves &gt; 45 ms in aVL</li>
+    </ul>
+    <p>Syncope + Bifascicular block (RBBB + left anterior/posterior fascicular block) warrants urgent rhythm evaluation</p>
+    <table>
+        <tr>
+            <td>
+                <figure class="ecg-figure">
+                    <img src="media/rS.jpg">
+                    <figcaption>rS</figcaption>
+                </figure>
+            </td>
+            <td>
+                <figure class="ecg-figure">
+                    <img src="media/qR.jpg">
+                    <figcaption>qR</figcaption>
+                </figure>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="nsection">
+    <h4>Left Posterior Fascicular Block</h4>
+    <ul>
+        <li>Right axis deviation</li>
+        <li>rS in I &amp; aVL</li>
+        <li>qR in II, III, aVF</li>
+        <li>R waves &gt; 45 ms in aVF</li>
+    </ul>
+    <p>Syncope + Bifascicular block (RBBB + left anterior/posterior fascicular block) warrants urgent rhythm evaluation</p>
+    <table>
+        <tr>
+            <td>
+                <figure class="ecg-figure">
+                    <img src="media/rS.jpg">
+                    <figcaption>rS</figcaption>
+                </figure>
+            </td>
+            <td>
+                <figure class="ecg-figure">
+                    <img src="media/qR.jpg">
+                    <figcaption>qR</figcaption>
+                </figure>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="nsection">
+    <h4>Smith-Modified Sgarbossa Criteria</h4>
+    <p>For identifying possible acute coronary occlusion in LBBB or Ventricular Paced Rhythm</p>
+    <ul>
+        <li>Concordant ST elevation &ge; 1 mm in &ge; 1 lead</li>
+        <li>Concordant ST depression &ge; 1 mm in &ge; 1 lead of V1-3</li>
+        <li> Discordant ST elevation &ge;1 mm that is at least 25% of the depth of the preceding S wave in the same lead (ST/S ratio &le;&minus;0.25)</li>
+    </ul>
+</div>
+
+<hr>
+
+<div class="nsection">
+    <h4>Pathologic Q-Waves</h4>
+    <p>unusually wide/deep Q waves in contiguous leads, suggesting prior or evolving myocardial infarction</p>
+    <ul>
+        <li>&ge; 0.04 s wide</li>
+        <li>&ge; 2 mm deep or &ge; 25% depth of the following R wave)</li>
+    </ul>
+</div>
+
+<div class="nsection">
+    <h4>Right Ventricular Hypertrophy</h4>
+    <ul>
+        <li>Right axis deviation</li>
+        <li>Dominant R-wave in V1 (&gt;7 mm tall or R:S &gt; 1</li>
+        <li>Dominant S-wave in V5/6 &gt;7 mm tall or R:S &lt; 1</li>
+        <li>QRS duration &lt; 120 ms (not RBBB)</li>
+    </ul>
+</div>
+
+<div class="nsection">
+    <h4>Left Ventricular Hypertrophy</h4>
+    <ul>
+        <li>R-wave in V5/6 Plus S-wave in V1 &gt; 35 mm</li>
+    </ul>
+</div>
+
+<hr>
+
+<div class="nsection">
+    <h4>T-Waves</h4>
+    <ul>
+        <li>Upright in all but aVR and V1
+            <ul>
+                <li>T wave inversion in lead III is a normal variant.</li>
+                <li>T wave inversion is a normal finding in children.</li>
+            </ul>
+        </li>
+        <li>Amplitude &lt; 5 mm in limb leads</li>
+        <li>Amplitude &lt; 10 mm in precordial leads</li>
+    </ul>
+
+    <p>Peaked T-waves seen in hyperkalemia</p>
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>LITFL. <a href="https://litfl.com/ecg-library/basics/">Life In the Fast Lane: ECG Basics</a></li>
+        <li>ProductiveMedic. <a href="https://productivemedic.com/ecg/">ECG Made Easier</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-08-24";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

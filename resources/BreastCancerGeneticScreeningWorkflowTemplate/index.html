@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Breast Cancer Genetic Screening Workflow Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for documenting on breast cancer risk">
+    <meta name="keywords" content="breast, cancer, risk, calculator, tyrer, cuzick, ibis, screening, genetic, template">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Breast Cancer Genetic Screening Workflow Template</h1>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">### FHS-7 Screener
+[ ] First-degree relative with breast or ovarian cancer
+[ ] Relative with bilateral breast cancer
+[ ] Male relative with breast cancer
+[ ] Female relative with both breast and ovarian cancer
+[ ] Female relative with breast cancer before age 50
+[ ] Two or more relatives with breast and/or ovarian cancer
+[ ] Two or more relatives with breast and/or colorectal cancer
+
+### Additional Cancer-Genetics Referral Triggers
+[ ] Known hereditary-cancer pathogenic variant in a blood relative
+[ ] First- or second-degree relative with triple-negative breast cancer
+[ ] First- or second-degree relative with multiple primary breast cancers
+[ ] First-degree relative with pancreatic cancer
+[ ] First- or second-degree relative with metastatic or high-/very-high-risk prostate cancer
+[ ] Lobular breast cancer and diffuse gastric cancer in the family
+[ ] Ashkenazi Jewish or other relevant founder ancestry</div>
+</div>
+
+<div id="notes">
+<h3>Affected Relatives</h3>
+<ul>
+    <li>Maternal or paternal lineage</li>
+    <li>Relationship</li>
+    <li>Cancer type</li>
+    <li>Age at diagnosis</li>
+    <li>Bilateral or multiple primary cancers</li>
+    <li>Living or age at death</li>
+    <li>Genetic testing and result</li>
+</ul>
+
+<div class="mermaid">
+flowchart TD
+    A["Asymptomatic patient concerned about hereditary breast-cancer risk"] --> B["Obtain focused three-generation cancer history<br><br>Complete FHS-7 and additional referral screen<br><br>Update EHR family history"]
+    B --> C{"FHS-7 positive or<br>additional referral trigger?"}
+
+    C -- Yes --> D["Refer for cancer-genetics counseling"]
+    C -- No --> E["Cancer-genetics referral<br>not routinely indicated"]
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/genetic-testing-for-hereditary-breast-and-ovarian-cancer-syndromes">Genetic testing for hereditary breast and ovarian cancer syndromes</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>
