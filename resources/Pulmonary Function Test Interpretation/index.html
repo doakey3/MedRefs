@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pulmonary Function Test Interpretation</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for reading pulmonary function tests">
+    <meta name="keywords" content="pulmonary, function, test, interpretation, pft, spirometry, breathing">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Pulmonary Function Test Interpretation</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abbreviation</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>FEV1</strong></td>
+      <td><strong>Forced Expiratory Volume in 1 second</strong> — the amount of air a person can forcefully exhale during the first second of a breath out.</td>
+    </tr>
+    <tr>
+      <td><strong>FVC</strong></td>
+      <td><strong>Forced Vital Capacity</strong> — the total amount of air a person can forcefully exhale after taking the deepest breath possible.</td>
+    </tr>
+    <tr>
+      <td><strong>DLCO</strong></td>
+      <td><strong>Diffusing Capacity of the Lung for Carbon Monoxide</strong> — measures how well gas moves from the lungs into the bloodstream.</td>
+    </tr>
+    <tr>
+      <td><strong>TLC</strong></td>
+      <td><strong>Total Lung Capacity</strong> — the total amount of air in the lungs after taking the deepest breath possible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div class="mermaid">
+flowchart TD
+    A["<b>Valid Spirometry</b>:<ul><li>Flow loops consistently shaped</li><li>2 best FVC &amp; FEV1 are within 0.2 L of eachother</li></ul>"] --> B{"FEV1/FVC &lt;0.70?"}
+
+    B -- Yes --> C{"FVC &lt;80% predicted?"}
+    B -- No --> D{"FVC &lt;80% predicted?"}
+
+    C -- No --> E["Obstructive pattern"]
+    C -- Yes --> F["Mixed pattern"]
+    
+    D -- Yes --> H["Restrictive pattern"]
+    D -- No --> G["Normal<br><br>If asthma still suspected, do methacholine challenge"]
+    
+
+    E --> I{"<b>Bronchodilator therapy</b><br>FEV1 ↑ or FVC ↑ &ge;12%? (AND 200 mL in either for adults)"}
+    I -- Yes --> J["Reversible obstruction<br>(asthma)"]
+    I -- No --> K["Irreversible obstruction"]
+
+    F --> L{"<b>Bronchodilator therapy</b><br>FVC now &ge;80% predicted?"}
+    L -- Yes --> M["Pure obstruction w/air trapping (prob COPD)"]
+
+    H --> N{"TLC &lt;80% predicted?"}
+
+    N -- No --> O["No restriction<br>Consider poor effort"]
+    N -- Yes --> P{"DLCO Low?"}
+    P -- Yes --> Q["Intrinsic/parenchymal disease"]
+    P -- No --> R["Extrapulmonary restriction"]
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Obstructive<br>(hard to empty)</th>
+      <th>Restrictive<br>(hard to fill)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>α<sub>1</sub>-antitrypsin deficiency</td>
+      <td><strong>Chest wall</strong></td>
+    </tr>
+    <tr>
+      <td>Asthma</td>
+      <td>&nbsp;&nbsp;&nbsp;Ankylosing spondylitis</td>
+    </tr>
+    <tr>
+      <td>Bronchiectasis</td>
+      <td>&nbsp;&nbsp;&nbsp;Kyphosis</td>
+    </tr>
+    <tr>
+      <td>Bronchiolitis obliterans</td>
+      <td>&nbsp;&nbsp;&nbsp;Morbid obesity</td>
+    </tr>
+    <tr>
+      <td>Chronic obstructive pulmonary disease</td>
+      <td>&nbsp;&nbsp;&nbsp;Scoliosis</td>
+    </tr>
+    <tr>
+      <td>Cystic fibrosis</td>
+      <td><strong>Drugs (adverse reaction)</strong></td>
+    </tr>
+    <tr>
+      <td>Silicosis (early)</td>
+      <td>&nbsp;&nbsp;&nbsp;Amiodarone</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Methotrexate</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Nitrofurantoin (Furadantin)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>Interstitial lung disease</strong></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Asbestosis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Berylliosis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Eosinophilic pneumonia</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Hypersensitivity pneumonitis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Idiopathic pulmonary fibrosis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Sarcoidosis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Silicosis (late)</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>Neuromuscular disorders</strong></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Amyotrophic lateral sclerosis</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Guillain-Barré syndrome</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Muscular dystrophy</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>&nbsp;&nbsp;&nbsp;Myasthenia gravis</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2020/0315/p362">Office Spirometry: Indications and Interpretation</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2014/0301/p359.pdf">A Stepwise Approach to the Interpretation of Pulmonary Function Tests</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-09-08";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

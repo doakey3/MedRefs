@@ -1,0 +1,134 @@
+{
+  "title": "Pruffin",
+  "goal": "muscle",
+  "image": null,
+  "instructions": "",
+  "ingredients": [
+    {
+      "type": "ingredient",
+      "fdcId": 168147,
+      "name": "Vital wheat gluten",
+      "grams": 130,
+      "comment": "1 cup"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2477360,
+      "name": "Pea Protein Powder",
+      "grams": 30,
+      "comment": "1/4 cup"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 174276,
+      "name": "Soy protein isolate",
+      "grams": 30,
+      "comment": "1/3 cup"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2671913,
+      "name": "Tapioca Flour",
+      "grams": 15,
+      "comment": "2 tbsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2262075,
+      "name": "Flaxseed, ground",
+      "grams": 60,
+      "comment": "1/2 cup"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2671914,
+      "name": "Potato Starch",
+      "grams": 25,
+      "comment": "3 tbsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 746775,
+      "name": "Salt, table, iodized",
+      "grams": 6,
+      "comment": "1 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2449440,
+      "name": "Monosodium Glutamate",
+      "grams": 2,
+      "comment": "1/4 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 172231,
+      "name": "Spices, turmeric, ground",
+      "grams": 3,
+      "comment": "1 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170923,
+      "name": "Spices, cumin seed",
+      "grams": 5,
+      "comment": "2 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170922,
+      "name": "Spices, coriander seed",
+      "grams": 5,
+      "comment": "2 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 172805,
+      "name": "Leavening agents, baking powder, low-sodium",
+      "grams": 5,
+      "comment": "1 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 9000001,
+      "name": "Methylcellulose",
+      "grams": 2,
+      "comment": "1 tsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2486564,
+      "name": "Nutritional yeast",
+      "grams": 10,
+      "comment": "2 tbsp"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 170093,
+      "name": "Potatoes, baked, flesh and skin, without salt",
+      "grams": 900,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 168450,
+      "name": "Pumpkin, canned, without salt",
+      "grams": 425,
+      "comment": ""
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 2258590,
+      "name": "Peppers, bell, red, raw",
+      "grams": 396,
+      "comment": "1 bag"
+    },
+    {
+      "type": "ingredient",
+      "fdcId": 748608,
+      "name": "Oil, olive, extra virgin",
+      "grams": 30,
+      "comment": "2 tbsp"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chronic Opioids Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for managing patients already on chronic opioid therapy, not including those who have cancer, sickle cell disease, or are on palliative care.">
+    <meta name="keywords" content="opioid, opiate, morphine, oxycodone, dilaudid, chronic, management, oud">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Chronic Opioids Template</h1>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">**Functional Reason for opioids**:
+**Duration of Opioid Use**:
+**Current Opioid Regimen**:
+**MME/day**:
+
+### Red Flags:
+[ ] Heavy alcohol use / alcohol use disorder
+[ ] Concurrent benzodiazepine or other sedative/hypnotic use
+[ ] History of overdose
+[ ] Significant pulmonary disease
+[ ] Significant renal/hepatic impairment
+[ ] History of falls and in danger of serious injury with repeat fall
+[ ] Pregnancy
+
+### Patient's Functions Improved by the opioid:
+[ ] Work
+[ ] ADLs
+[ ] Sleep
+[ ] Caregiving
+[ ] Recreation
+[ ] Other: 
+
+### Evidence of Opioid Harm
+[ ] Sedation
+[ ] Cognitive impairment
+[ ] Constipation
+[ ] Falls
+[ ] Motor vehicle collisions
+[ ] Workplace accidents
+[ ] Decreased sexual function
+[ ] Opioid induced hyperalgesia
+[ ] Dose escalation without improved function
+[ ] Aberrant medication use
+[ ] Overdose history
+
+### Previous Therapies Attempted For Chronic Pain
+[ ] PT
+[ ] Regular moderate intensity exercise
+[ ] Cognitive behavioral therapy
+[ ] NSAIDs
+[ ] Topical therapy (lidocaine/menthol patches, voltaren gel)
+[ ] SNRI (e.g. duloxetine)
+[ ] Tricyclic antidepressant
+[ ] Gabapentine/Pregabalin
+[ ] Therapeutic Injection (trigger point)
+[ ] Acupuncture
+[ ] Osteopathic manipulative therapy
+[ ] Radiofrequency ablation
+
+### Indicators of Safe Continued Use
+[ ] Stable dose for years
+[ ] Reported functional benefit
+[ ] No significant adverse effects
+[ ] No evidence of misuse/opioid use disorder
+[ ] No dangerous drug combinations
+[ ] MME &lt; 50
+
+### opioid Use Disorder Diagnostic Criteria (DSM-5)
+(2-3: Mild; 4-5: Moderate; &ge;6: Severe)
+Over the past year:
+[ ] Takes more or longer than intended
+[ ] Wants/tries to cut down but cannot
+[ ] Excessive time obtaining, using, or recovering
+[ ] Craving or strong urge to use opioids
+[ ] Opioid use interferes with major obligations
+[ ] Continues despite social/relationship problems
+[ ] Gives up important activities because of opioids
+[ ] Repeated opioid use in hazardous situations
+[ ] Continues despite opioid-caused physical/psych harm
+[ ] Tolerance*
+[ ] Withdrawal or opioid use to prevent withdrawal*
+
+*Tolerance and withdrawal do not count when occurring solely during appropriate prescribed opioid therapy.</div>
+</div>
+
+<div id="notes">
+<p>This template <b>NOT intended for:</b> cancer-related pain, sickle cell disease, palliative care, or end-of-life care.</p>
+    
+<a href="https://www.uptodate.com/contents/opioid-use-disorder-pharmacologic-management">Opioid use disorder: Pharmacologic management</a>
+
+<h3>Every Visit Checklist</h3>
+<ul>
+    <li>Confirm opioid, dose, frequency, indication, and calculate MME/day</li>
+    <li>Assess pain and functional benefit</li>
+    <li>Assess adverse effects, sedation, falls, overdose, and other opioid-related harms</li>
+    <li>Check PMP/PDMP at least every 3 months</li>
+    <li>Review other sedatives: benzodiazepines, alcohol, sleep medications, etc.</li>
+    <li>Screen for concerning use / opioid use disorder when indicated</li>
+    <li>offer naloxone</li>
+    <li>Consider urine/toxicology testing per risk and clinic policy</li>
+    <li>Optimize non-opioid and non-pharmacologic pain treatment</li>
+    <li>Decide: continue, taper, or transition/treat OUD</li>
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>MME/day</th>
+            <th>Interpretation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&lt;20</td>
+            <td>Lower risk</td>
+        </tr>
+        <tr>
+            <td>20–49</td>
+            <td>Moderate risk</td>
+        </tr>
+        <tr>
+            <td>50–99</td>
+            <td>Higher risk, reassess carefully, emphasize naloxone safety</td>
+        </tr>
+        <tr>
+            <td>≥100</td>
+            <td>High risk, strong scrutiny of benefit vs harm</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="mermaid">
+flowchart TD
+    A["Established patient requesting chronic opioid renewal"] --> B["Verify regimen + calculate MME<br>Assess function, harms, PDMP, sedatives, naloxone"]
+    B --> C{"Immediate serious safety concern?<br>Overdose, severe sedation,<br>dangerous interaction, etc."}
+    C -- Yes --> C1["Urgently address safety<br>Do not reflexively abruptly stop<br>unless life-threatening"]
+    C -- No --> D{"Evidence of opioid use disorder?"}
+    D -- Yes --> D1["Offer medication treatment for OUD<br>Buprenorphine usually practical in primary care<br>Continue treating pain"]
+    D -- No --> E{"Meaningful functional benefit<br>AND harms acceptable?"}
+    E -- Yes --> F{"Dose/risk concerning?<br>e.g. ≥50 MME, sedatives,<br>falls, pulmonary risk, prior overdose"}
+    F -- No --> G["RENEW<br>Continue current dose<br>Optimize non-opioid therapy"]
+    F -- Yes --> H{"Can risks be mitigated<br>without reducing opioid?"}
+    H -- Yes --> I["RENEW WITH ADDITIONAL PRECAUTIONS<br>Naloxone, closer follow-up,<br>address sedatives/risk factors"]
+    H -- No --> J["GRADUAL TAPER<br>Decrease MME &le;10%/mo<br>slower if needed<br>Optimize alternatives"]
+    E -- No --> K{"Unable to taper AND full dose remains unacceptably risky?"}
+    K -- No --> J
+    K -- Yes --> L["Reevaluate for OUD. Recommend buprenorphine as an alternative."]
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>CDC. <a href="https://www.cdc.gov/mmwr/volumes/71/rr/pdfs/rr7103a1-H.pdf?utm_source=chatgpt.com">CDC Clinical Practice Guideline for Prescribing Opioids for Pain — United States, 2022</a></li>
+        <li>Uptodate <a href="https://www.uptodate.com/contents/opioid-use-disorder-pharmacologic-management">Opioid use disorder: Pharmacologic management</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

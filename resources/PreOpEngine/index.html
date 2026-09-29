@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PreOp Engine</title>
+    <meta name="author" content="doakey3">
+
+    <meta name="description" content="Generate an assessment and plan for patients preparing to undergo surgery">
+    <meta name="keywords" content="preop, preoperative, surgery, clearance, engine">
+    
+    <link rel="stylesheet" href="css/checkbox.css">
+    <link rel="stylesheet" href="css/radiobox.css">
+    <link rel="stylesheet" href="css/floakey.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/references.css">
+    <link rel="stylesheet" href="css/info.css">
+
+</head>
+
+<body>
+    <div id="outer_darkness">
+        <div id="resource_viewer">
+            <div id="preoperative_algorithm"></div>
+        </div>
+    </div>
+    
+    <div id="left_side_container">
+        <button id="view_resources">View Algorithm</button>
+        <h1>PreOp Engine</h1>
+        <div id="choices"></div>
+        
+        <h2>References</h2>
+        <table id="references">
+            <tr><td>[AHA]</td><td><a href="https://www.ahajournals.org/doi/full/10.1161/cir.0000000000000105">"2014 ACC/AHA Guideline on Perioperative Cardiovascular Evaluation and Management of Patients Undergoing Noncardiac Surgery: Executive Summary"</a> The American Heart Association. Aug 2014</td></tr>
+            <tr><td>[AHA2009]</td><td><a href="https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.109.192690">"2009 ACCF/AHA Focused Update on Perioperative Beta Blockade Incorporated Into the ACC/AHA 2007 Guidelines on Perioperative Cardiovascular Evaluation and Care for Noncardiac Surgery"</a> The American Heart Association. Nov 2009</td></tr>
+            <tr><td>[LV_ACC]</td><td><a href="https://www.acc.org/tools-and-practice-support/clinical-toolkits/heart-failure-practice-solutions/left-ventricular-ejection-fraction-lvef-assessment-outpatient-setting">"Left Ventricular Ejection Fraction LVEF ASsessment (Outpatient Setting)</a></td></tr>
+            <tr><td>[UTD]</td><td><a href="https://www.uptodate.com/contents/evaluation-of-cardiac-risk-prior-to-noncardiac-surgery">"Evaluation of cardiac risk prior to noncardiac surgery."</a> Uptodate. Jul 21, 2020.</td></tr>
+            <tr><td>[UTD_Drugs]</td><td><a href="https://www.uptodate.com/contents/perioperative-medication-management">"Perioperative medication management."</a> Uptodate. April 12, 2019</td></tr>
+            <tr><td>[FamPrac]</td><td><a href="https://www.mdedge.com/familymedicine/article/113361/practice-management/preoperative-evaluation-time-saving-algorithm">"Preoperative evaluation: A time-saving algorithm"</a> The Journal of Family Practice. October 2016</td></tr>
+        </table>
+    </div>
+    
+    <div id="reciever_container">
+        <textarea id="reciever" autocomplete="off"></textarea>
+    </div>
+</body>
+
+<script>
+    document.getElementById("view_resources").onclick = function() {
+        document.getElementById("outer_darkness").style.zIndex = "2";
+    }
+    document.getElementById("outer_darkness").onclick = function(event) {
+        if (event.target == this) {
+            this.style.zIndex = "-2";
+        }
+    }
+</script>
+
+<script src="js/preoperative_algorithm.js"></script>
+<script src="../../lib/floakey.js"></script>
+<script>floakey.make_flowchart("preoperative_algorithm", preoperative_algorithm);</script>
+
+<script src="js/layout_map.js"></script>
+<script src="js/make_layout.js"></script>
+
+<script src="js/make_checkboxes.js"></script>
+<script src="js/make_radioboxes.js"></script>
+
+<script src="js/logic_utils.js"></script>
+<script src="js/logic_map.js"></script>
+<script src="js/make_logic.js"></script>
+
+<script src="js/setup_infos.js"></script>
+</html>

@@ -1,0 +1,51 @@
+ul.checklist {
+   margin-top: 3px;
+   padding-left: 5px;
+}
+
+ul.checklist ul.checklist {
+    margin-left: 1.5em;
+}
+
+li.checklist_item {
+    list-style: none;
+}
+
+ul.checklist.horizontal li.checklist_item {
+    float: left;
+    margin-right: 1em;
+}
+
+div.checkbox {
+    position: relative;
+    display: inline-block;
+    margin-bottom: .2em;
+}
+
+div.checkbox div.button {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 0.05em;
+    border: .15em solid black;
+    padding: .1em;
+    margin-bottom: 0.5em;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+div.checkbox div.button::-moz-focus-inner {
+    border: 0;
+}
+
+div.checkbox div.button:hover {
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+div.checkbox span {
+    display: block;
+    margin-left: 2em;
+    line-height: 1.5;
+}

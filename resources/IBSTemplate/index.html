@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IBS Template</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting on IBS">
+    <meta name="keywords" content="ibs, irritable, bowel, syndrome">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+</head>
+
+<body>
+<h1>IBS Template</h1>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">### IBS Diagnostic Criteria (Rome IV)
+[ ] Symptom onset ≥ 6 months ago
+[ ] Recurrent abdominal pain ≥ weekly x 3 months and...
+    ≥ 2 of: Pain related to...:
+    [ ] Defecation
+    [ ] Frequency of stool
+    [ ] Form of stool
+
+### IBS Subtype
+[ ] **IBS-C**: &gt;25% Bristol 1-2 **and** &lt;25% Bristol 6-7
+[ ] **IBS-D**: &lt;25% Bristol 1-2 **and** &gt;25% Bristol 6-7
+[ ] **IBS-M**: &gt;25% Bristol 1-2 **and** &gt;25% Bristol 6-7
+[ ] **IBS-Unclassified**: meets IBS criteria but doesn't meet the above subtype criteria
+
+### IBS Alarm Features (Consider Colonoscopy/GI referral):
+[ ] More than minimal rectal bleeding
+[ ] Abnormal weight loss
+[ ] Unexplained iron deficiency anemia
+[ ] Jaundice
+[ ] Onset after age 55
+[ ] Nocturnal symptoms that rouse from sleep
+Family history of:
+    [ ] Colorectal cancer
+    [ ] Inflammatory bowel disease
+    [ ] Celiac</div>
+</div>
+
+<!-- IBS CALCULATOR -->
+<table id="ibs-score-calculator" style="width: 100%; border-collapse: collapse; font-size: 16pt;">
+    <tr>
+        <th style="text-align: left; width: 32%;">Recent Abdominal Pain Severity</th>
+        <td data-field="painSeverity">
+            <button type="button" data-score="0">No Pain</button>
+            <button type="button" data-score="25">Mild</button>
+            <button type="button" data-score="50">Moderate</button>
+            <button type="button" data-score="75">Severe</button>
+            <button type="button" data-score="100">Very Severe</button>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="text-align: left;">Abdominal Pain Frequency Over Last 10 Days</th>
+        <td data-field="painFrequency">
+            <button type="button" data-score="0">0</button>
+            <button type="button" data-score="10">1</button>
+            <button type="button" data-score="20">2</button>
+            <button type="button" data-score="30">3</button>
+            <button type="button" data-score="40">4</button>
+            <button type="button" data-score="50">5</button>
+            <button type="button" data-score="60">6</button>
+            <button type="button" data-score="70">7</button>
+            <button type="button" data-score="80">8</button>
+            <button type="button" data-score="90">9</button>
+            <button type="button" data-score="100">10</button>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="text-align: left;">Recent Abdominal Distention Severity</th>
+        <td data-field="distentionSeverity">
+            <button type="button" data-score="0">No Distention</button>
+            <button type="button" data-score="25">Mild</button>
+            <button type="button" data-score="50">Moderate</button>
+            <button type="button" data-score="75">Severe</button>
+            <button type="button" data-score="100">Very Severe</button>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="text-align: left;">Satisfaction w/Bowel Habits</th>
+        <td data-field="bowelSatisfaction">
+            <button type="button" data-score="0">Very Happy</button>
+            <button type="button" data-score="33">Happy</button>
+            <button type="button" data-score="67">Unhappy</button>
+            <button type="button" data-score="100">Very Unhappy</button>
+        </td>
+    </tr>
+
+    <tr>
+        <th style="text-align: left;">Interference w/Life In General</th>
+        <td data-field="lifeInterference">
+            <button type="button" data-score="0">Not at all</button>
+            <button type="button" data-score="33">Not much</button>
+            <button type="button" data-score="67">Quite a lot</button>
+            <button type="button" data-score="100">Completely</button>
+        </td>
+    </tr>
+</table>
+
+<div class="rich-editor-wrap">
+    <div id="ibs_score" class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false">### Treatment
+GENERAL:
+- regular meals; adequate hydration
+- trial low FODMAP diet x 4-6 weeks with food journaling, reintroduce foods gradually
+- regular moderate intensity exercise, 20-30 mins per day 3-5 times per week
+
+ABDOMINAL PAIN:
+- enteric coated peppermint oil (IBGard)
+- dicyclomine 10–20 mg PO QID PRN for cramping; watch for anticholinergic effects
+   - (dry mouth, blurred vision, constipation, urinary retention, confusion)
+
+IBS-C:
+- psyllium fiber; start at 1 tsp daily and gradually titrate up (may cause bloating)
+- miralax, 17 g daily; helps with constipation, will not improve abdominal pain/bloating
+- linaclotide 290 mcg daily, expect improvement by day 7, stop if no improvement by 4 weeks
+    - if diarrhea develops, reduce to 145 mcg daily, then 72 mcg daily if it persists
+
+IBS-D:
+- 2 mg PO PRN or ~30–45 min before meals/anticipated triggers; titrate to lowest effective dose, limit to 16 mg max per day
+    - use the lowest dose needed to control symptoms
+    - helps with diarrhea, does not improve abdominal pain
+- (for diarrhea + severe pain): nortriptyline 10 mg PO QHS; titrate up to effective dose
+- (for frequent diarrhea + little pain): rifaximin 550 mg PO TID x 14 days
+    - consider retreatment if initially responsive, but symptoms recur
+</div>
+</div>
+
+<div id="notes">
+    
+    
+
+    <table id="bristol" style="border-collapse: collapse; border: 2px solid black; margin: 1em; background-color: white;">
+        <tr>
+            <th colspan="3" style="padding: 1em; font-size: 125%; background-color: lightblue;">Bristol Stool Form Scale</th>
+        </tr>
+        <tr><th style="padding: 1em;">Type 1</th><td style="padding: 1em;"><img src="media/bristol/01.jpg"></td><td style="padding: 1em;">Separate hard lumps, like nuts (hard to pass)</td></tr>
+        <tr><th style="padding: 1em;">Type 2</th><td style="padding: 1em;"><img src="media/bristol/02.jpg"></td><td style="padding: 1em;">Sausage-shaped, but lumpy</td></tr>
+        <tr><th style="padding: 1em;">Type 3</th><td style="padding: 1em;"><img src="media/bristol/03.jpg"></td><td style="padding: 1em;">Like a sausage, but with cracks on its surface</td></tr>
+        <tr><th style="padding: 1em;">Type 4</th><td style="padding: 1em;"><img src="media/bristol/04.jpg"></td><td style="padding: 1em;">Like a sausage or snake, smooth and soft</td></tr>
+        <tr><th style="padding: 1em;">Type 5</th><td style="padding: 1em;"><img src="media/bristol/05.jpg"></td><td style="padding: 1em;">Soft blobs with clear-cut edges (passed easily)</td></tr>
+        <tr><th style="padding: 1em;">Type 6</th><td style="padding: 1em;"><img src="media/bristol/06.jpg"></td><td style="padding: 1em;">Fluffy pieces with ragged edges, a mushy stool</td></tr>
+        <tr><th style="padding: 1em;">Type 7</th><td style="padding: 1em;"><img src="media/bristol/07.jpg"></td><td style="padding: 1em;">Watery, no solid pieces, ENTIRELY LIQUID</td></tr>
+    </table>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/treatment-of-irritable-bowel-syndrome-in-adults#!">Treatment of irritable bowel syndrome in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2012/0901/p419.html">Diagnosis and Management of IBS in Adults</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const calculator = document.getElementById("ibs-score-calculator");
+    const output = document.getElementById("ibs_score");
+
+    const selections = {
+        painSeverity: null,
+        painFrequency: null,
+        distentionSeverity: null,
+        bowelSatisfaction: null,
+        lifeInterference: null
+    };
+
+    const labels = {
+        painSeverity: "Recent Abdominal Pain Severity",
+        painFrequency: "Abdominal Pain Frequency Over Last 10 days",
+        distentionSeverity: "Recent Abdominal Distention Severity",
+        bowelSatisfaction: "Satisfaction w/Bowel Habits",
+        lifeInterference: "Interference w/Life In General"
+    };
+
+    function updateOutput() {
+        const answered = Object.values(selections).filter(value => value !== null);
+
+        if (answered.length === 0) {
+            output.textContent = "";
+            return;
+        }
+
+        const score = answered.reduce((sum, value) => sum + value.score, 0);
+
+        const lines = [
+            `### IBS Severity: ${score}`
+        ];
+
+        for (const [field, value] of Object.entries(selections)) {
+            if (value !== null) {
+                lines.push(`**${labels[field]}**: ${value.text}`);
+            }
+        }
+
+        window.richText.renderEditor(
+            output,
+            lines.join("\n")
+        );
+    }
+
+    calculator.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", () => {
+            const cell = button.closest("[data-field]");
+            const field = cell.dataset.field;
+
+            // Only one selected button per row.
+            cell.querySelectorAll("button").forEach(other => {
+                other.classList.remove("selected");
+            });
+
+            button.classList.add("selected");
+
+            selections[field] = {
+                score: Number(button.dataset.score),
+                text: button.textContent.trim()
+            };
+
+            updateOutput();
+        });
+    });
+
+    updateOutput();
+});
+</script>
+
+</html>

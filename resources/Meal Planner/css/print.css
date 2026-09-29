@@ -1,0 +1,241 @@
+@page {
+    size: letter;
+    margin: 0.4in;
+}
+
+@media print {
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    body {
+        font-size: 11pt;
+    }
+
+    .meal-planner {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+
+    /* =====================================================
+       PAGE 1: recipe + nutrition
+    ===================================================== */
+
+    .meal-overview {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 3.1in !important;
+        align-items: stretch;
+        width: 100%;
+        height: var(--page-content-height);
+        box-sizing: border-box;
+        border: 0;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .recipe-panel {
+        padding: 0 0.25in 0 0;
+        border-right: 1px solid #bbb;
+    }
+
+    .nutrition-panel {
+        padding: 0 0 0 0.25in;
+    }
+
+
+    /* Meal name / goal */
+
+    .meal-settings {
+        margin-bottom: 0.15in;
+    }
+
+    .meal-setting input,
+    .meal-setting select {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        appearance: none;
+    }
+
+
+    /* Image */
+
+    .meal-image-panel h2 {
+        margin-bottom: 0.08in;
+    }
+
+    #meal-image-drop {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    .meal-image-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .meal-image-placeholder {
+        display: none;
+    }
+
+
+    /* Instructions */
+
+    .instructions-panel {
+        margin-top: 0.15in;
+    }
+
+    #meal-instructions {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+        border: 0;
+        resize: none;
+        overflow: visible;
+        background: transparent;
+    }
+
+
+    /* Nutrition */
+
+    .nutrition-chart {
+        width: 2.6in;
+        height: 2.6in;
+        margin: 0 auto;
+    }
+
+    .nutrition-chart canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .nutrition-summary {
+        margin-top: 0.12in;
+    }
+
+    .nutrition-row {
+        padding: 2px 0;
+    }
+
+
+    /* =====================================================
+       PAGE 2+: ingredients
+    ===================================================== */
+
+    .ingredients-panel {
+        padding: 0;
+        break-before: page;
+        page-break-before: always;
+    }
+
+    .ingredients-panel h2 {
+        margin: 0 0 0.15in;
+    }
+
+    #ingredient-list {
+        gap: 4px;
+    }
+
+    .ingredient-row {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        min-height: 0;
+    }
+
+
+    /* Hide editing controls */
+
+    .drag-handle,
+    .delete-ingredient,
+    .ingredient-buttons,
+    .meal-scale,
+    .meal-file-buttons {
+        display: none !important;
+    }
+
+
+    /* Ingredient row print layout */
+
+    .ingredient-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        gap: 0.12in;
+        align-items: baseline;
+        padding: 2px 0;
+    }
+
+    .ingredient-name {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+    }
+
+    .ingredient-quantity {
+        white-space: nowrap;
+    }
+
+    .ingredient-comment {
+        width: 1.5in;
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+
+
+    /* Number sliders become plain values */
+
+    .number-slider {
+        border: 0 !important;
+        background: transparent !important;
+        min-width: 0 !important;
+        width: auto !important;
+    }
+
+    .number-slider button,
+    .number-slider .number-slider-left,
+    .number-slider .number-slider-right {
+        display: none !important;
+    }
+
+    .number-slider input {
+        width: auto !important;
+        border: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        text-align: right;
+    }
+
+
+    /* Dividers */
+
+    .divider-row {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .divider-input {
+        border: 0;
+        background: transparent;
+    }
+
+
+    /* Food dialog should never print */
+
+    #food-dialog {
+        display: none !important;
+    }
+}

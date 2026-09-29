@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>UTI Template</title>
+    <meta name="author" content="doakey3">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on UTI">
+    <meta name="keywords" content="urinary, tract, infection, template, uti">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>UTI Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Symptoms of UTI: (50% probability if any of the first 3 are true, 90% probability of diagnosis if all first 3 are true)
+(    ) Dysuria
+(    ) Increased urinary frequency
+(    ) Suprapubic pain
+(    ) No vaginal discharge or vaginal pruritis
+
+Urinalysis not always needed, but should be done if any of the following:
+(    ) New or worsening urinary urgency
+(    ) New incontinence
+(    ) Gross hematuria
+(    ) Elderly patient with nonspecific mental/functional change with fever
+(    ) Any patient at risk of a resistant organism
+    (    ) History of a multidrug resistant gram negative urinary isolate
+	(    ) History of flouroquinolone-resistant Pseudomonas aeruginosa isolate
+	(    ) Recent inpatient stay at a hospital, nursing home, or long-term acute care facility
+	(    ) Recent use of a flouroquinolone, bactrim, or third+ generation cephalosporin
+	(    ) Recent travel to India, Israel, Spain, Mexico or any other country where resistant organisms are common
+
+Complicated UTI: (complicated if any positive finding)
+(    ) Temperature greater than 99.9F/37.7C
+(    ) Chills, rigors, severe fatigue, or malaise
+(    ) Flank pain
+(    ) Costovertebral angle tenderness
+(    ) Pelvic or perineal pain in men
+(    ) Pregnancy
+(    ) Renal transplant patient
+
+Recurrent UTI:
+(    ) &gt;= 2 infections in 6 months
+(    ) &gt;= 3 infections in 1 year
+
+Risk Factors:
+(    ) Use of spermicide in the last year
+(    ) New sex partner in the last year
+(    ) First UTI before age 15
+(    ) Mother with frequent UTIs
+
+Indications for CT abdomen and pelvis without contrast:
+(    ) Repeated infection with proteus
+(    ) Relapsing infection (occurs within 2 weeks of completing treatment and bug is the same)
+(    ) History of passing stones
+(    ) Persistent hematuria
+
+--PLAN--
+-Pregnancy test if not ruled out by history alone
+-Nitrofurantoin 100 mg by mouth twice daily x 5 days
+
+Preventative measures for future UTIs:
+-2-3 liters of fluid intake daily (reduces frequency by about 50%)
+-Avoid spermicides
+-Postcoital voiding
+-Wiping front to back
+-Vaginal estrogen if postmenopausal
+
+Postcoital prophylaxis for recurrent UTI
+    (    ) Recurrent UTI associated with sexual intercourse
+    (    ) Use of antibiotics not leading to yeast infections
+-Nitrofurantoin 50 mg by mouth daily after sexual intercourse
+or
+-Keflex 250 mg by mouth daily after sexual intercourse
+	
+Continuous prophylaxis for recurrent UTI
+-Nitrofurantoin 50 mg daily
+or
+-Keflex 125 mg daily
+-follow up in 3 months to assess for improvement, if improved, will continue for 12 months then reassess
+</textarea>
+</div>
+
+<div id="notes">
+<p>Escherichia coli = cause in 75-95% of cases</p>
+<img src="media/abnormal_urine_color.png">
+<br>
+<img src="media/false_results_reasons.png">
+<br>
+<img src="media/urinalysis_accuracy.png">
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+		<li>Uptodate. <a href="https://www.uptodate.com/contents/acute-simple-cystitis-in-females">Acute Simple Cystitis in Females</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/recurrent-simple-cystitis-in-women">Recurrent Simple Cystitis In Women</a>.</li>
+		<li>AAFP. <a href="https://www.aafp.org/pubs/afp/issues/2005/0315/p1153.html">Urinalysis: A Comprehensive Review</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="js/setup_resizables.js"></script>
+<script src="js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+
+</html>

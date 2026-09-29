@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mildly Elevated Liver Enzymes - Management</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="For incidental asymptomatic AST/ALT elevation &lt; 5x the upper limit of normal with no obvious acute illness.">
+    <meta name="keywords" content="mildly, elevated, liver, enzymes, template, mash, masld, LFTs">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.12.0/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Mildly Elevated Liver Enzymes - Management</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+
+<p><b>MASLD</b>: Metabolic dysfunction-associated steatotic liver disease</p>
+<p><b>MASH</b>: Metabolic dysfunction-associated steatohepatitis</p>
+
+<div class="nsection">
+<p>Common Causes:</p>
+<ul>
+    <li>Alcohol</li>
+    <li>New medications (incl. acetaminophen, anabolic steroids)</li>
+    <li>supplements
+        <ul>
+            <li>valerian</li>
+            <li>kava</li>
+            <li>ashwagandha</li>
+            <li>green tea extract</li>
+            <li>turmeric</li>
+            <li>black cohosh</li>
+            <li>garcinia</li>
+            <li>kratom</li>
+            <li>red yeast rice extract</li>
+        </ul>
+    <li>Viral hepatitis</li>
+    <li>Recent strenuous exercise</li>
+    <li>Metabolic causes: obesity, diabetes, dyslipidemia, hypertension</li>
+</ul>
+</div>
+
+<div class="nsection" style="background-color: #cdb0fc">
+<h3>Workup Step 2</h3>
+<ul>
+    <li>Hep A IGM</li>
+    <li>Heb B (SAg, SAb, CAbIGM)</li>
+    <li>Hep C Ab</li>
+    <li>ANA</li>
+    <li>Anti-Smooth Ab</li>
+    <li>Iron+Ferritin</li>
+    <li>Anti-Mitochondrial Ab if Alk Phos+GGT High</li>
+    <li>Cerulopslamin if age &lt;50yo</li>
+    <li>Alpha-1 Antitrypsin</li>
+    <li>Serum IgG</li>
+    <li>Celiac Panel</li>
+    <li>TSH</li>
+</ul>
+</div>
+
+<div class="nsection">
+    <h3>Indications for Liver Ultrasound</h3>
+    <ul>
+        <li>
+    </ul>
+</div>
+    
+<div class="mermaid">
+flowchart TD
+    A["Incidental elevated AST / ALT"] --> B{"AST or ALT ≥5× ULN<br>or concerning symptoms?"}
+
+    B -- Yes --> C["Urgent / expanded evaluation<br>for acute liver injury"]
+    B -- No --> D{"Cholestatic pattern?<br>ALP disproportionately elevated"}
+
+    D -- Yes --> E["Use cholestatic<br>liver enzyme workup"]
+    D -- No --> F["Review prior labs + history<br><ul><li>Alcohol</li><li>Medications / acetaminophen</li><li>Herbals / supplements</li><li>Bodybuilding products</li><li>Metabolic risk factors</li><li>Viral hepatitis risk</li><li>Strenuous exercise / muscle injury</li></ul>"]
+
+    F --> G["CMP, GGT, CBC, INR in ~4 weeks"]
+
+    G --> H{"Normalized?"}
+
+    H -- Yes --> I["No further workup<br>unless clinical concern"]
+    H -- No --> J["WORKUP STEP 2"]
+
+    J --> K{"Cause Identified"}
+    K -- Yes --> Y["Treat Accordingly"]
+    K -- No --> L["RUQ US<br>Calculate FIB-4"]
+
+    L --> N{"FIB-4 low risk?"}
+    N -- Yes --> O["Manage metabolic risk factors<br>in primary care"]
+    N -- No --> P["Hepatology referral for Fibroscan"]
+
+    style J fill: #cdb0fc
+</div>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/management-of-metabolic-dysfunction-associated-steatotic-liver-disease-nonalcoholic-fatty-liver-disease-in-adults">Management of metabolic dysfunction-associated steatotic liver disease (nonalcoholic fatty liver disease) in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2024/1200/elevated-liver-transaminase-levels">Mildly Elevated Liver Transaminase Levels: Causes and Evaluation</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

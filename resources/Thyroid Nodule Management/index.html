@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Thyroid Nodule Management</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for managing thyroid nodules">
+    <meta name="keywords" content="thyroid, nodule, management">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Thyroid Nodule Management</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<br>
+<div class="nsection" style="background-color: #ffc299">
+<h3>Sonographic Criteria for FNA</h3>
+<ul>
+  <li>Irregular margins</li>
+  <li>Microcalcifications</li>
+  <li>Taller-than-wide shape</li>
+  <li>Extrathyroidal extension</li>
+  <li>Disrupted rim calcification</li>
+  <li>Cervical lymphadenopathy</li>
+</ul>
+
+<p><b>Note:</b> If extrathyroidal extension or cervical lymphadenopathy is present, perform FNA regardless of nodule size.</p>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A["Thyroid nodule<br>found clinically or incidentally"] --> B["TSH & US thyroid"]
+
+    B -- "TSH low" --> C["Check FT4, T3<br><br>Radionuclide thyroid uptake scan"]
+    B -- "TSH normal or high" --> F{"Meets sonographic<br>criteria for FNA?"}
+    
+    C -- "Hyperfunctioning" --> E["Choose One:<ul><li>Antithyroid medication</li><li>Radioiodine ablation</li><li>Surgery</li></ul>"]
+    C -- "Nonfunctioning" --> F
+
+    F -- "Yes" --> G{"Size"}
+    G -- "&lt;1 cm" --> H["Repeat ultrasound<br>in 6–9 months"]
+    G -- "&ge;1 cm" --> I["FNA"]
+
+    F -- "No" --> J{"Ultrasound appearance"}
+
+    J -- "Solid hypoechoic OR<br>partially cystic with<br>solid hypoechoic component" --> K{"Size"}
+    K -- "&lt;1 cm" --> L["Follow-up ultrasound<br>in 12–24 months"]
+    K -- "&ge;1 cm" --> I
+
+    J -- "Isoechoic or hyperechoic OR<br>partially cystic with<br>eccentric solid areas" --> M{"Size"}
+    M -- "&lt;1.5 cm" --> L
+    M -- "&ge;1.5 cm" --> Z["FNA"]
+
+    J -- "Spongiform OR partially cystic<br>without eccentric solid nodule" --> O{"Size"}
+    O -- "&lt;2 cm" --> P["Follow-up ultrasound<br>in 12–24 months"]
+    O -- "&ge;2 cm" --> Q["FNA OR follow-up ultrasound<br>in 12 months without FNA"]
+
+    J -- "Purely cystic" --> T{"Large &amp;<br>symptomatic?"}
+    T -- No --> R["No FNA"]
+    T -- Yes --> Y["Aspiration"]
+
+    style F fill: #ffc299
+</div>
+<hr>
+
+<div class="mermaid">
+flowchart TD
+    A["FNA"] --> B{"Bethesda cytology"}
+
+    B -- "I: Nondiagnostic" --> C["Repeat US-guided FNA<br>in 6-12 weeks"]
+
+    B -- "II: Benign" --> D["Ultrasound surveillance<br>12-24 Months"]
+
+    B -- "III: AUS" --> E{"Clinical / ultrasound<br/>features concerning?"}
+    E -- No --> G["Repeat FNA<br/>or molecular testing"]
+    G --> H{"Result reassuring?"}
+    H -- Yes --> D
+    H -- No --> F
+    E -- Yes --> F["Consider molecular testing<br/>or diagnostic lobectomy"]
+
+    B -- "IV: Follicular neoplasm" --> I{"Molecular testing<br/>available / desired?"}
+    I -- Yes --> J["Molecular testing"]
+    J --> K{"Result"}
+    
+    K -- "Benign" --> N["Ultrasound surveillance<br>12-24 Months"]
+    K -- "Suspicious" --> L["Diagnostic lobectomy"]
+    I -- No --> L
+
+    B -- "V: Suspicious for malignancy" --> M["Surgical referral"]
+    B -- "VI: Malignant" --> X["Surgical / oncologic management"]
+</div>
+
+</div>
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/thyroid-biopsy">Thyroid biopsy</a></li>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/evaluation-and-management-of-thyroid-nodules-with-indeterminate-cytology-in-adults">Evaluation and management of thyroid nodules with indeterminate cytology in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2020/0901/p298">Thyroid Nodules: Advances in Evaluation and Management</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-09-15";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>
