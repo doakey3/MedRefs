@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chest Pain</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting">
+    <meta name="keywords" content="chest, pain, costochondritis, mi">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Outpatient Chest Pain</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+
+<div class="nsection" style="background-color: #ff6666">
+    <h3>ECG Findings Requiring Emergent Action</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>ECG Pattern</th>
+            <th>Key Findings</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard STEMI</td>
+            <td>
+                New ST elevation at the J point in ≥2 contiguous leads:
+                <ul>
+                    <li>All leads except V2–V3: ≥1 mm</li>
+                    <li>V2–V3, men ≥40: ≥2 mm</li>
+                    <li>V2–V3, men &lt;40: ≥2.5 mm</li>
+                    <li>V2–V3, women: ≥1.5 mm</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Posterior MI</td>
+            <td>
+                Horizontal ST depression V1–V3, often with tall R waves
+                and upright T waves. Posterior leads V7–V9 may show
+                ST elevation ≥0.5 mm.
+            </td>
+        </tr>
+        <tr>
+            <td>LBBB / Paced Rhythm with Positive Modified Sgarbossa</td>
+            <td>
+                Any of:
+                <ul>
+                    <li>Concordant ST elevation ≥1 mm</li>
+                    <li>Concordant ST depression ≥1 mm in V1–V3</li>
+                    <li>Discordant ST elevation ≥1 mm with ST/S-wave ratio ≥0.25</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>De Winter Pattern</td>
+            <td>
+                Upsloping ST depression at the J point in precordial leads
+                with tall, symmetric T waves; often associated with
+                proximal LAD occlusion.
+            </td>
+        </tr>
+        <tr>
+            <td>Hyperacute T Waves</td>
+            <td>
+                New, broad-based, disproportionately tall regional T waves,
+                especially with reciprocal ST depression or dynamic changes.
+            </td>
+        </tr>
+        <tr>
+            <td>Subtle Occlusion MI</td>
+            <td>
+                Regional ST elevation below conventional STEMI thresholds
+                with convincing reciprocal ST depression or evolving
+                ischemic changes.
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #ffb366">
+<h3>ECG Findings Requiring Urgent Evaluation, Ischemic Changes</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ECG Pattern</th>
+            <th>Key Findings</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ST Depression</td>
+            <td>New horizontal or downsloping ST depression ≥0.5 mm in ≥2 contiguous leads</td>
+            <td>Evaluate for NSTEMI/unstable angina; serial ECGs and troponins</td>
+        </tr>
+        <tr>
+            <td>T-Wave Inversion</td>
+            <td>New, symmetric T-wave inversion ≥1 mm in ≥2 contiguous leads</td>
+            <td>Evaluate for ischemia; compare prior ECGs and obtain serial troponins</td>
+        </tr>
+        <tr>
+            <td>Wellens Pattern</td>
+            <td>Deeply inverted or biphasic T waves in V2–V3, often after chest pain resolves</td>
+            <td>Urgent cardiology consultation; avoid stress testing</td>
+        </tr>
+        <tr>
+            <td>Diffuse ST Depression + aVR Elevation</td>
+            <td>Widespread ST depression with ST elevation in aVR, suggesting global subendocardial ischemia</td>
+            <td>Urgent assessment; early cardiology consultation, especially with ongoing pain or instability</td>
+        </tr>
+        <tr>
+            <td>New LBBB</td>
+            <td>New or presumed-new LBBB without modified Sgarbossa criteria</td>
+            <td>Evaluate for ACS based on symptoms, serial ECGs, and troponins</td>
+        </tr>
+        <tr>
+            <td>Nonspecific ST-T Changes</td>
+            <td>Mild ST deviation, T-wave flattening, or nonspecific T-wave inversion</td>
+            <td>Compare prior ECGs; evaluate according to clinical risk</td>
+        </tr>
+        <tr>
+            <td>Normal ECG</td>
+            <td>No acute ischemic abnormalities</td>
+            <td>Does not exclude ACS; use validated hs-troponin pathway if suspected</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #ffff99">
+<table>
+    <tr><th>Diagnosis</th><th>Key Clinical Features</th><th>Management</th></tr>
+
+    <tr><th colspan="3">LIFE-THREATENING CONDITIONS</th></tr>
+    <tr><td>Acute coronary syndrome</td><td>Rest pain, new or worsening angina; may present with dyspnea, nausea, weakness, or syncope.</td><td>ED/EMS; ECG, serial troponins, ACS protocol.</td></tr>
+    <tr><td>Pulmonary embolism</td><td>Acute dyspnea, pleuritic pain, tachypnea, cough, or unilateral leg swelling.</td><td>ED; Wells/PERC, D-dimer or CTPA; anticoagulation if confirmed or strongly suspected.</td></tr>
+    <tr><td>Dangerous arrhythmia</td><td>VT or complete heart block; palpitations, dyspnea, presyncope, or syncope.</td><td>ED/EMS; ECG, cardiac monitoring, ACLS if unstable.</td></tr>
+    <tr><td>Acute aortic syndrome</td><td>Sudden severe chest/back pain; possible pulse deficit, syncope, or neurological deficits.</td><td>EMS; CTA aorta, IV anti-impulse therapy, urgent surgical consultation.</td></tr>
+    <tr><td>Tension pneumothorax</td><td>Sudden unilateral pleuritic pain, respiratory distress, hypotension.</td><td>Immediate decompression; emergency chest drainage.</td></tr>
+    <tr><td>Cardiac tamponade</td><td>Hypotension, tachycardia, elevated JVP; possible muffled heart sounds.</td><td>ED/EMS; urgent echocardiogram and pericardial drainage if unstable.</td></tr>
+    <tr><td>Esophageal rupture</td><td>Severe chest pain after vomiting; possible subcutaneous emphysema or sepsis.</td><td>ED; CT imaging, NPO, IV antibiotics, urgent surgical consultation.</td></tr>
+    <tr><td>Perforated peptic ulcer</td><td>Sudden severe chest/abdominal pain, abdominal rigidity.</td><td>ED; CT abdomen, NPO, IV fluids, antibiotics, urgent surgery.</td></tr>
+    <tr><td>Takotsubo cardiomyopathy</td><td>MI-like chest pain after emotional or physical stress; transient LV dysfunction.</td><td>ED; exclude ACS, echocardiogram, cardiology consultation.</td></tr>
+
+    <tr><th colspan="3">CARDIAC</th></tr>
+    <tr><td>Stable angina</td><td>Predictable exertional pressure relieved by rest or nitroglycerin.</td><td>ECG, assess CAD probability; CCTA or stress imaging if indicated; optimize CAD therapy.</td></tr>
+    <tr><td>Heart failure</td><td>Chest discomfort with dyspnea, fatigue, edema, or orthopnea.</td><td>BNP/NT-proBNP, ECG, echocardiogram; diuretics if congested, initiate GDMT.</td></tr>
+    <tr><td>Pericarditis / myopericarditis</td><td>Sharp pleuritic pain relieved by leaning forward; possible diffuse ST elevation.</td><td>ECG, troponin, CRP, echocardiogram; NSAID + colchicine for uncomplicated pericarditis; urgent evaluation if myocardial involvement.</td></tr>
+    <tr><td>Myocarditis</td><td>Chest pain, palpitations, presyncope, or new heart failure symptoms.</td><td>Urgent evaluation; ECG, troponin, echocardiogram; cardiology, consider cardiac MRI.</td></tr>
+    <tr><td>Aortic stenosis</td><td>Exertional chest pain, dyspnea, or syncope; systolic murmur.</td><td>Echocardiogram; cardiology referral if symptomatic or significant stenosis.</td></tr>
+    <tr><td>Mitral stenosis</td><td>Progressive exertional dyspnea, sometimes angina-like pain; diastolic murmur.</td><td>Echocardiogram; cardiology referral.</td></tr>
+
+    <tr><th colspan="3">GASTROINTESTINAL</th></tr>
+    <tr><td>GERD</td><td>Postprandial or nocturnal retrosternal burning, regurgitation.</td><td>Empiric PPI for 4–8 weeks; lifestyle modifications; EGD if alarm features.</td></tr>
+    <tr><td>Peptic ulcer disease</td><td>Epigastric pain, nausea, early satiety, food-associated symptoms.</td><td>H. pylori testing/treatment, PPI, avoid NSAIDs; EGD if indicated.</td></tr>
+    <tr><td>Esophageal motility disorder</td><td>Spasmodic substernal pain, often after meals; possible dysphagia.</td><td>GI referral; EGD and esophageal manometry as indicated.</td></tr>
+    <tr><td>Esophagitis</td><td>Retrosternal pain with odynophagia; infectious or medication-related.</td><td>Remove offending medication; PPI for reflux; EGD or targeted antimicrobials if indicated.</td></tr>
+    <tr><td>Eosinophilic esophagitis</td><td>Dysphagia, food impaction, refractory heartburn.</td><td>GI referral, EGD with biopsies; PPI or swallowed topical corticosteroid.</td></tr>
+    <tr><td>Hiatal hernia</td><td>Chest discomfort with reflux symptoms.</td><td>EGD; GERD treatment; consider GI/surgical referral for large or complicated hernia.</td></tr>
+
+    <tr><th colspan="3">PULMONARY</th></tr>
+    <tr><td>Pneumothorax</td><td>Sudden unilateral pleuritic pain and dyspnea; reduced breath sounds.</td><td>Urgent chest X-ray or ultrasound; observation, aspiration, or drainage depending on severity.</td></tr>
+    <tr><td>Pneumonia</td><td>Pleuritic pain, fever, productive cough, focal lung findings.</td><td>Chest X-ray; antibiotics if bacterial; assess need for hospitalization.</td></tr>
+    <tr><td>Lung cancer</td><td>Persistent chest pain, cough, hemoptysis, weight loss.</td><td>Chest CT; pulmonology referral for tissue diagnosis.</td></tr>
+    <tr><td>Asthma / COPD</td><td>Chest tightness, wheezing, dyspnea.</td><td>Bronchodilators; spirometry when stable; treat exacerbation as indicated.</td></tr>
+    <tr><td>Pleuritis</td><td>Pleuritic pain associated with infection, autoimmune disease, or medications.</td><td>Evaluate underlying cause; NSAID if appropriate.</td></tr>
+    <tr><td>Sarcoidosis</td><td>Cough, dyspnea, occasionally pleuritic pain or arrhythmias.</td><td>Chest imaging, ECG; pulmonology referral; corticosteroids if clinically indicated.</td></tr>
+    <tr><td>Acute chest syndrome (sickle cell)</td><td>Chest pain, fever, hypoxemia, new pulmonary infiltrate.</td><td>ED/admission; oxygen if hypoxemic, antibiotics, analgesia, consider transfusion.</td></tr>
+    <tr><td>Pulmonary hypertension</td><td>Exertional dyspnea, chest pain, syncope.</td><td>Echocardiogram; referral to pulmonary hypertension specialist; right-heart catheterization for confirmation.</td></tr>
+
+    <tr><th colspan="3">MUSCULOSKELETAL</th></tr>
+    <tr><td>Costochondritis / chest wall pain</td><td>Localized reproducible tenderness, pain with movement.</td><td>Topical or oral NSAID if appropriate; reassurance, activity modification.</td></tr>
+    <tr><td>Rib fracture</td><td>Focal reproducible pain, usually following trauma.</td><td>Analgesia, pulmonary hygiene; imaging if complications suspected.</td></tr>
+    <tr><td>Rheumatic disease / fibromyalgia</td><td>Chest wall pain with inflammatory joint symptoms or widespread tenderness.</td><td>Evaluate underlying disorder; targeted anti-inflammatory treatment or fibromyalgia management.</td></tr>
+    <tr><td>Chest wall trauma</td><td>Localized pain following thoracic injury.</td><td>Assess for fracture or intrathoracic injury; analgesia and supportive care.</td></tr>
+
+    <tr><th colspan="3">PSYCHIATRIC</th></tr>
+    <tr><td>Panic attack / disorder</td><td>Episodic chest pain, palpitations, sweating, dyspnea, paresthesias, intense fear.</td><td>Assess for panic disorder; CBT, SSRI/SNRI if indicated.</td></tr>
+    <tr><td>Other psychiatric conditions</td><td>Depression or somatic symptom disorder associated with chest discomfort.</td><td>Screen for psychiatric disorders; psychotherapy and condition-specific treatment.</td></tr>
+
+    <tr><th colspan="3">COCAINE AND METHAMPHETAMINE</th></tr>
+    <tr><td>Cocaine / methamphetamine use</td><td>Acute chest pain from vasospasm, ischemia, arrhythmias, or dissection.</td><td>ED for acute symptoms; ECG/troponins, supportive care; treat stimulant use disorder.</td></tr>
+
+    <tr><th colspan="3">REFERRED PAIN</th></tr>
+    <tr><td>Referred abdominal pain</td><td>Cholecystitis or pancreatitis causing chest discomfort.</td><td>Lipase, liver tests, abdominal ultrasound or CT as indicated; treat underlying cause.</td></tr>
+    <tr><td>Referred spinal pain</td><td>Chest pain associated with cervical/thoracic spine movement or radicular symptoms.</td><td>Conservative treatment, physical therapy; imaging if neurological deficits or red flags.</td></tr>
+
+    <tr><th colspan="3">HERPES ZOSTER</th></tr>
+    <tr><td>Herpes zoster</td><td>Unilateral dermatomal pain or dysesthesia, often preceding vesicular rash.</td><td>Valacyclovir 1 g PO TID for 7 days (renal-adjust); analgesia.</td></tr>
+
+    <tr><th colspan="3">INTIMATE PARTNER VIOLENCE</th></tr>
+    <tr><td>Intimate partner violence</td><td>Chest pain associated with trauma, anxiety, or psychological distress.</td><td>Private assessment, injury evaluation, safety planning, social work/resources.</td></tr>
+</table>
+</div>
+
+<h3>Emergency Room</h3>
+<div class="mermaid">
+flowchart TD
+    A["Acute chest pain in ED"] --> B["Vitals &amp; ECG in &le; 10 mins"]
+    B --> C{"Emergent<br>ECG Findings?"}
+    C -- Yes --> D["<ul><li>Aspirin 325 mg chewed</li><li>Oxygen to keep SpO2 &ge; 90%</li><li>Nitro SL 0.4 mg Q5Min &le; 3x's. Avoid if hypotensive, RV infarct, or recent PDE5 inhibitor use (e.g. sildenafil, tadalafil)</li><li>Activate Cath protocol, alert cardiology</li></ul>"]
+    C -- No --> E{"Ischemic changes on ECG<br>Or clinically suspected ACS?"}
+    E -- Yes --> F["Activate ACS protocol<br><br>Serial EKGs &amp; Troponins, consider cardiology consult"]
+    E -- No --> G{"Wells Score<br>&gt; 4?"}
+    
+    G -- No --> I{"PERC Score<br>&gt; 0?"}
+    I -- No --> J["Consider alternative diagnoses"]
+    I -- Yes --> K{"D-dimer positive?"}
+    K -- Yes --> H
+    K -- No --> J
+
+    G -- Yes --> H["CT Pulmonary Angiogram"]
+
+    style C fill: #ff6666
+    style E fill: #ffb366
+    style J fill: #ffff99
+</div>
+
+<hr>
+<h3>Outpatient</h3>
+
+<div class="nsection" style="background-color: #d9b3ff">
+    <h3>Call 911 If (&lt;30 sec assessment)</h3>
+    <ul>
+        <li>Severe dyspnea, respiratory distress, or hypoxemia</li>
+        <li>Diaphoresis, pallor, or cool/clammy skin with acute chest pain</li>
+        <li>Severe or persistent chest pain with obvious distress</li>
+        <li>Hypotension, weak pulse, or signs of shock</li>
+        <li>Syncope, altered mental status, or new focal neurological deficit</li>
+        <li>Sudden, maximal-at-onset chest or back pain (suspect aortic dissection)</li>
+        <li>Chest pain with sustained marked tachycardia, bradycardia, or an irregular pulse causing symptoms</li>
+    </ul>
+</div>
+
+<div class="nsection" style="background-color: #bbff99">
+    <h3>Send to ED If (2-Minute Assessment)</h3>
+    <ul>
+        <li>New or persistent chest pressure/tightness at rest</li>
+        <li>New or worsening exertional chest pain</li>
+        <li>Chest pain with radiation to arm/jaw, dyspnea, nausea, or presyncope concerning for ACS</li>
+        <li>Pleuritic pain or unexplained dyspnea with PE risk factors, tachycardia, or unilateral leg swelling</li>
+        <li>Sudden chest/back pain with known aortic aneurysm or pulse asymmetry</li>
+        <li>Acute chest pain after cocaine/methamphetamine use</li>
+        <li>Persistent unexplained pain with significant concern for a dangerous cause</li>
+    </ul>
+</div>
+
+
+
+<div class="mermaid">
+flowchart TD
+    A["Patient presents with chest pain"] --> B{"Concern for life-threatening cause?"}
+    B -- Yes --> C["Call EMS<br><br>Send to ED"]
+
+    B -- No --> D["<ul><li>Vitals</li><li>History</li><li>Physical Exam</li></ul>"]
+
+    D --> E{"Concern for life-threatening cause?"}
+
+    E -- Yes --> C
+    E -- No --> F["Consider alternative diagnoses"]
+
+    style B fill: #d9b3ff
+    style E fill: #bbff99
+    style F fill: #ffff99
+</div>
+
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2023/0200/practice-guidelines-chest-pain-evaluation">Diagnosis and Management of IBS in Adults</a>Chest Pain Evaluation: Updated Guidelines From the AHA/ACC</li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-10-18";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

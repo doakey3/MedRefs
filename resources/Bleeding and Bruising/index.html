@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bleeding and Bruising</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting">
+    <meta name="keywords" content="bleeding, bruising, coagulopathy, disorder">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Bleeding and Bruising</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+
+<br>
+<a href="https://www.mdcalc.com/calc/10580/isth-ssc-bleeding-assessment-tool">ISTH-BAT</a>
+<br><br>
+
+<div class="nsection" style="background-color: #66ffb3">
+    <h3>Medications that Cause Bleeding:</h3>
+    <ul>
+      <li>Apixaban</li>
+      <li>Dabigatran</li>
+      <li>Lovenox</li>
+      <li>Heparin</li>
+      <li>Rivaroxaban</li>
+      <li>Warfarin</li>
+      <li>Aspirin</li>
+      <li>NSAIDs (However, these can help reduce menstrual bleeding)</li>
+      <li>Corticosteroids</li>
+      <li>Clopidogrel</li>
+      <li>Fish oil</li>
+      <li>SSRIs</li>
+      <li>Alcohol</li>
+      <li>Cephalosporins</li>
+      <li>Nitrofurantoin</li>
+      <li>Penicillin</li>
+      <li>Sulfonamides</li>
+      <li>Vancomycin</li>
+      <li>Carbamazepine</li>
+      <li>Quinine</li>
+      <li>Hydrochlorothiazide</li>
+      <li>Valproic acid</li>
+    </ul>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A["Abnormal bleeding or bruising"] --> B{"Medication causes?"}
+
+    B -- Yes --> Med["Change/Stop/Discuss Med"]
+    B -- No --> C["Clinical assessment + ISTH-BAT"]
+
+    C --> D{"Abnormal ISTH-BAT?"}
+
+    D -- No --> Worse["Follow up if symptoms worsen"]
+    D -- Yes --> Labs["Check:<ul><li>CBC w/diff</li><li>Smear</li><li>PT</li><li>aPTT</li><li>CMP</li><li>Fibrinogen Level</li></ul>"]
+
+    Labs -- Abnormal platelet<br>size or shape --> E["Hematology referral<br><br>(Light transmission aggregometry)"]
+    Labs -- Low platelet count --> F["Thrombocytopenia"]
+    Labs --> G{"Normal PT?"}
+
+    G -- Yes --> H{"Normal aPTT<br>(corrected)?"}
+
+    H -- Yes --> I["Check:<ul><li>Factor VIII</li><li>von Willebrand Factor Antigen</li><li>von Willebrand Factor activity</li></ul>"]
+    I -- Normal --> E
+    I -- Abnormal --> vWd["von Willebrand Disease"]
+    
+    H -- No --> J["aPTT mixing study"]
+
+    J -- Corrects --> K["Factor VIII, IX, XI assay"]
+    J -- Doesn't Correct --> L["Lupus anticoagulant or factor VIII inhibitor present"]
+
+    K -- VIII Low --> I
+
+    G -- No --> M{"Normal aPTT?"}
+    M -- Yes --> N["Administer vitamin K"]
+    N -- Corrects --> O["Malnutrition"]
+    N -- Doesn't Correct --> P["Factor VII assay"]
+    M -- No --> dz["<ul><li>Liver disease</li><li>DIC</li><li>Factor deficiency</li></ul>"]
+    
+
+    style B fill: #66ffb3
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>AAFP: <a href="https://www.aafp.org/pubs/afp/issues/2016/0215/p279.html">Clinical Evaluation of Bleeding and Bruising in Primary Care</a>.</li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-10-18";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

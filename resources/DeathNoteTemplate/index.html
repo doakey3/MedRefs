@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Death Note Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for writing the note for a patient who has died in the hospital.">
+    <meta name="keywords" content="death, note, template, deceased, dead, died">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Death Note Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Events:
+I was called to the patient's bedside at [TIME] for unresponsive patient.
+
+Physical Exam:
+General: pale; motionless; unresponsive
+Eyes: pupils fixed, dilated
+Heart: heart sounds absent; carotid and peripheral pulses absent
+Lungs: no breath sounds; no respiratory effort
+Neuro: unresponsive to sternal rub
+
+I expressed my condolences to the family. Autopsy declined.
+
+Time of Death: [TIME]
+Cause: [CAUSE]
+Contributing Factors: [FACTORS]
+Physician: [NAME]
+</textarea>
+</div>
+
+</body>
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+<script>
+    last_updateds = document.getElementsByClassName("last_updated");
+    for (var i = 0; i < last_updateds.length; i++) {
+        var mydate = new Date(document.lastModified);
+        var newdate = new Intl.DateTimeFormat("en-US", {year: "numeric", month: "long", day: "numeric"}).format(mydate).replace(/\./g, '-');
+        last_updateds[i].innerHTML = newdate;
+    } 
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pain Scale Template</title>
+    <meta name="author" content="doakey3">
+    
+    <meta name="description" content="A template for charting a patient's level of pain">
+    <meta name="keywords" content="pain, scale, template">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+
+</head>
+
+<body>
+<h1>Pain Scale Template</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Pain Level:
+(    ) 0: No pain
+(    ) 1: Hardly notice pain
+(    ) 2: Notice pain, does not interfere with activities
+(    ) 3: Sometimes distracts me
+(    ) 4: Distracts me, can do usual activities
+(    ) 5: Interrupts some activities
+(    ) 6: Hard to ignore, avoid usual activities
+(    ) 7: Focus of attention, prevents doing daily activities
+(    ) 8: Awful, hard to do anything
+(    ) 9: Can't bear the pain, unable to do anything
+(    ) 10: As bad as it could be, nothing else matters
+
+Biosocial Impact of Pain For the Last 24 Hours:
+Usual Activies: [SCALE 1-10]
+Sleep: [SCALE 1-10]
+Mood: [SCALE 1-10]
+Stress: [SCALE 1-10]
+</textarea>
+</div>
+
+<div id="notes">
+<img src="media/dod_pain.jpg">
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>DOD. <a href="https://www.va.gov/PAINMANAGEMENT/docs/DVPRS_2slides_and_references.pdf">Defense and Veterans Pain Rating Scale</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

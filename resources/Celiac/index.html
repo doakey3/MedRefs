@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Celiac Disease</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for managing Celiac">
+    <meta name="keywords" content="key, words, here">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+
+    <style>
+        table.definitions td:first-child {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Celiac Disease</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+
+<div class="nsection" style="background-color: #b3e6ff">
+    <h3>Indications For Celiac Testing</h3>
+    <ul>
+        <li>Any first-degree relative of a person with confirmed celiac disease</li>
+        <li>Chronic (3 months or more) gastrointestinal complaint not explained by another process
+            <ul>
+                <li>Diarrhea/steatorrhea (fatty/oily stools)</li>
+                <li>Constipation</li>
+                <li>Unexpected weight loss (5% or more in a 6-month period)</li>
+                <li>Abdominal pain</li>
+                <li>Bloating/distension</li>
+            </ul>
+        </li>
+        <li>Type 1 Diabetes</li>
+        <li>Autoimmune Thyroiditis</li>
+        <li>Down syndrome</li>
+        <li>Turner Syndrome</li>
+        <li>Pulmonary Hemosiderosis</li>
+        <li>Dermatitis herpetiformis</li>
+        <li>Unexplained anemia</li>
+        <li>Unexplained B12/folate deficiency</li>
+        <li>Unexplained fatigue</li>
+        <li>Persistent aphthous stomatitis</li>
+        <li>Persistently elevated serum aminotransferases</li>
+        <li>Recurrent headaches</li>
+        <li>Recurrent fetal loss</li>
+        <li>Low birth weight offspring</li>
+        <li>Reduced fertility</li>
+        <li>Premature osteoporosis</li>
+        <li>Idiopathic peripheral neuropathy</li>
+        <li>Nonhereditary cerebellar ataxia</li>
+    </ul>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A["Celiac Workup Indicated"] --> B{"Currently<br>eating gluten?"}
+
+    B -- No --> C["Check<ul><li>HLA-DQ2</li><li>HLA-DQ8</li></ul>(Assess susceptibility)"]
+    C --> D{"Both negative?"}
+    D -- Yes --> E["Celiac essentially excluded"]
+    D -- No --> F["Gluten challenge:<br>&ge;10 g/day for 6–12 weeks<br>(if tolerated)"]
+    F --> G["Check tTG-IgA &amp; total IgA"]
+
+    B -- Yes --> G
+
+    G --> H{"tTG-IgA positive?"}
+
+    H -- Yes --> I["Refer to GI for EGD<br>with duodenal biopsies"]
+
+    H -- No --> J{"Total IgA deficient?"}
+    J -- Yes --> K["Check DGP-IgG<br>and/or tTG-IgG"]
+    K --> L{"IgG antibody positive?"}
+    L -- Yes --> I
+    L -- No --> M{"High clinical<br>suspicion?"}
+
+    J -- No --> M
+
+    M -- Yes --> I
+    M -- No --> N["Celiac disease unlikely<br>Evaluate alternative diagnoses"]
+
+    style A fill: #b3e6ff
+</div>
+
+<br>
+
+<table class="definitions">
+    <thead>
+        <tr>
+            <th>Test</th>
+            <th>What It Measures</th>
+            <th>Clinical Use</th>
+            <th>Interpretation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tTG-IgA</td>
+            <td>IgA antibodies against tissue transglutaminase, an enzyme involved in protein modification.</td>
+            <td>Preferred initial screening test for celiac disease.</td>
+            <td>Positive suggests celiac disease. Negative makes celiac less likely if the patient consumes gluten and has sufficient IgA.</td>
+        </tr>
+        <tr>
+            <td>Total IgA</td>
+            <td>Total circulating immunoglobulin A, regardless of antigen specificity.</td>
+            <td>Detects IgA deficiency, which can cause falsely negative tTG-IgA results.</td>
+            <td>Low or undetectable IgA warrants IgG-based testing.</td>
+        </tr>
+        <tr>
+            <td>DGP-IgG</td>
+            <td>IgG antibodies against deamidated gliadin peptides (chemically modified fragments of gluten).</td>
+            <td>Alternative test when IgA deficiency is present.</td>
+            <td>Positive supports celiac disease; negative reduces its likelihood but does not exclude it.</td>
+        </tr>
+        <tr>
+            <td>tTG-IgG</td>
+            <td>IgG antibodies against tissue transglutaminase.</td>
+            <td>Alternative test when IgA deficiency is present.</td>
+            <td>Positive supports celiac disease in IgA-deficient patients. Less useful when total IgA is normal.</td>
+        </tr>
+        <tr>
+            <td>EMA-IgA</td>
+            <td>IgA anti-endomysial antibodies, which recognize tissue transglutaminase.</td>
+            <td>Highly specific confirmatory serology, especially when tTG-IgA results are equivocal.</td>
+            <td>Positive strongly supports celiac disease. Limited by IgA deficiency and reduced gluten exposure.</td>
+        </tr>
+        <tr>
+            <td>HLA-DQ2</td>
+            <td>Genetic variants encoding HLA-DQ2 antigen-presenting molecules, particularly DQ2.5 and DQ2.2.</td>
+            <td>Assesses genetic susceptibility, particularly in patients already avoiding gluten or with inconclusive testing.</td>
+            <td>Negative reduces the likelihood of celiac disease; positive indicates susceptibility, not disease.</td>
+        </tr>
+        <tr>
+            <td>HLA-DQ8</td>
+            <td>Genetic variants encoding the HLA-DQ8 antigen-presenting molecule.</td>
+            <td>Assesses genetic susceptibility alongside HLA-DQ2.</td>
+            <td>Absence of both HLA-DQ2 and DQ8 makes celiac disease extremely unlikely (&gt;99% negative predictive value).</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/diagnosis-of-celiac-disease-in-adults">Diagnosis of celiac disease in adults</a></li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2024/0100/practice-guidelines-celiac-disease">Diagnosis and Management of Celiac Disease: Guidelines From the American College of Gastroenterology</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-10-18";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

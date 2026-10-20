@@ -1,0 +1,48 @@
+ul.radiolist {
+   margin-top: 3px;
+   padding-left: 5px;
+}
+
+li.radiolist_item {
+    list-style: none;
+}
+
+ul.radiolist.horizontal li.radiolist_item {
+    float: left;
+    margin-right: 1em;
+}
+
+div.radiobox {
+    position: relative;
+    display: block;
+    margin-bottom: .2em;
+}
+
+div.radiobox div.button {
+    position: absolute;
+    top: 0.05em;
+    left: 0;
+    height: 1.25em;
+    width: 1.25em;
+    user-select: none;
+    border: .15em solid black;
+    border-radius: 50%;
+}
+
+div.radiobox div.button::-moz-focus-inner {
+    border: 0;
+}
+
+div.radiobox div.button:hover {
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+div.radiobox div.button.checked {
+    background-color: black;
+}
+
+div.radiobox span {
+    display: block;
+    margin-left: 2em;
+    line-height: 1.5;
+}

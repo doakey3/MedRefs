@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaiser Locations</title>
+<meta name="description" content="A map showing the locations of Kaiser Northwest">
+<meta name="keywords" content="kaiser, clinic, locations, map">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; }
+  .layout { display: flex; height: 100vh; min-height: 450px; }
+  .sidebar { width: 270px; flex-shrink: 0; overflow-y: auto; padding: 12px; background: #f8fafc; border-right: 1px solid #cbd5e1; }
+  h2 { margin: 0 0 12px; font-size: 18px; }
+  table { border-collapse: separate; border-spacing: 0 4px; width: 100%; font-size: 14px; }
+  th { text-align: left; padding: 4px 9px; }
+  td { padding: 8px 9px; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { outline: 2px solid #222; }
+  td:first-child { font-weight: 750; border-radius: 5px 0 0 5px; }
+  td:last-child { border-radius: 0 5px 5px 0; }
+  #map { flex: 1; min-width: 0; }
+  .pin { width: 22px; height: 22px; border: 2px solid white; border-radius: 50%; box-shadow: 0 1px 5px #0009; }
+  @media (max-width: 600px) { .layout { flex-direction: column; } .sidebar { width: 100%; height: 37vh; flex-shrink: 0; } #map { min-height: 63vh; } }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h2>Locations</h2>
+    <table aria-label="Locations"><thead><tr><th>ID</th><th>Name</th></tr></thead><tbody id="locations"></tbody></table>
+  </aside>
+  <div id="map" aria-label="Map of locations"></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const locations = {
+  "BVT": {"lat": 45.48616, "lon": -122.78358, "name": "Beaverton"},
+  "BTL": {"lat": 45.78164, "lon": -122.54494, "name": "Battleground"},
+  "CPK": {"lat": 45.61820, "lon": -122.54198, "name": "Cascade Park"},
+  "ECG": {"lat": 44.05609, "lon": -123.05431, "name": "Eugene Chase Gardens"},
+  "EIN": {"lat": 45.54758, "lon": -122.67953, "name": "East Interstate"},
+  "GTW": {"lat": 45.53508, "lon": -122.55667, "name": "Gateway"},
+  "HBN": {"lat": 45.52033, "lon": -122.92698, "name": "Hillsboro North"},
+  "KZS": {"lat": 45.00752, "lon": -122.99727, "name": "Keizer Station"},
+  "LVK": {"lat": 46.13387, "lon": -122.92536, "name": "Longview Kelso"},
+  "MTS": {"lat": 45.43277, "lon": -122.56304, "name": "Mount Scott"},
+  "NLR": {"lat": 44.95709, "lon": -122.98278, "name": "North Lancaster"},
+  "ORC": {"lat": 45.67343, "lon": -122.53112, "name": "Orchards"},
+  "MPC": {"lat": 45.19888, "lon": -123.16497, "name": "McMinnville"},
+  "RKW": {"lat": 45.51754, "lon": -122.46182, "name": "Rockwood"},
+  "SAL": {"lat": 45.72598, "lon": -122.65389, "name": "Salmon Creek"},
+  "SKY": {"lat": 44.88230, "lon": -123.07226, "name": "Skyline"},
+  "SST": {"lat": 45.54036, "lon": -122.87628, "name": "Sunset"},
+  "TUA": {"lat": 45.38148, "lon": -122.77307, "name": "Tualatin"},
+  "WSM": {"lat": 44.95171, "lon": -123.04969, "name": "West Salem"}
+};
+
+const map = L.map('map');
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const tbody = document.getElementById('locations');
+const bounds = [];
+const entries = Object.entries(locations);
+entries.forEach(([id, loc], i) => {
+  // Evenly spaced hues produce 19 distinct, consistent marker/row colors.
+  const hue = Math.round(i * 360 / entries.length);
+  const color = `hsl(${hue}, 75%, 43%)`;
+  const background = `hsl(${hue}, 85%, 86%)`;
+  const marker = L.marker([loc.lat, loc.lon], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div class="pin" style="background:${color}"></div>`,
+      iconSize: [22, 22], iconAnchor: [11, 11]
+    })
+  }).addTo(map);
+  marker.bindPopup(`<strong>${id}</strong> — ${loc.name}`);
+  marker.bindTooltip(id, { direction: 'top', offset: [0, -8] });
+  bounds.push([loc.lat, loc.lon]);
+
+  const row = document.createElement('tr');
+  row.style.background = background;
+  const code = document.createElement('td');
+  const name = document.createElement('td');
+  code.textContent = id;
+  name.textContent = loc.name;
+  row.append(code, name);
+  row.title = `Show ${loc.name} on map`;
+  row.addEventListener('click', () => {
+    map.setView([loc.lat, loc.lon], Math.max(map.getZoom(), 12));
+    marker.openPopup();
+  });
+  tbody.appendChild(row);
+});
+map.fitBounds(bounds, { padding: [35, 35] });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+.number-slider {
+    display: inline-flex;
+    align-items: stretch;
+
+    height: 40px;
+
+    border: 2px solid #888;
+    border-radius: 10px;
+
+    /*
+     * Clips the button hover backgrounds to the
+     * rounded outer border.
+     */
+    overflow: hidden;
+
+    user-select: none;
+}
+
+.number-slider button {
+    width: 40px;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+    color: #777;
+
+    cursor: pointer;
+}
+
+.number-slider button:hover {
+    background: #eee;
+}
+
+.number-slider input {
+    width: 70px;
+    padding: 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    text-align: center;
+    font-size: 24px;
+
+    cursor: ew-resize;
+}
+
+/*
+ * Once the user is actually typing, show the normal
+ * text cursor instead of the drag cursor.
+ */
+.number-slider input:focus {
+    cursor: text;
+}
+
+.number-slider.dragging input {
+    cursor: ew-resize;
+}

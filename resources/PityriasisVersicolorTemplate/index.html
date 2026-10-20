@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pityriasis Versicolor</title>
+    <meta name="author" content="doakey3">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="author" content="doakey3"> 
+    <meta name="description" content="A template for charting on pityriasis versicolor">
+    <meta name="keywords" content="pityriasis, versicolor, tinea, template">
+    
+    <link rel="stylesheet" href="../../css/grow_wrap.css">
+    <link rel="stylesheet" href="../../css/template_style.css">
+    
+    <style>
+        img {
+            max-width: 256px;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>Pityriasis Versicolor</h1>
+<div class="grow-wrap">
+<textarea class="checkable resizable" spellcheck="false" autocomplete="off">
+Treatment Regimens:
+-ketoconazole 2% shampoo, one five-minute application daily x 3 days
+-selenium sulfide 2.5% shampoo, one ten-minute application daily x 7 days
+-terbinafine 1% cream, apply twice daily x 7 days
+
+-oral fluconazole 300 mg once weekly x 2 weeks
+-oral itraconazole 200 mg daily x 5 days
+</textarea>
+</div>
+
+<div id="notes">
+    <p>Much more common in tropical locations. More commonly affects those with a weakened immune system.</p>
+    <p>A third of cases will fluoresce under a woods lamp.</p>
+    <p>Occurs more commonly in tropical climates</p>
+    <p>Not contagious</p>
+    <p>Caused by malassezia globosa fungi and occasionally other malassezia species. These are normal skin flora.</p>
+    <p>Recurrence is common. Long-term prophylactic therapy is often needed.</p>
+    <img src="media/tinea_versicolor_white.jpg">
+    <img src="media/black_versicolor.jpg">
+    <img src="media/tinea_versicolor_erythematous.jpg">
+    <img src="media/woods_lamp.jpg">
+    <p>Look for hyphae and yeast cells (spaghetti and meatball pattern)</p>
+    <img src="media/koh_prep.jpg">
+    <h3 style="margin: 0;">KOH Prep</h3>
+    <video width="320" height="240" autoplay muted loop>
+        <source src="media/koh_prep.mp4" type="video/mp4">
+    </video>
+    <p>Scrape the edge of a fungal lesion (where growth is occurring). KOH dissolves human cells, leaving only the yeast cells visible. Heat will speed up the process.</p>
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Uptodate. <a href="https://www.uptodate.com/contents/tinea-versicolor-pityriasis-versicolor">Tinea Versicolor</a>.</li>
+        <li>Youtube. <a href="https://www.youtube.com/watch?v=LUwNQI_0BWU">Watch &amp; Learn: KOH preparation</a></li>
+    </ul>
+</div>
+
+</body>
+
+<script src="../../js/setup_resizables.js"></script>
+<script src="../../js/setup_boxes.js"></script>
+<script>
+    var textarea = document.getElementsByClassName("checkable")[0];
+    textarea.focus();
+</script>
+</html>

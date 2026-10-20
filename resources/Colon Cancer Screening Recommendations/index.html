@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Colon Cancer Screening Recommendations</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A guide for colon cancer screening">
+    <meta name="keywords" content="colon, cancer, screening, polyp, recommendations, guidelines, colonoscopy, fit">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Colon Cancer Screening Recommendations</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<br>
+
+<div class="nsection">
+<h3>Colonoscopy Follow Up Recommendations</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Initial colonoscopy finding</th>
+      <th>Follow-up interval</th>
+      <th>Finding at follow-up colonoscopy</th>
+      <th>Next follow-up interval</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th colspan="4">Normal</th>
+    </tr>
+    <tr>
+      <td>Normal (no polyps)</td>
+      <td>10 years</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+
+    <tr>
+      <th colspan="4">Traditional adenomas</th>
+    </tr>
+
+    <tr>
+      <td rowspan="5">1–2 tubular adenomas &lt;10 mm</td>
+      <td rowspan="5">7–10 years</td>
+      <td>Normal</td>
+      <td>10 years</td>
+    </tr>
+    <tr>
+      <td>1–2 tubular adenomas &lt;10 mm</td>
+      <td>7–10 years</td>
+    </tr>
+    <tr>
+      <td>3–4 tubular adenomas &lt;10 mm</td>
+      <td>3–5 years</td>
+    </tr>
+    <tr>
+      <td>5–10 tubular adenomas &lt;10 mm</td>
+      <td>3 years</td>
+    </tr>
+    <tr>
+      <td>High-risk adenoma</td>
+      <td>3 years</td>
+    </tr>
+
+    <tr>
+      <td rowspan="5">3–4 tubular adenomas &lt;10 mm</td>
+      <td rowspan="5">3–5 years</td>
+      <td>Normal</td>
+      <td>10 years</td>
+    </tr>
+    <tr>
+      <td>1–2 tubular adenomas &lt;10 mm</td>
+      <td>7–10 years</td>
+    </tr>
+    <tr>
+      <td>3–4 tubular adenomas &lt;10 mm</td>
+      <td>3–5 years</td>
+    </tr>
+    <tr>
+      <td>5–10 tubular adenomas &lt;10 mm</td>
+      <td>3 years</td>
+    </tr>
+    <tr>
+      <td>High-risk adenoma</td>
+      <td>3 years</td>
+    </tr>
+
+    <tr>
+      <td>5–10 tubular adenomas &lt;10 mm</td>
+      <td>3 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+
+    <tr>
+      <td rowspan="5">
+        High-risk adenoma<br>
+        ≥10 mm, villous/tubulovillous histology, or high-grade dysplasia
+      </td>
+      <td rowspan="5">3 years</td>
+      <td>Normal</td>
+      <td>5 years</td>
+    </tr>
+    <tr>
+      <td>1–2 tubular adenomas &lt;10 mm</td>
+      <td>5 years</td>
+    </tr>
+    <tr>
+      <td>3–4 tubular adenomas &lt;10 mm</td>
+      <td>3–5 years</td>
+    </tr>
+    <tr>
+      <td>5–10 tubular adenomas &lt;10 mm</td>
+      <td>3 years</td>
+    </tr>
+    <tr>
+      <td>High-risk adenoma</td>
+      <td>3 years</td>
+    </tr>
+
+    <tr>
+      <td>&gt;10 adenomas</td>
+      <td>1 year</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+
+    <tr>
+      <th colspan="4">Serrated polyps</th>
+    </tr>
+
+    <tr>
+      <td>1–2 sessile serrated polyps &lt;10 mm</td>
+      <td>5–10 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>3–4 sessile serrated polyps &lt;10 mm</td>
+      <td>3–5 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>5–10 sessile serrated polyps &lt;10 mm</td>
+      <td>3 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>High-risk sessile serrated polyp (≥10 mm or dysplasia)</td>
+      <td>3 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+
+    <tr>
+      <th colspan="4">Hyperplastic polyps</th>
+    </tr>
+
+    <tr>
+      <td>Up to 20 hyperplastic polyps &lt;10 mm</td>
+      <td>10 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Any hyperplastic polyp ≥10 mm</td>
+      <td>3–5 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Traditional serrated adenoma</td>
+      <td>3 years</td>
+      <td>No evidence available</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="nsection" style="background-color: #ccb3ff">
+    <h3>Colorectal Cancer Syndromes</h3>
+    <ul>
+        <li>Familial Adenomatous Polyposis</li>
+        <li>Gardner's Syndrome</li>
+        <li>Peutz-Jegher's Syndrome</li>
+        <li>Cowden Syndrome</li>
+        <li>MYH-Associated Polyposis</li>
+        <li>Juvenile Polyposis</li>
+        <li>Hereditary Nonpolyposis Colon Cancer/Lynch Syndrome</li>
+    </ul>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A{"Known colorectal cancer syndrome?"}
+    A -- Yes --> B["Refer to Genetics"]
+    B --> C{"Hx of<br>Complete Colectomy?"}
+    C -- No --> E["Referral to GI"]
+    C -- Yes --> D["Colon cancer screening not indicated"]
+
+    A -- No --> F{"IBD?"}
+    F -- Yes --> G{"Hx of<br>Complete Colectomy?"}
+    G -- Yes --> D
+    G -- No --> H{"UC limited to proctosigmoid colon?"}
+    H -- Yes --> I["CRC Screening (45-75yo)<br><br>CScope Q10Y"]
+    H -- No --> J{"IBD x &ge;8y?"}
+    J -- Yes --> I
+    J -- No --> K["Refer to GI"]
+
+    F -- No --> L{"<u>One</u> 1st°<br>relative w/CRC?"}
+    L -- Yes --> M["CScope at 10Y younger than age of dx of relative"]
+    L -- No --> O{"&ge;2 1st°<br>OR<br>&ge;3 1st/2nd°<br>relatives w/CRC?"}
+    O -- Yes --> P["Refer to Genetics"]
+    P --> M
+    O -- No --> Q["FIT annually<br>OR<br>CScope Q10Y"]
+    
+
+    style A fill: #ccb3ff
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>Kaiser Permanente Practice Recommendations.</li>
+        <li>AAFP. <a href="https://www.aafp.org/afp/2021/0301/p314">Colonoscopy Follow-up: U.S. Multi-Society Task Force on Colorectal Cancer Updates Recommendations</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-09-14";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>

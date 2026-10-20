@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Elevated Bilirubin</title>
+    <meta name="author" content="doakey3">
+    <meta name="description" content="A template for charting">
+    <meta name="keywords" content="elevated, bilirubin, hyperbilirubinemia, gilberts, gilbert's, syndrome, crigler, najjar">
+
+    <link rel="stylesheet" href="../../css/template_style.css">
+    <link rel="stylesheet" href="../../css/rich_resizable.css">
+
+    <script src="../../js/mermaid.min.js"></script>
+    <script src="../../js/simple_mermaid_init.js"></script>
+</head>
+
+<body>
+<h1>Elevated Bilirubin</h1>
+
+<!--
+<div class="rich-editor-wrap">
+    <div class="rich-editor resizable checkable or-selectable" contenteditable="true" spellcheck="false"></div>
+</div>
+-->
+
+<div id="notes">
+<table>
+    <tr>
+        <td>Direct bilirubin ≈ conjugated bilirubin</td>
+    </tr>
+    <tr>
+        <td>Indirect bilirubin ≈ unconjugated bilirubin</td>
+    </tr>
+</table>
+<br>
+
+<div class="nsection" style="background-color: #ffb3ff">
+    <h3>Medications That Cause &uarr;Indirect Bilirubin</h3>
+    <ul>
+        <li>Atazanavir (UGT1A1 inhibition)</li>
+        <li>Indinavir (UGT1A1 inhibition)</li>
+        <li>Rifampin (impaired hepatic uptake)</li>
+        <li>Probenecid (impaired hepatic uptake)</li>
+        <li>Gemfibrozil (impaired hepatic uptake)</li>
+        <li>Sorafenib (UGT1A1 inhibition)</li>
+        <li>Nilotinib (UGT1A1 inhibition)</li>
+        <li>Pazopanib (UGT1A1 inhibition)</li>
+        <li>Dapsone (hemolysis)</li>
+        <li>Primaquine (hemolysis, especially with G6PD deficiency)</li>
+        <li>Sulfonamides (hemolysis, especially with G6PD deficiency)</li>
+        <li>Nitrofurantoin (hemolysis, especially with G6PD deficiency)</li>
+        <li>Rasburicase (hemolysis with G6PD deficiency)</li>
+    </ul>
+</div>
+
+<div class="mermaid">
+flowchart TD
+    A["Elevated bilirubin<br>Normal AST, ALT, ALP"] --> B["Order:<ul><li>Fractionated bilirubin</li><li>CBC</li><li>Reticulocytes</li><li>LDH</li><li>Haptoglobin</li></ul><br><br>Review:<ul><li>Prior labs</li><li>Medications</li><li>Symptoms</li></ul>"]
+    B --> C{"Predominantly<br>indirect?"}
+    C -- Yes --> D{"<ul><li>&darr;Hemoglobin</li><li>&darr;Haptoglobin</li><li>&uarr;LDH</li><li>&uarr;Reticulocytes</li></ul>"}
+    D -- Yes --> E["Hemolysis"]
+    D -- No --> Med{"Portosystemic shunt<br>or<br><span style="background-color: #ffb3ff">Medications</span>?"}
+    Med -- Yes --> Tx["Treatment<br>Side effect"] 
+    Med -- No --> F{"Indirect<br>bilirubin<br>&lt;5?"}
+    F -- Yes --> G["Gilbert's<br>Syndrome"]
+    F -- No --> H["Other etiology<br>(Crigler Najjar)"]
+
+    C -- No --> I["Consider:<ul><li>Biliary obstruction</li><li>Intrahepatic cholestasis</li><li>Hepatocellular injury</li><li>Dubin-Johnson</li><li>Rotor Syndrome</li></ul>"]
+</div>
+
+</div>
+
+<div id="references">
+    <h2>References</h2>
+    <ul>
+        <li>NCBI. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4424929/">Evaluating Elevated Bilirubin Levels in Asymptomatic Adults</a></li>
+    </ul>
+</div>
+
+<div id="dateModified"></div>
+</body>
+
+<script>
+    const dateText = "2026-10-19";
+    document.getElementById("dateModified").innerHTML = `Date Modified: <time datetime="${dateText}">${dateText}</time>`;
+</script>
+
+<script src="../../js/text2html.js"></script>
+<script src="../../js/setup_rich_resizables.js"></script>
+<script src="../../js/setup_rich_boxes.js"></script>
+<script src="../../js/setup_rich_or_select.js"></script>
+
+</html>
